@@ -29,19 +29,28 @@ theme:
     - search.highlight
     - search.suggest
     - content.code.copy
-    - content.action.edit
   icon:
     repo: fontawesome/brands/github
 
 nav:
-  - Home: index.md
-  - Research:
-    - research/overview.md
-    - research/papers.md
-    - research/projects.md
-  - Blog:
-    - blog/loop-engineering.md
-    - blog/memory-contagion.md
+  - Chinese (中文):
+    - zh/index.md
+    - Research:
+      - zh/research/overview.md
+      - zh/research/papers.md
+      - zh/research/projects.md
+    - Blog:
+      - zh/blog/loop-engineering.md
+      - zh/blog/memory-contagion.md
+  - English:
+    - en/index.md
+    - Research:
+      - en/research/overview.md
+      - en/research/papers.md
+      - en/research/projects.md
+    - Blog:
+      - en/blog/loop-engineering.md
+      - en/blog/memory-contagion.md
 
 markdown_extensions:
   - pymdownx.highlight:
