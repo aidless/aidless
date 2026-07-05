@@ -8,25 +8,31 @@
       
       
       
+        <link rel="canonical" href="https://aidless.github.io/aidless/zh/blog/memory-contagion/">
       
+      
+        <link rel="prev" href="../loop-engineering/">
+      
+      
+        <link rel="next" href="../../../en/">
       
       
         
       
       
-      <link rel="icon" href="/aidless/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Liu Zewen -- Research and Projects</title>
+        <title>Memory Contagion: When AI Agents Remember Bias - Liu Zewen -- Research and Projects</title>
       
     
     
-      <link rel="stylesheet" href="/aidless/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/aidless/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("/aidless/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#memory-contagion-when-ai-agents-remember-bias" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/aidless/." title="Liu Zewen -- Research and Projects" class="md-header__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
+    <a href="../../.." title="Liu Zewen -- Research and Projects" class="md-header__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Memory Contagion: When AI Agents Remember Bias
             
           </span>
         </div>
@@ -210,11 +221,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/aidless/zh/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -234,7 +247,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/aidless/en/" class="md-tabs__link">
+        <a href="../../../en/" class="md-tabs__link">
           
   
   
@@ -268,7 +281,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/aidless/." title="Liu Zewen -- Research and Projects" class="md-nav__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
+    <a href="../../.." title="Liu Zewen -- Research and Projects" class="md-nav__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -295,28 +308,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -334,7 +350,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -352,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -386,10 +402,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -398,7 +417,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
             
   
   
@@ -434,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/research/overview/" class="md-nav__link">
+      <a href="../../research/overview/" class="md-nav__link">
         
   
   
@@ -462,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/research/papers/" class="md-nav__link">
+      <a href="../../research/papers/" class="md-nav__link">
         
   
   
@@ -490,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/research/projects/" class="md-nav__link">
+      <a href="../../research/projects/" class="md-nav__link">
         
   
   
@@ -523,28 +542,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="">
             
   
   
@@ -562,7 +584,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -580,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/blog/loop-engineering/" class="md-nav__link">
+      <a href="../loop-engineering/" class="md-nav__link">
         
   
   
@@ -605,10 +627,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/aidless/zh/blog/memory-contagion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Contagion: When AI Agents Remember Bias
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -624,6 +673,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Experiment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why It Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paper
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -705,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/" class="md-nav__link">
+      <a href="../../../en/" class="md-nav__link">
         
   
   
@@ -787,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/research/overview/" class="md-nav__link">
+      <a href="../../../en/research/overview/" class="md-nav__link">
         
   
   
@@ -815,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/research/papers/" class="md-nav__link">
+      <a href="../../../en/research/papers/" class="md-nav__link">
         
   
   
@@ -843,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/research/projects/" class="md-nav__link">
+      <a href="../../../en/research/projects/" class="md-nav__link">
         
   
   
@@ -933,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/blog/loop-engineering/" class="md-nav__link">
+      <a href="../../../en/blog/loop-engineering/" class="md-nav__link">
         
   
   
@@ -961,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/blog/memory-contagion/" class="md-nav__link">
+      <a href="../../../en/blog/memory-contagion/" class="md-nav__link">
         
   
   
@@ -1014,6 +1138,71 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Experiment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Findings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why It Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paper
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1026,8 +1215,41 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="memory-contagion-when-ai-agents-remember-bias">Memory Contagion: When AI Agents Remember Bias<a class="headerlink" href="#memory-contagion-when-ai-agents-remember-bias" title="Permanent link">&para;</a></h1>
+<p>Can bias spread through time via AI agent memory? We found that it can -- but only in certain models.</p>
+<h2 id="the-question">The Question<a class="headerlink" href="#the-question" title="Permanent link">&para;</a></h2>
+<p>AI agents increasingly use memory systems to maintain long-term coherence. But what if the memories they store are biased? Does that bias persist and propagate to future decisions?</p>
+<h2 id="the-experiment">The Experiment<a class="headerlink" href="#the-experiment" title="Permanent link">&para;</a></h2>
+<p>We tested three models (DeepSeek V4-Chat, V4-Pro, Claude 4.6) with two types of bias (length preference and authority bias) across four experimental phases.</p>
+<h2 id="key-findings">Key Findings<a class="headerlink" href="#key-findings" title="Permanent link">&para;</a></h2>
+<p><strong>Bias persists even with perfect memory consolidation.</strong> Even when we used an "oracle" consolidation that preserves all information without loss, length bias still propagated to future agents. This means the problem isn't in how memories are merged -- it's in the biased content itself.</p>
+<p><strong>It depends on the model generation.</strong> Length bias propagated strongly in DeepSeek V4-Chat (Gamma_A = 13.18) but completely failed in both V4-Pro (Gamma_A = 0.00) and Claude 4.6 (Gamma_A = 0.00). Newer models appear immune.</p>
+<p><strong>There is no safe threshold.</strong> Contagion was detectable at contamination rates as low as 20%. Even small amounts of biased data can influence future behavior.</p>
+<p><strong>It depends on the bias type.</strong> Authority bias failed to propagate in all three models across 15 controlled multi-seed runs. Only certain bias types trigger contagion.</p>
+<h2 id="why-it-matters">Why It Matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
+<p>As AI agents are deployed in high-stakes environments, their reliance on long-term memory makes them susceptible to "historical" biases. Simply improving memory consolidation is not enough if the input experiences are already tainted.</p>
+<h2 id="paper">Paper<a class="headerlink" href="#paper" title="Permanent link">&para;</a></h2>
+<p><a href="https://arxiv.org/abs/2606.23195">arXiv 2606.23195</a> | TMLR #56</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1070,10 +1292,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/aidless/", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "/aidless/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/aidless/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

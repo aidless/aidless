@@ -8,25 +8,31 @@
       
       
       
+        <link rel="canonical" href="https://aidless.github.io/aidless/zh/blog/loop-engineering/">
       
+      
+        <link rel="prev" href="../../research/projects/">
+      
+      
+        <link rel="next" href="../memory-contagion/">
       
       
         
       
       
-      <link rel="icon" href="/aidless/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Liu Zewen -- Research and Projects</title>
+        <title>Loop Engineering: Building a Paper Quality Audit System - Liu Zewen -- Research and Projects</title>
       
     
     
-      <link rel="stylesheet" href="/aidless/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/aidless/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("/aidless/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#loop-engineering-building-a-paper-quality-audit-system" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/aidless/." title="Liu Zewen -- Research and Projects" class="md-header__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
+    <a href="../../.." title="Liu Zewen -- Research and Projects" class="md-header__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Loop Engineering: Building a Paper Quality Audit System
             
           </span>
         </div>
@@ -210,11 +221,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/aidless/zh/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -234,7 +247,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/aidless/en/" class="md-tabs__link">
+        <a href="../../../en/" class="md-tabs__link">
           
   
   
@@ -268,7 +281,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/aidless/." title="Liu Zewen -- Research and Projects" class="md-nav__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
+    <a href="../../.." title="Liu Zewen -- Research and Projects" class="md-nav__button md-logo" aria-label="Liu Zewen -- Research and Projects" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -295,28 +308,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -334,7 +350,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -352,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -386,10 +402,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -398,7 +417,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
             
   
   
@@ -434,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/research/overview/" class="md-nav__link">
+      <a href="../../research/overview/" class="md-nav__link">
         
   
   
@@ -462,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/research/papers/" class="md-nav__link">
+      <a href="../../research/papers/" class="md-nav__link">
         
   
   
@@ -490,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/research/projects/" class="md-nav__link">
+      <a href="../../research/projects/" class="md-nav__link">
         
   
   
@@ -523,28 +542,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="">
             
   
   
@@ -562,7 +584,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -577,10 +599,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/aidless/zh/blog/loop-engineering/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loop Engineering: Building a Paper Quality Audit System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -596,6 +645,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rulebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rulebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmlr-baseline-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TMLR Baseline Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -608,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/zh/blog/memory-contagion/" class="md-nav__link">
+      <a href="../memory-contagion/" class="md-nav__link">
         
   
   
@@ -705,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/" class="md-nav__link">
+      <a href="../../../en/" class="md-nav__link">
         
   
   
@@ -787,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/research/overview/" class="md-nav__link">
+      <a href="../../../en/research/overview/" class="md-nav__link">
         
   
   
@@ -815,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/research/papers/" class="md-nav__link">
+      <a href="../../../en/research/papers/" class="md-nav__link">
         
   
   
@@ -843,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/research/projects/" class="md-nav__link">
+      <a href="../../../en/research/projects/" class="md-nav__link">
         
   
   
@@ -933,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/blog/loop-engineering/" class="md-nav__link">
+      <a href="../../../en/blog/loop-engineering/" class="md-nav__link">
         
   
   
@@ -961,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aidless/en/blog/memory-contagion/" class="md-nav__link">
+      <a href="../../../en/blog/memory-contagion/" class="md-nav__link">
         
   
   
@@ -1014,6 +1149,82 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rulebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rulebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmlr-baseline-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TMLR Baseline Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1026,8 +1237,87 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="loop-engineering-building-a-paper-quality-audit-system">Loop Engineering: Building a Paper Quality Audit System<a class="headerlink" href="#loop-engineering-building-a-paper-quality-audit-system" title="Permanent link">&para;</a></h1>
+<p>I built a tool that checks your论文 for problems before reviewers do. 91 rules, 15 automated checks, 15 Python modules.</p>
+<h2 id="why">Why<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
+<p>Every time I submitted a paper to TMLR, I had to manually check formatting, citations, statistics, and writing quality. It was tedious and I kept missing things. So I extracted all the issues from 3 papers and 11 review rounds into a rulebook, and automated the checking.</p>
+<h2 id="what-it-does">What It Does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h2>
+<p>The tool does three things:</p>
+<ol>
+<li><strong>Pre-submission check</strong> -- scans your paper for hard errors (missing citations, wrong statistical methods, formatting issues)</li>
+<li><strong>Quality assessment</strong> -- scores your paper and compares it against published TMLR papers</li>
+<li><strong>Cross-paper tracking</strong> -- if you're submitting multiple papers, it finds issues that appear in one paper but might exist in others</li>
+</ol>
+<h2 id="the-rulebook">The Rulebook<a class="headerlink" href="#the-rulebook" title="Permanent link">&para;</a></h2>
+<p>91 rules extracted from real review rounds, organized into 4 tiers:</p>
+<ul>
+<li><strong>Tier 1 (blocking)</strong>: Must fix. Ghost references, missing controls, contradictions.</li>
+<li><strong>Tier 2 (quality)</strong>: Important improvements. Small N, missing CIs, cherry-picking.</li>
+<li><strong>Tier 3 (polish)</strong>: Minor refinements. Terminology, figure labels.</li>
+<li><strong>Defense</strong>: Prepare for hostile reviewer attacks.</li>
+</ul>
+<h2 id="tmlr-baseline-comparison">TMLR Baseline Comparison<a class="headerlink" href="#tmlr-baseline-comparison" title="Permanent link">&para;</a></h2>
+<p>The tool compares your paper against 5 published TMLR papers:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>TMLR Median</th>
+<th>Typical Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datasets</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Seeds specified</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>CI reported</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Effect sizes</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
+<p>I used this tool on my last 6 TMLR submissions. It caught 23 issues that I would have missed, including 4 ghost references, 2 missing confidence intervals, and 1 statistical test inconsistency.</p>
+<h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
+<p>The entire system is open source: <a href="https://github.com/aidless/loop-engineering">github.com/aidless/loop-engineering</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1070,10 +1360,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/aidless/", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "/aidless/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/aidless/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
