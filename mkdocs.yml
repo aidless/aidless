@@ -1,0 +1,37 @@
+site_name: Liu Zewen -- Research & Projects
+site_url: https://aidless.github.io/aidless/
+repo_url: https://github.com/aidless/aidless
+repo_name: aidless/aidless
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Research:
+    - Overview: research/overview.md
+    - Papers: research/papers.md
+    - Projects: research/projects.md
+  - Blog:
+    - Loop Engineering: blog/loop-engineering.md
+    - Memory Contagion: blog/memory-contagion.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - tables
+  - admonition
+  - toc:
+      permalink: true
