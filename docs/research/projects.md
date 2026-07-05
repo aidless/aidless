@@ -1,130 +1,107 @@
-# 🖥️ 项目总览
+# Projects
 
-> **科研 · Web · AI Agent · 毕业设计 · 工具引擎** — 全部项目一目了然
-
----
-
-## 📊 统计
-
-| 类别 | 数量 |
-|------|:---:|
-| 🔬 科研系统 | 5 |
-| 🌐 Web 应用 | 6 |
-| 🤖 AI/Agent | 5 |
-| 💻 毕业/课程 | 4 |
-| 🧮 工具/引擎 | 4 |
-| 📊 AI 工作流 | 3 |
-| **总计** | **27** |
+Engineering projects organized by category. Each project includes what it does, what technology it uses, and why it matters.
 
 ---
 
-## 🔬 科研系统
+## Research Tools
 
-| 项目 | 位置 | 状态 | 说明 |
-|------|------|:---:|------|
-| [[🏠_科研总览\|aettl-research]] | `F:\Research\` | 🟢 活跃 | 核心论文仓库（Obsidian Vault） |
-| **Loop Engineering v5.3** | `F:\Research\.loop\` | 🟢 活跃 | 论文质量自动化审计系统（91条规则、15项检查、15个模块） |
-| calibration-contagion-release | `Desktop\` | ✅ | P8 实验代码（100,500 API calls, GPT-4o/DeepSeek） |
-| calibration-benchmark | `F:\test\` | ✅ | ML 校准基准（5 UCI 数据集） |
-| hybrid_calibration | `F:\Dev\ZCodeProject\` | ✅ | 嵌入+树模型混合校准实验 |
-| tmlr_revision | `F:\test\` | ✅ | Contagion Tensor TMLR 投稿包 |
+### Loop Engineering v5.3 -- Paper Quality Audit System
 
----
+A Python tool that automatically checks your paper for problems before submission. I built this because manually checking formatting, citations, statistics, and writing quality for every TMLR submission was tedious and error-prone.
 
-## 🌐 Web 应用
+The tool contains 91 review rules extracted from 3 papers and 11 review rounds. It runs 15 automated checks across 7 categories: format compliance, citation accuracy, statistical methods, internal consistency, methodology, LaTeX compilation, and semantic claims.
 
-### 太玄阁「万象」平台（⭐ 活跃项目）
+It also compares your paper against 5 published TMLR papers to calibrate expectations. For example, the typical TMLR paper uses 4 datasets and 3 models, rarely reports confidence intervals or effect sizes, and does not specify random seeds. My papers exceed these baselines on every metric.
 
-**全功能 AI 占卜平台：八字 + 吠陀占星 + 塔罗 + 六爻 + 奇门遁甲 + AI 智能解读**
+GitHub: [aidless/loop-engineering](https://github.com/aidless/loop-engineering)
 
-| 组件 | 位置 | 技术栈 | 状态 |
-|------|------|------|:---:|
-| **wx-miniprogram** | `F:\test\2026-06-27...\wx-miniprogram\` | 微信小程序（7 页面） | 🟢 活跃 |
-| **fortune-web-v2** | `F:\test\2026-06-27...\fortune-web-v2\` | Express v2.1（15+ 引擎） | 🟢 已部署 |
-| **vedic microservice** | `F:\test\2026-06-27...\fortune-web-v2\backend\vedic\` | Python (PyJHora, 34KB) | 🟢 |
-| **gaokao-vedic** | `F:\test\2026-06-27...\gaokao-vedic\` | Flask | ✅ |
-| fortune-web v1 | `F:\test\2026-06-27...\fortune-web\` | Node.js | 旧版 |
+### Multi-Agent Code Review System
 
-**后端引擎**：ai-engine.js · chart-engine.js · tarot-engine.js · liuyao-engine.js · reading-engine.js · user-engine.js · quota-engine.js · payment-engine.js · render.js · verifycode-engine.js · role-engine.js · dump-text.js
+An AI-powered code review tool for GitHub Pull Requests. When you submit a PR URL, 5 specialized AI agents collaborate to analyze the code and generate a review report.
 
-### 其他 Web 应用
+The agents are: Fetcher (pulls PR data from GitHub API), Analyzer (static code analysis + LLM reasoning), Synthesizer (generates Markdown report), Reflector (scores report quality using LLM-as-Judge, retries if score is below 7), and Notifier (posts report to PR comment).
 
-| 项目 | 位置 | 技术栈 | 说明 |
-|------|------|------|------|
-| **life-planner** | `F:\life-planner\` | FastAPI + Vue/React | AI 生活规划（日记/考试/求职/考研/日常） |
-| **paper-reviewer-web** | `F:\Dev\ZCodeProject\` | Streamlit | 论文审稿 Web UI |
+Built with LangGraph for workflow orchestration, DeepSeek API for LLM calls, and Streamlit for the web interface.
 
----
+GitHub: [aidless/code-review-agent](https://github.com/aidless/code-review-agent)
 
-## 🤖 AI/Agent 系统
+### Agentic Paper Review System
 
-| 项目 | 位置 | 技术栈 | 说明 |
-|------|------|------|------|
-| **code-review-agent** | `Desktop\code-review-agent\` | LangGraph + DeepSeek + Streamlit | 5-agent GitHub PR 审查（fetcher/analyzer/synthesizer/reflector/notifier） |
-| **agentic-paper-review** | `F:\Dev\ZCodeProject\` | Python + multi-agent | 多 agent 论文审稿+冲突解决+覆盖率报告 |
-| **Light-skills-master** | `F:\Dev\ZCodeProject\` | Python | AI agent 技能路由框架（mode registry + verification） |
-| **research-writing-skill** | `F:\Dev\ZCodeProject\` | Claude/Cursor 插件 | AI 科研写作技能（LaTeX 模板+hooks） |
-| **DifyAIA 工作流集** | `F:\Dev\ZCodeProject\` | Dify 平台 | MindMap/Excel/PPT/GitHub/Bill 等 8+ AI 工作流 |
+A domain-agnostic multi-agent system for structured academic paper review. Unlike the code review tool above, this one is designed for reviewing research papers against custom criteria.
+
+The system uses a team of AI agents: Specialist (criterion-by-criterion analysis), Editor (synthesizes findings into a final review), Judge (resolves conflicts between reviews from different AI models), Librarian (searches academic databases for related papers), and Fact-Checker (verifies suspicious claims).
+
+It produces scored reviews with cross-model adjudication and literature grounding. I used this system to generate 12+ structured review reports for my own papers.
+
+GitHub: [aidless/agentic-paper-review](https://github.com/aidless/agentic-paper-review)
+
+### Research Writing Skill
+
+An AI-assisted academic writing system implemented as a Claude/Cursor plugin. It provides structured workflows for different stages of paper writing: brainstorming, outline creation, section drafting, figure generation, LaTeX formatting, and pre-submission review.
+
+The system includes LaTeX templates for multiple venues (ACM, IEEE, Elsevier, Springer), writing modules for different disciplines (engineering, social science, medical, legal), and hooks that integrate with AI coding assistants.
+
+GitHub: [aidless/research-writing-skill](https://github://aidless/research-writing-skill)
 
 ---
 
-## 💻 毕业/课程项目
+## Web Applications
 
-| 项目 | 位置 | 技术栈 | 说明 |
-|------|------|------|------|
-| **matouchuanzhihuogui** | `F:\matouchuanzhihuogui\` | Spring Boot | 码头船只出行管理系统 |
-| **码头船只出行管理系统** | `F:\码头船只出行管理系统\` | Spring Boot | 同上（带 demo 数据+前端） |
-| **Lhy-test** | `F:\Lhy-test\` | Spring Boot + Vue | 港口集装箱管理系统（含论文第三章） |
-| **task-manager-springboot** | `Desktop\task-manager-springboot\` | Spring Boot | 任务管理系统 |
+### Taixuan Ge (Wanxiang) -- AI Fortune-Telling Platform
 
----
+A full-stack WeChat Mini Program that combines traditional Chinese and Vedic astrology with AI interpretation. Users enter their birth date, and the system generates readings based on Bazi, Ziwei Doushu, Vedic Jyotish, Tarot, Liu Yao, and Qimen Dunjia.
 
-## 🧮 工具/引擎
+The backend is a Node.js Express server (version 2.1, 664 lines in the main file) with 15 engine modules: AI interpretation engine (DeepSeek API with three-section structured output), Bazi chart engine, Vedic astrology engine (34KB Python, fixes 9 upstream bugs in Shadbala calculation), Tarot engine, Liu Yao engine, Qimen Dunjia microservice, scenario-based reading engine, user system, quota engine, payment engine, and rendering engine.
 
-| 项目 | 位置 | 技术栈 | 说明 |
-|------|------|------|------|
-| **vedic_scripts** | `Desktop\vedic_scripts\` | Python (PyJHora/pysweph) | 吠陀占星核心引擎（34KB, Shadbala/Dasha/Ashtakavarga） |
-| **ccf-deadlines** | `F:\Dev\ZCodeProject\` | Rust | CCF 会议截稿日期追踪 |
-| **ai-deadlines** | `F:\Dev\ZCodeProject\` | Jekyll (GitHub Pages) | AI 会议截稿网站 |
-| ComfyUI | `F:\ComfyUI\` | Python | AI 图像生成（已安装+教程） |
+The WeChat Mini Program has 7 pages: home (hot questions, scenario selection), input (birth date, time, gender), result (AI interpretation display), history (past readings), profile (subscription management), functions, and webview.
+
+API endpoints include: POST /api/v2/reading (generate scenario-based reading), GET /api/v2/readings (history), POST /api/chat (AI Q&A), POST /api/chart (Bazi/Ziwei chart), POST /api/tarot (Tarot spread), POST /api/liuyao (Liu Yao divination).
+
+Security: CORS whitelist, rate limiting (10 requests/minute/IP), JWT authentication, CSP headers, XSS/CSRF protection, framework fingerprint hiding.
+
+### AI Life Planner
+
+A personal growth management platform built with FastAPI + Vue.js + Anthropic Claude API. Features include daily journaling, exam score analysis, college application guidance (Gaokao), job search tracking, and graduate school planning. The AI generates daily/weekly/monthly plans based on user history.
 
 ---
 
-## 📊 学习/参考资源
+## Course and Graduation Projects
 
-| 项目 | 位置 | 说明 |
-|------|------|------|
-| **LLMs-from-scratch** | `F:\Dev\ZCodeProject\` | 《从零构建大语言模型》代码 |
-| anime-master | `F:\Dev\ZCodeProject\` | TypeScript 动画库 |
-| Dify 平台 | `F:\Dev\ZCodeProject\dify-main\` | Dify 自部署 |
-| SkillOpt | `F:\Dev\ZCodeProject\` | 技能优化实验 |
-| Arbor | `F:\Dev\ZCodeProject\` | Arbor 项目 |
-| scientific-agent-skills | `F:\Dev\ZCodeProject\` | 科研 agent 技能集 |
+### Port Vessel Management System
 
----
+A Spring Boot web application for managing vessel departures and arrivals at a port. Standard MVC architecture (Controller, Service, DAO, Entity layers) with MySQL database. Includes vessel registration, route queries, and role-based access control.
 
-## 📁 Desktop 散落文件（已迁移）
+### Port Container Management System
 
-| 文件 | 去向 |
-|------|------|
-| `BOUNDARY_SYNC.pdf` | `F:\Research\FLAGSHIP\` |
-| `BOUNDARY_SYNC_ARXIV.pdf` | `F:\Research\boundary_sync_standalone\` |
-| `tmlr_paper.pdf` | `F:\Research\` |
-| `contagion_tensor_arxiv_fixed.zip` | `F:\Research\` |
-| `resampling_calibration_arxiv_resubmit.zip` | `F:\Research\` |
-| `MSD_SOLO_PLAN.md` | `F:\Research\` |
-| 求职/面试材料 | `Desktop\`（保留原位） |
+A full-stack application with Spring Boot backend and Vue.js frontend for container management at a port. Includes database design documentation and thesis chapter draft.
+
+### Task Management System
+
+A Spring Boot task management application with standard CRUD operations, user authentication, and task assignment features.
 
 ---
 
-## 🗂️ 待迁移到 F 盘
+## Calculation Engines
 
-以下仍在 C 盘，建议迁入 F:\Dev\ 或 F:\Research\：
+### Vedic Astrology Engine
 
-| 项目 | 当前位置 | 建议目标 | 大小 |
-|------|---------|---------|:---:|
-| calibration-contagion-release | Desktop\ | F:\Research\ | 96KB |
-| code-review-agent | Desktop\ | F:\Dev\ | 200KB |
-| fortune-web-v2 | Desktop\ | F:\Dev\ | ~2MB |
-| vedic_scripts | Desktop\ | F:\Dev\ | ~100KB |
-| task-manager-springboot | Desktop\ | F:\Dev\ | ~100KB |
+An independent implementation of Vedic Jyotish (Indian astrology) astronomical calculations. 34KB of Python core code using PyJHora and pysweph (Swiss Ephemeris).
+
+Implements: Shadbala strength assessment (9 types of strength calculation, fixes 9 bugs in PyJHora upstream), Dasha period system (Vimshottari and Chara Dasha), Ashtakavarga point system, divisional charts (D-9 through D-60), and planetary transit analysis.
+
+### CCF Conference Deadline Tracker
+
+A Rust application that automatically scrapes deadline dates for CCF-recommended computer science conferences. Supports filtering by conference tier, research area, and deadline proximity.
+
+---
+
+## GitHub Repositories
+
+| Repository | Description |
+|------------|-------------|
+| [aidless/loop-engineering](https://github.com/aidless/loop-engineering) | Paper quality audit system |
+| [aidless/code-review-agent](https://github.com/aidless/code-review-agent) | Multi-agent code review |
+| [aidless/agentic-paper-review](https://github.com/aidless/agentic-paper-review) | Multi-agent paper review |
+| [aidless/research-writing-skill](https://github.com/aidless/research-writing-skill) | AI writing system |
+| [aidless/aidless](https://github.com/aidless/aidless) | Profile and research site |
