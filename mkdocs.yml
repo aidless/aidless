@@ -2,6 +2,7 @@ site_name: Liu Zewen -- Research and Projects
 site_url: https://aidless.github.io/aidless/
 repo_url: https://github.com/aidless/aidless
 repo_name: aidless/aidless
+site_dir: docs
 
 theme:
   name: material
