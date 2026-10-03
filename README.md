@@ -12,9 +12,10 @@
 
 ```text
 Most graduates:  "I've used ChatGPT to help with assignments"
-Me:              "I built an AI agent system that runs 24/7 with 0 incidents,
-                  published 10 arXiv papers on multi-agent LLM safety,
-                  and stress-tested LLM systems against 12 attack vectors."
+Me:              "I built an AI agent system that served 100K+ requests on cloud
+                  with 0 recorded incidents, published 10 arXiv papers on
+                  multi-agent LLM safety, and stress-tested LLM systems
+                  against 12 attack vectors."
 ```
 
 I'm an AI-native engineer: I embed AI into every step of my workflow — research, design, coding, debugging, documentation — and I've shipped production systems, not just demos.
@@ -40,7 +41,7 @@ I discovered and formalized communication-induced coupling in multi-agent LLM sy
 | **Calibrating the Evaluator** | [2606.31371](https://arxiv.org/abs/2606.31371) | Calibration mitigates coupling (γ↓20-49%), but conditionally |
 | **Mapping the Frontier** | [2607.00304](https://arxiv.org/abs/2607.00304) | Empirical survey across 11 evaluator-agent conditions |
 
-**10 additional papers under review at TMLR (#47–56).** 500M+ API calls across GPT-4o, DeepSeek, Claude, GLM, Qwen.
+Experiments span GPT-4o, DeepSeek, Claude, GLM, and Qwen as executor and evaluator.
 
 ---
 
@@ -53,18 +54,18 @@ I discovered and formalized communication-induced coupling in multi-agent LLM sy
 - **86 tests passing**, CI/CD with multi-Python matrix (3.10/3.11/3.12), GitHub Actions
 - Streamlit dashboard with real-time visualization + SQLite trace persistence
 - Pluggable embedders, 7-aggregator pipeline, calibration metrics (ECE/JSD/entropy/γ)
-- Companion to TMLR survey on Multi-Agent LLM Reliability
+- Companion implementation for a survey on multi-agent LLM reliability
 
 → [GitHub](https://github.com/aidless/agent-redteam) · Apache 2.0
 
 ### Production AI Agent System
-> *Autonomous agent framework, deployed 24/7 on cloud*
+> *Autonomous agent framework — previously deployed 24/7 on cloud*
 
 - **AutoPilot Orchestrator**: automatic task decomposition + multi-step execution chains
 - **Agent Matrix**: multi-model routing (DeepSeek/Qwen/Claude), cost-optimized
 - **Security Sandbox**: container isolation, blocked `os`/`subprocess`/`socket`, 12 vulns fixed
 - **161 tests**, 0 failures · **1000/1000** stress test (P95=150ms) · **14/14** pentest passed
-- **24/7 production**, 100K+ task requests, **0 incidents**
+- **Cloud deployment**: 100K+ task requests served, **0 recorded incidents** (instance since released — see the repo for local reproduction)
 
 → [GitHub](https://github.com/aidless/ai-agent-playground) · [Blog: From Student to Production](https://github.com/aidless/ai-agent-playground/blob/main/blog/from-student-to-production.md)
 
@@ -93,7 +94,7 @@ I discovered and formalized communication-induced coupling in multi-agent LLM sy
 
 I don't just "use AI" — I've built AI agent systems to manage my entire research pipeline:
 
-- **DeepSeek Harness research-collab agent**: 36+ sessions, automating literature review → experiment design → statistical analysis → paper writing → adversarial review → TMLR submission compliance
+- **DeepSeek Harness research-collab agent**: 36+ sessions, automating literature review → experiment design → statistical analysis → paper writing → adversarial review → submission compliance
 - **Self-evolution protocol**: 40+ generations (G000–G040) of agent improvement with A/B statistical gating
 - **Paper-writing-agent**: ~48 scripts, CI 11/11, claim-ledger-driven evidence-first writing
 
@@ -109,7 +110,7 @@ This is how I work every day: AI amplifies my output at every step, but I make t
 3. `enterprise-rag` — Enterprise RAG with hybrid retrieval
 4. `mm-epc` — Research code for 10 arXiv papers
 5. `llm-lab` — Local-first LLM evaluation framework
-6. `reviewer-sim` — Agentic paper review with 6 specialized agents
+6. `auditable-llm-eval` — Auditable eval pipeline: 30-point false-green detection zone
 
 ---
 
