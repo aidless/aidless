@@ -2,7 +2,7 @@
 
 **AI Application Developer** — building production-grade AI Agent systems from scratch.
 
-> 10万+ task requests handled in real production systems. 161 tests, 0 failures. 14/14 penetration tests passed. Deployed 24/7 on cloud.
+> 10万+ task requests handled in real production systems. 161 tests, 0 failures. 14/14 penetration tests passed. Every number below is backed by evidence files committed in the repos.
 
 ---
 
@@ -19,21 +19,25 @@ A complete autonomous agent framework with 9 self-improving engines. Built from 
 - 14/14 penetration tests passed (OWASP LLM Top 10)
 - 1000/1000 stress test requests, P95=150ms
 - 9 autonomous engines: self-evolution, debate, bootstrap, meta-agent
-- Deployed 24/7 on Alibaba Cloud ECS
+- Deployment: ran 24/7 on Alibaba Cloud ECS — demo instance currently offline; benchmark & pentest reports are committed in the repo
 
 **What it does:** The system doesn't just answer questions — it detects its own capability gaps, generates missing tools at runtime, evolves tool implementations, and rolls back on regression. All 9 engines have real LLM-verified code.
 
-→ [Live Demo](http://47.98.106.182:8080) &nbsp;|&nbsp; [GitHub](https://github.com/aidless/ai-agent-playground) &nbsp;|&nbsp; [Blog (CN)](https://github.com/aidless/ai-agent-playground/blob/main/blog/from-student-to-production.md)
+→ [GitHub](https://github.com/aidless/ai-agent-playground) &nbsp;|&nbsp; [Benchmark & pentest evidence (in repo)](https://github.com/aidless/ai-agent-playground) &nbsp;|&nbsp; [Blog (CN)](https://github.com/aidless/ai-agent-playground/blob/main/blog/from-student-to-production.md)
 
 ---
 
-### 📊 MM-EPC — Multi-Modal AI Research (NeurIPS 2026 submission)
+### 📊 MM-EPC — Multi-Modal Evaluator Preference Collapse (paper in submission)
 
-Research on how reasoning strategies transfer across modalities in multi-modal AI models. Found that **visual-to-text strategy contamination is significantly stronger** than text-to-visual (p = 0.008).
+Research on how evaluator choice distorts self-evolving multi-modal agents. Key findings from the final paper:
 
-**Why it matters:** If you're building GPT-4V / Gemini-style multi-modal systems, your visual training data may be silently degrading text reasoning performance.
+- **Cross-model evaluators drive strong preference collapse**: GPT-4o-as-judge yields MPCI = 1.449 — about 3.2× the self-eval condition and 2.0× the random baseline.
+- **Self-eval is near-immune** (γ̄ ≈ 0.033) — but that immunity is fragile: swapping the judge model within the same family flips it by ~36×.
+- **Directional asymmetry (text→vision vs vision→text) is not significant** in the final analysis — an earlier draft reported p = 0.008; the claim was revised during review preparation, and the reversal itself became part of the methodology (see the N-Sensitivity diagnostic work).
 
-**Paper:** [arXiv preprint (in submission)](https://arxiv.org/abs/2501.xxxxx) &nbsp;|&nbsp; [GitHub](https://github.com/aidless/aettl-research)
+**Why it matters:** if you're building self-improving agent loops, the evaluator — not the task design — may dominate your policy drift.
+
+**Paper:** in submission &nbsp;|&nbsp; [GitHub](https://github.com/aidless/mm-epc)
 
 ---
 
@@ -44,6 +48,7 @@ Research on how reasoning strategies transfer across modalities in multi-modal A
 | **AI/LLM** | DeepSeek V4, Qwen2.5, Claude (API), OpenAI-compatible APIs |
 | **Frameworks** | FastAPI, LangChain, Streamlit, AsyncIO |
 | **Agent Tech** | RAG (ChromaDB + all-MiniLM), Tool calling, Multi-agent orchestration |
+| **Research Methods** | McNemar / cluster bootstrap / BH–Holm correction, preregistration, SHA-256 evidence manifests, append-only evolution ledgers |
 | **Security** | OWASP LLM Top 10 audit, penetration testing, sandbox isolation |
 | **Deployment** | Docker, Alibaba Cloud ECS, systemd, Prometheus |
 | **Languages** | Python (primary), Java / Spring Boot, SQL |
@@ -54,10 +59,10 @@ Research on how reasoning strategies transfer across modalities in multi-modal A
 
 | Project | What It Does | Stack |
 |---------|--------------|-------|
-| [ai-agent-playground](https://github.com/aidless/ai-agent-playground) | 9-engine autonomous agent, self-evolving, 24/7 production | Python, FastAPI, DeepSeek V4, ChromaDB |
-| [aettl-research](https://github.com/aidless/aettl-research) | Multi-modal AI research, NeurIPS 2026 submission | Python, NumPy, SciPy, LaTeX |
-| ling-reader (灵阅) | Multi-Agent video production system | Agent orchestration, video rendering |
-| ling-producer (灵映) | Agent video rendering pipeline | Agent system design |
+| [gsm8k-self-evolve](https://github.com/aidless/gsm8k-self-evolve) | Two-round eval-gated policy evolution; blind-set 0.780→0.925, McNemar p=1.08e-06; end-to-end recomputable evidence chain | Python, Ollama, Ed25519 signing |
+| [ai-agent-playground](https://github.com/aidless/ai-agent-playground) | 9-engine autonomous agent, self-evolving, committed benchmark & pentest evidence | Python, FastAPI, DeepSeek V4, ChromaDB |
+| [mm-epc](https://github.com/aidless/mm-epc) | Multi-modal evaluator preference collapse; full experiment JSONs + preregistered protocol | Python, LaTeX, GPT-4o / Qwen / DeepSeek |
+| [morphagent-textbook](https://github.com/aidless/morphagent-textbook) | Open 31-chapter Chinese textbook on self-modifying agents (Zenodo DOI) | Markdown, LaTeX, SVG |
 
 ---
 
