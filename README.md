@@ -1,5 +1,7 @@
 # Liu Zewen (刘泽文)
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **AI Application Developer** — building production-grade AI Agent systems from scratch.
 
 > 10万+ task requests handled in real production systems. 161 tests, 0 failures. 14/14 penetration tests passed. Every number below is backed by evidence files committed in the repos.
