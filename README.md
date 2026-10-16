@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**AI Application Developer** — autonomous agent systems, and the evidence discipline to know when they don't work.
+**LLM Evaluation & Reliability Engineer** — auditing the judges, gates and agent runtimes that decide whether a model actually improved.
 
 Every claim below links to something you can check. Where a number can't be reproduced, I say so instead of quoting it.
 
@@ -71,10 +71,13 @@ Five papers on evaluator-coupling, all with evidence chains (SHA-256 manifests) 
 
 ## Teaching and tooling
 
-- [`morphagent-textbook`](https://github.com/aidless/morphagent-textbook) — 31-chapter open textbook on self-modifying agents. Zenodo DOI, GitHub Pages. **The only repository here with stars.**
+- [`morphagent-textbook`](https://github.com/aidless/morphagent-textbook) — 31-chapter open textbook on self-modifying agents. Zenodo DOI, GitHub Pages. **The only repository here with more than one star.**
 - [`paper-writing-agent`](https://github.com/aidless/paper-writing-agent) — 49 deterministic validation gates for paper writing, including a 619-line stdlib re-implementation of p/t/z/χ²/F, and a library of 29 failure modes mined from real revision rounds
+- [`arx`](https://github.com/aidless/arx) — a research loop that refuses to write a claim its measurement cannot resolve: noise floor, minimum detectable effect, pre-registration ledger. 369 tests, five offline examples
+- [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — evaluating the evaluator: the naive check reports 100% green while the authoritative scorer returns 69.00% / 67.00%
+- [`wse-bench-public`](https://github.com/aidless/wse-bench-public) — 156-task eval-gated self-evolution benchmark with an append-only promotion ledger, paired McNemar and cluster bootstrap
 - [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10
-- [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness, 93 tests, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
+- [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 86 pytest tests passing plus a 93-check CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
 
 ---
 
@@ -98,7 +101,7 @@ Three rules I now follow without exception:
 
 ## Currently
 
-- **Looking for:** AI Application Developer / AI Agent Engineer
+- **Looking for:** LLM Evaluation & Reliability Engineer / LLM–Agent Engineer
 - **Location:** China · open to relocate · **Available immediately**
 
 ## Elsewhere
