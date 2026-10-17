@@ -84,7 +84,7 @@ Five papers on evaluator-coupling, all with evidence chains (SHA-256 manifests) 
 
 ## How I work
 
-**I test my own gates.** After finding that six repositories on this account had CI that was green while proving nothing — `|| true` swallowing every failure, and one gate that printed "no Python sources tracked" in a repository with 182 of them — I added mutation-control jobs: each injects a known fault and requires the gate to reject it, then re-wraps the gate in the swallowing form and requires the control to *refuse* that. 7 repositories now carry one.
+**I test my own gates.** After finding that six repositories on this account had CI that was green while proving nothing — `|| true` swallowing every failure, and one gate that printed "no Python sources tracked" in a repository with 182 of them — I added mutation-control jobs: each injects a known fault and requires the gate to reject it, then re-wraps the gate in the swallowing form and requires the control to *refuse* that. **38 repositories now carry one** — 36 as a `mutation-control:` job in their `ci.yml`, 2 as a workflow of their own.
 
 That approach immediately paid for itself: in `hybrid-calibration` the control reported `FAIL: the byte-compile gate accepted a file with a syntax error`. It had been wrong since it was written and no one had noticed.
 
