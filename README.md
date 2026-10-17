@@ -9,7 +9,7 @@ Every claim below links to something you can check. Where a number can't be repr
 
 ---
 
-## Three things to look at
+## Four things to look at
 
 Each of these is a repository you can clone and verify yourself. I start here rather than a skills table because the table is the least interesting thing about my work.
 
@@ -53,6 +53,22 @@ Multi-modal evaluator preference collapse. In submission.
 - **An earlier draft reported p = 0.008 on directional asymmetry. The final analysis does not.** The claim was revised during review preparation, and the reversal became the input to a separate diagnostic line of work rather than being quietly dropped
 
 Full experiment JSONs, a preregistered protocol, and an evidence manifest are in the repo.
+
+### 4. [`arx`](https://github.com/aidless/arx) — what a rank gap is worth, on real boards
+
+A gate that refuses to call a ranking readable unless the leader clears the noise floor of its own labels — run on all three ChaosNLI components (4,645 items, 100 annotations each) and then on the same board twice, with only the label producer changed.
+
+- **Three boards, three verdicts**: `READABLE` on SNLI, `UNREADABLE` on MNLI-m and αNLI — and on both refusals the **leader itself** scores below the floor
+- **The verdict inverts with the floor's producer**, board held fixed: 100 humans → margin **+0.0423** (`READABLE`); a 32-judge LLM panel → margin **−0.0770** (`UNREADABLE`), because the panel agrees with itself (0.8660) more than any model in the board scores (0.7890)
+- **Even the readable board's ranking does not survive**: its top four systems sit within **0.29x** of the minimum detectable effect
+- **Formatting alone moves the judges more than the ranking does**: re-ordering the answer options swings a judge's accuracy by a median **0.0120**, against a top-to-second gap of **0.0020** on the same items
+
+```bash
+git clone https://github.com/aidless/arx && cd arx/case-studies/chaosnli-noise-floor
+python3 audit_chaosnli.py && python3 audit_judge_panel.py && python3 audit_position_bias.py
+```
+
+**What I won't claim:** the nine checkpoints are 2019-era encoders rather than LLMs, and the judge panel's *identities* are taken on trust — the latter is the data release's own caveat. Neither touches the finding, which is about the apparatus, but both are written down in the report instead of left out.
 
 ---
 
