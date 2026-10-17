@@ -1,5 +1,6 @@
 # Liu Zewen (刘泽文)
 
+[![PyPI](https://img.shields.io/pypi/v/tmaudit)](https://pypi.org/project/tmaudit/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **LLM Evaluation & Reliability Engineer** — auditing the judges, gates and agent runtimes that decide whether a model actually improved.
@@ -76,8 +77,8 @@ Five papers on evaluator-coupling, all with evidence chains (SHA-256 manifests) 
 - [`arx`](https://github.com/aidless/arx) — a research loop that refuses to write a claim its measurement cannot resolve: noise floor, minimum detectable effect, pre-registration ledger. 369 tests, five offline examples
 - [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — evaluating the evaluator: the naive check reports 100% green while the authoritative scorer returns 69.00% / 67.00%
 - [`wse-bench-public`](https://github.com/aidless/wse-bench-public) — 156-task eval-gated self-evolution benchmark with an append-only promotion ledger, paired McNemar and cluster bootstrap
-- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10
-- [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 86 pytest tests passing plus a 93-check CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
+- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10; **published to PyPI** ([`pip install tmaudit`](https://pypi.org/project/tmaudit/)), 223 tests, 14/14 regression-injection bugs caught
+- [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 92 pytest tests passing plus a 93-check CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
 
 ---
 
