@@ -32,7 +32,7 @@ python3 verify_evidence.py
 
 **5** self-improvement engines (evolution, debate, bootstrap, self-play, meta-agent) across ~55 modules under `agent/`. Detects its own capability gaps, generates missing tools at runtime, evolves them, rolls back on regression.
 
-- **161 tests** in `tests/` (166 collected including the end-to-end script), **0 failures**
+- **166 passed, 1 skipped** in `tests/`, **0 failures**
 - **14/14** penetration tests (OWASP LLM Top 10), `scripts/pentest.py`
 - Committed evidence: `benchmark_report.json`, `b3_bench_report.json` (10 attacks), `code_bench_report.json`, `swebench_report.json`, `multi_agent_bench_report.json`
 - Ran 24/7 on Alibaba Cloud ECS. **The instance is released**, so there is no live demo — see below
