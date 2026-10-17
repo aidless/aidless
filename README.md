@@ -21,7 +21,7 @@ Two rounds of policy self-evolution on GSM8K, built so that **anyone can recompu
 - `python3 verify_evidence.py` recomputes the chain; `signed/bundle.json` is an **Ed25519-signed** manifest of every artifact
 - Round 5 is a preregistered ablation: it locates the gate's power in an α=0.05 significance test (FPR 0.0125, against 0.4125 / 0.9825 for the naive gates) with **zero model calls**
 
-**The part worth your attention**: the `verify` job in CI is **red on purpose**. The signed bundle binds the artifact hashes as of promotion, and the working tree has since grown, so the hash check fails. That is fail-closed behaving correctly — re-signing to make it green would mean the manifest no longer describes a promotion event that happened. A previous round had a similar situation in a different repo and I left it red there too.
+**The part worth your attention**: the evidence chain verifies on **any** checkout — `tools/verify_evidence_chain.py` prints 5/5 PASS including the Ed25519 signature — and CI is green. How it got green is the point: the gate used to hash the live working tree against a bundle that pins the round-2 evaluator, so it could only ever fail. The fix pointed the check at the byte-exact signed copy (`signed/artifacts/`) and documented the provenance — **not** a re-sign — and the mutation-control job still perturbs a hashed artifact to prove the gate can refuse.
 
 ```bash
 git clone https://github.com/aidless/gsm8k-self-evolve && cd gsm8k-self-evolve
@@ -62,11 +62,15 @@ A gate that refuses to call a ranking readable unless the leader clears the nois
 - **The verdict inverts with the floor's producer**, board held fixed: 100 humans → margin **+0.0423** (`READABLE`); a 32-judge LLM panel → margin **−0.0770** (`UNREADABLE`), because the panel agrees with itself (0.8660) more than any model in the board scores (0.7890)
 - **Even the readable board's ranking does not survive**: its top four systems sit within **0.29x** of the minimum detectable effect
 - **Formatting alone moves the judges more than the ranking does**: re-ordering the answer options swings a judge's accuracy by a median **0.0120**, against a top-to-second gap of **0.0020** on the same items
+- **It can reject a board too, not just rank one**: AlpacaEval 2.0 publishes no per-item human labels, and three of its five public evaluators are prompt variants of one GPT-4-turbo — two of those return an identical verdict on **805 of 805** items, one judge run counted twice. All four premises recompute
 
 ```bash
 git clone https://github.com/aidless/arx && cd arx/case-studies/chaosnli-noise-floor
 python3 audit_chaosnli.py && python3 audit_judge_panel.py && python3 audit_position_bias.py
+python3 audit_alpaca_eval.py     # this one needs its own inputs; see the README
 ```
+
+**Read the write-up:** [English](https://github.com/aidless/arx/blob/main/case-studies/chaosnli-noise-floor/ARTICLE.md) · [中文](https://github.com/aidless/arx/blob/main/case-studies/chaosnli-noise-floor/ARTICLE.zh-CN.md)
 
 **What I won't claim:** the nine checkpoints are 2019-era encoders rather than LLMs, and the judge panel's *identities* are taken on trust — the latter is the data release's own caveat. Neither touches the finding, which is about the apparatus, but both are written down in the report instead of left out.
 
@@ -90,10 +94,10 @@ Five papers on evaluator-coupling, all with evidence chains (SHA-256 manifests) 
 
 - [`morphagent-textbook`](https://github.com/aidless/morphagent-textbook) — 31-chapter open textbook on self-modifying agents. Zenodo DOI, GitHub Pages. **The only repository here with more than one star.**
 - [`paper-writing-agent`](https://github.com/aidless/paper-writing-agent) — 49 deterministic validation gates for paper writing, including a 619-line stdlib re-implementation of p/t/z/χ²/F, and a library of 29 failure modes mined from real revision rounds
-- [`arx`](https://github.com/aidless/arx) — a research loop that refuses to write a claim its measurement cannot resolve: noise floor, minimum detectable effect, pre-registration ledger. 369 tests, five offline examples. The [ChaosNLI case study](https://github.com/aidless/arx/tree/main/case-studies/chaosnli-noise-floor) returns `READABLE` once and `UNREADABLE` twice over three real boards, and shows the same board flipping verdict when only the label producer changes
+- [`arx`](https://github.com/aidless/arx) — a research loop that refuses to write a claim its measurement cannot resolve: noise floor, minimum detectable effect, pre-registration ledger. 366 tests passing (3 environment-skipped), five offline examples. The [ChaosNLI case study](https://github.com/aidless/arx/tree/main/case-studies/chaosnli-noise-floor) returns `READABLE` once and `UNREADABLE` twice over three real boards, shows the same board flipping verdict when only the label producer changes, and records an audit of AlpacaEval 2.0 that rejects it on four premises
 - [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — evaluating the evaluator: the naive check reports 100% green while the authoritative scorer returns 69.00% / 67.00%
 - [`wse-bench-public`](https://github.com/aidless/wse-bench-public) — 156-task eval-gated self-evolution benchmark with an append-only promotion ledger, paired McNemar and cluster bootstrap
-- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10; **published to PyPI** ([`pip install tmaudit`](https://pypi.org/project/tmaudit/)), 223 tests, 14/14 regression-injection bugs caught
+- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10, plus a plugin API for auditing papers the built-in configs do not cover; **published to PyPI** ([`pip install tmaudit`](https://pypi.org/project/tmaudit/)), 246 tests, 14/14 regression-injection bugs caught
 - [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 92 pytest tests passing plus a 93-check CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
 
 ---
