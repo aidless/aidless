@@ -9,9 +9,24 @@ Every claim below links to something you can check. Where a number can't be repr
 
 ---
 
-## Four things to look at
+## Five things to look at
 
 Each of these is a repository you can clone and verify yourself. I start here rather than a skills table because the table is the least interesting thing about my work.
+
+### 0. [`r5-verify-vs-gate`](https://github.com/aidless/r5-verify-vs-gate) — the newest: external gates vs model-internal verification
+
+A pre-registered five-arm protocol measuring whether a model's **own** verification assertion tracks the persisted state — the same proxy/actual divergence found in external approval gates, but with no log to compare against, because the assertion and the action come from the same source.
+
+- The **primary endpoint is empty, and the paper says so as an emptiness, not a zero rate**: of 216 temptation cells, 48 reached the acting path and none of those 48 carried an assertion. There is no denominator to divide.
+- The supported finding is **narration can be wrong while the decision is right**: 6 of 36 statements claim tool, target and value all match the grant while the value differs — and the model stops correctly anyway
+- Every number in the [10-page manuscript](https://github.com/aidless/r5-verify-vs-gate/blob/main/paper/main.pdf) (TMLR format, **arXiv-style preprint, not peer-reviewed**) is emitted by `emit_numbers.py` into a 92-row claim ledger, and `audit_numbers.py` **fails the build** on any number the ledger cannot source. 21 distinct numbers: 14 sourced, 7 structural, 0 unmatched
+- Writing the unexecuted arm down exposed a silent defect: Arm E's "trained verification switch" never reached the backend — the arm's prompt was byte-identical to Arm A's, so a run would have produced Arm A's behaviour under Arm E's label. The seam now refuses to run rather than degrade (Amendment 6, 9 tests)
+
+```bash
+git clone https://github.com/aidless/r5-verify-vs-gate && cd r5-verify-vs-gate
+python3 scripts/check_integrity.py   # stop rule 1: 540-cell EXACT REPRODUCTION
+python3 audit_numbers.py             # 0 unsourced numbers in the manuscript
+```
 
 ### 1. [`gsm8k-self-evolve`](https://github.com/aidless/gsm8k-self-evolve) — the trust anchor
 
@@ -46,7 +61,7 @@ uv sync --locked && uv run pytest tests/ -q
 
 ### 3. [`mm-epc`](https://github.com/aidless/mm-epc) — where the evaluator, not the task design, drives the drift
 
-Multi-modal evaluator preference collapse. In submission.
+Multi-modal evaluator preference collapse. **arXiv preprint ([2606.16682](https://arxiv.org/abs/2606.16682)), not peer-reviewed.**
 
 - **MPCI = 1.449** for GPT-4o-as-judge — **~3.2×** the self-eval condition, **2.0×** random
 - Self-eval looks immune (**γ̄ ≈ 0.033**) — but swapping the judge within the same family flips that by **~36×**
@@ -78,10 +93,11 @@ python3 audit_alpaca_eval.py     # this one needs its own inputs; see the README
 
 ## The research line
 
-Five papers on evaluator-coupling, all with evidence chains (SHA-256 manifests) rather than prose claims.
+Ten papers on evaluator-coupling and multi-agent systems, all **arXiv preprints, none peer-reviewed**, all with evidence chains (SHA-256 manifests) rather than prose claims.
 
 | Repository | What it establishes |
 |---|---|
+| [`r5-verify-vs-gate`](https://github.com/aidless/r5-verify-vs-gate) | External approval gate vs model-internal self-verification: the primary endpoint is empty for a structural reason, and the narration can be wrong while the decision is right |
 | [`paper1-anon`](https://github.com/aidless/paper1-anon) | 13 conditions × 4 model families on evaluator-preference coupling |
 | [`paper2-anon`](https://github.com/aidless/paper2-anon) | Cramér–Rao-type conditional bounds on the same coupling, γ ∈ [0.033, 1.038] |
 | [`paper4-anon`](https://github.com/aidless/paper4-anon) | N-Sensitivity: how much of a conclusion is the evaluator's — 4 case studies |
@@ -99,6 +115,9 @@ Five papers on evaluator-coupling, all with evidence chains (SHA-256 manifests) 
 - [`wse-bench-public`](https://github.com/aidless/wse-bench-public) — 156-task eval-gated self-evolution benchmark with an append-only promotion ledger, paired McNemar and cluster bootstrap
 - [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10, plus a plugin API for auditing papers the built-in configs do not cover; **published to PyPI** ([`pip install tmaudit`](https://pypi.org/project/tmaudit/)), 246 tests, 14/14 regression-injection bugs caught
 - [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 92 pytest tests passing plus a 93-check CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
+- [`ai-researcher`](https://github.com/aidless/ai-researcher) — autonomous research loop: preregistration envelope + kill-switch executor + two-seat review + an Ed25519 evidence chain
+- [`paper_agent`](https://github.com/aidless/paper_agent) — full-lifecycle paper agent: retrieval, close reading, writing and an evidence chain, with its own eval harness
+- [`agent_compose`](https://github.com/aidless/agent_compose) — agent-composition experiments (ReAct / Reflexion / ablations); every results JSON recomputable from raw files
 
 ---
 
