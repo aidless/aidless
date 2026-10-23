@@ -2,7 +2,7 @@
 
 **AI-Native Engineer** — I don't just use AI. I build AI agent systems that run in production, research how they fail, and make them safer.
 
-> 📧 liuzewen@qlnu.edu.cn · 📍 Shanghai · 🔗 [arXiv](https://arxiv.org/search/?searchtype=author&query=Liu%2C+Zewen) · [ORCID](https://orcid.org/0009-0003-2981-9888)
+> 📍 Shanghai · 🔗 [arXiv](https://arxiv.org/search/?searchtype=author&query=Liu%2C+Zewen) · [ORCID](https://orcid.org/0009-0003-2981-9888)
 > 
 > **Available immediately** — looking for AI Agent Engineer / LLM Application Developer roles.
 
