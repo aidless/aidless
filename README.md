@@ -100,9 +100,9 @@ Ten papers on evaluator-coupling and multi-agent systems, all **arXiv preprints,
 | [`r5-verify-vs-gate`](https://github.com/aidless/r5-verify-vs-gate) | External approval gate vs model-internal self-verification: the primary endpoint is empty for a structural reason, and the narration can be wrong while the decision is right |
 | [`approval-gates-r3`](https://github.com/aidless/approval-gates-r3) | The external-gate baseline R5 builds on: 540 constructed cells; 63/45 unauthorized effects under name-only / exact-precheck while the name/log proxy stays positive — plus an uncalibrated independent AI review (6.2/10) kept citable |
 | [`agent-effort-r1`](https://github.com/aidless/agent-effort-r1) | A five-axis allocation calculation (modeled token-cost ratio 3.44) vs eight-task bounded agent evaluation, two Qwen3 AWQ case studies, 672 records each — with a protocol audit of what the model assumes and what the records support |
-| [`paper1-anon`](https://github.com/aidless/paper1-anon) | 13 conditions × 4 model families on evaluator-preference coupling |
-| [`paper2-anon`](https://github.com/aidless/paper2-anon) | Cramér–Rao-type conditional bounds on the same coupling, γ ∈ [0.033, 1.038] |
-| [`paper4-anon`](https://github.com/aidless/paper4-anon) | N-Sensitivity: how much of a conclusion is the evaluator's — 4 case studies |
+| `paper1-anon` | 13 conditions × 4 model families on evaluator-preference coupling |
+| `paper2-anon` | Cramér–Rao-type conditional bounds on the same coupling, γ ∈ [0.033, 1.038] |
+| `paper4-anon` | N-Sensitivity: how much of a conclusion is the evaluator's — 4 case studies |
 | [`memory-architecture-bias`](https://github.com/aidless/memory-architecture-bias) | A negative result **reversed by external replication** (+2.72, p < 0.0001) |
 | [`acvjepa-project`](https://github.com/aidless/acvjepa-project) | AC-VJEPA: three preregistered experiments, three negative results |
 
