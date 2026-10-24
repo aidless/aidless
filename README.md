@@ -93,7 +93,7 @@ python3 audit_alpaca_eval.py     # this one needs its own inputs; see the README
 
 ## The research line
 
-Ten papers on evaluator-coupling and multi-agent systems, all **arXiv preprints, none peer-reviewed**, all with evidence chains (SHA-256 manifests) rather than prose claims.
+Five papers on evaluator-coupling and multi-agent systems, all **arXiv preprints, none peer-reviewed**, all with evidence chains (SHA-256 manifests) rather than prose claims.
 
 | Repository | What it establishes |
 |---|---|
