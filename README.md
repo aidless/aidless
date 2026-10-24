@@ -91,6 +91,24 @@ python3 audit_alpaca_eval.py     # this one needs its own inputs; see the README
 
 ---
 
+## Agent evaluation: does the signal agree with the effect?
+
+Three instruments for one question — whether a comparison can be resolved at
+all, whether the proxy report matches the persisted effect, and whether the loop
+itself is covered by eval.
+
+| Instrument | Question it answers | Evidence |
+|---|---|---|
+| [`arx`](https://github.com/aidless/arx) | Can this comparison be resolved at all? | Four verdicts; the same board flips `READABLE` → `MARGINAL` when the MDE method changes (0.0274 → 0.0743, 2.7×) with no change to the data. 370 tests passing, 3 skipped |
+| [`agent-proxy-audit`](https://github.com/aidless/agent-proxy-audit) | Does the proxy report agree with the persisted effect? | 540-cell matrix: name-check passes **63** unauthorized effects, full precheck **45**, bound-control/AGT **0**. Self-verification's zeros include a **27/27 format collapse** — a false zero, not safety |
+| [`agent-loop-safety`](https://github.com/aidless/agent-loop-safety) | Is the agent loop covered by eval? | `compare` / `chain_coverage` / `coupling_map` / `estimate`; offline tests and a red-team integration behind a write gate |
+
+Supporting: [`agent-redteam`](https://github.com/aidless/agent-redteam) (OWASP-aligned red-team harness, 92 tests), [`mcp-guard`](https://github.com/aidless/mcp-guard) (offline MCP poisoning scan + hash pinning), [`agent-databench`](https://github.com/aidless/agent-databench) (20-task cost-aware eval).
+
+**Full line, methods, reproducible commands, and stated limits:** [AGENT_EVAL.md](AGENT_EVAL.md)
+
+---
+
 ## The research line
 
 Five papers on evaluator-coupling and multi-agent systems, all **arXiv preprints, none peer-reviewed**, all with evidence chains (SHA-256 manifests) rather than prose claims.
