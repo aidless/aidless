@@ -81,6 +81,39 @@ front.
 
 ---
 
+## Recent related work (Oct 2026)
+
+The direction is now active in public preprints. Four papers read closely:
+
+- **When the harness decides success** (arXiv:2610.26632): truncating context
+  costs nothing when a fact can be looked up again, but drops success to chance
+  when it cannot — Δ **+92.5 points** (90% CI [89.5, 95.5]), replicated at
+  **+101.0** on a second provider's model. On ARC-AGI-3, summarization recovers
+  86% of a 63-point harness gap (one run per cell).
+- **AfterDeleteBench** (arXiv:2610.31366): exact source deletion still leaves the
+  secret recoverable from a derived summary — ΔRec **0.680** IID / **0.640** OOD,
+  clean controls **0/200**; non-verbatim components reconstruct 0.615–0.990;
+  provenance closure removes the tracked channel.
+- **Who Verifies the Agent's Success Claim?** (arXiv:2610.29609): withholding the
+  agent's self-report raises trace-only dangerous-misreport recall by **43.4**
+  and **13.3** points on two judges; report isolation is a design requirement.
+- **Auditing the Product, Not the Recursion** (arXiv:2610.27610): of 114 studies
+  (90 self-described RSI), only **22%** audit two or more full-loop reruns, and
+  **4 of 26** improvement claims compare procedures from identical starting
+  artifacts at a matched budget.
+
+I ran pilot replications of the first two on local Qwen2.5-7B: truncation ×
+recoverability gave **0/6** when the fact was lost vs **6/6** when it could be
+looked up; deleting a source record left the secret recoverable **20/20**, against
+**0/20** never-exposed and **0/20** after provenance closure. Scripts, raw
+records and the stated limits: [`agent-proxy-audit/replications/2026-10-harness-and-deletion`](https://github.com/aidless/agent-proxy-audit/tree/main/replications/2026-10-harness-and-deletion).
+
+**How this line differs:** the papers supply benchmarks and failure taxonomies;
+this line supplies a check on whether a reported signal corresponds to a
+persisted effect, with an evidence chain and an explicit refusal state. The
+replications are pilot-scale and are labelled as such — they are not the
+published protocols.
+
 ## Supporting tools
 
 - [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-vs-blue
