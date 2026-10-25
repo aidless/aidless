@@ -131,6 +131,8 @@ scaled to 50 cases):
 Comparison, scripts, raw records and limits:
 [related systems](https://github.com/aidless/agent-proxy-audit/blob/main/docs/related-systems-2026-10.md).
 
+**Write-up:** [Same conservative prompt, three operating points](https://github.com/aidless/agent-proxy-audit/blob/main/docs/blog/2026-10-conservative-prompt-operating-points.md).
+
 **How this line differs:** the papers supply benchmarks and failure taxonomies;
 this line supplies a check on whether a reported signal corresponds to a
 persisted effect, with an evidence chain and an explicit refusal state. The
