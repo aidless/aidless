@@ -108,6 +108,25 @@ looked up; deleting a source record left the secret recoverable **20/20**, again
 **0/20** never-exposed and **0/20** after provenance closure. Scripts, raw
 records and the stated limits: [`agent-proxy-audit/replications/2026-10-harness-and-deletion`](https://github.com/aidless/agent-proxy-audit/tree/main/replications/2026-10-harness-and-deletion).
 
+I also read four memory/harness systems in the same window — `ai-memory`
+(git-backed Markdown, access-weighted decay, claim-once handoffs), `Hy-Memory`
+(L0–L7 dual-process memory, conservative reconciliation), `Harness²` (eight
+editable components, Propose–Probe–Compose), and `context-mode` (sandboxed
+`ctx_execute`, SQLite/FTS5 continuity). Three pilots on local Qwen2.5-7B:
+
+- **Decay:** access weighting extends retention **81 → 119 days**, but has no
+  effect at the eviction margin under a 180-day half-life (418 days for every
+  access pattern tested).
+- **Conflict:** the conservative supersede rule had **0/12 false merges** but
+  missed **2/8** true continuations; a permissive rule caught 8/8 and merged
+  **4/12** negatives.
+- **Deletion:** an extractive summary preserved a deleted secret **10/10**; the
+  model's own three-bullet summary omitted it **10/10**. Residue depends on the
+  summarizer, not just on deletion.
+
+Comparison, scripts, raw records and limits:
+[related systems](https://github.com/aidless/agent-proxy-audit/blob/main/docs/related-systems-2026-10.md).
+
 **How this line differs:** the papers supply benchmarks and failure taxonomies;
 this line supplies a check on whether a reported signal corresponds to a
 persisted effect, with an evidence chain and an explicit refusal state. The
