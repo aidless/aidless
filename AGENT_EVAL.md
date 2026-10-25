@@ -112,17 +112,21 @@ I also read four memory/harness systems in the same window — `ai-memory`
 (git-backed Markdown, access-weighted decay, claim-once handoffs), `Hy-Memory`
 (L0–L7 dual-process memory, conservative reconciliation), `Harness²` (eight
 editable components, Propose–Probe–Compose), and `context-mode` (sandboxed
-`ctx_execute`, SQLite/FTS5 continuity). Three pilots on local Qwen2.5-7B:
+`ctx_execute`, SQLite/FTS5 continuity). Three pilots (local Ollama; the last two
+scaled to 50 cases):
 
 - **Decay:** access weighting extends retention **81 → 119 days**, but has no
   effect at the eviction margin under a 180-day half-life (418 days for every
   access pattern tested).
-- **Conflict:** the conservative supersede rule had **0/12 false merges** but
-  missed **2/8** true continuations; a permissive rule caught 8/8 and merged
-  **4/12** negatives.
-- **Deletion:** an extractive summary preserved a deleted secret **10/10**; the
-  model's own three-bullet summary omitted it **10/10**. Residue depends on the
-  summarizer, not just on deletion.
+- **Conflict:** 50 pairs × 3 models. The conservative rule had **1/90 false
+  merges** but missed **16/60** true continuations; the permissive rule caught
+  **58/60** and merged **29/90**. The best operating point is model-specific:
+  llama conservative 49/50, qwen conservative 46/50, gemma permissive 46/50.
+- **Deletion:** 50 profiles. An extractive summary preserved a deleted secret
+  **50/50** (clean 0/50, closure 0/50); the model's own three-bullet summary
+  retained it only **2/50** and recovered **1/50** — and the one failure with
+  the string present said "their access code", not "your". Residue depends on
+  the summarizer and on how the query addresses the memory.
 
 Comparison, scripts, raw records and limits:
 [related systems](https://github.com/aidless/agent-proxy-audit/blob/main/docs/related-systems-2026-10.md).
