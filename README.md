@@ -7,6 +7,18 @@
 
 Every claim below links to something you can check. Where a number can't be reproduced, I say so instead of quoting it.
 
+## Latest releases
+
+Four versioned source snapshots published on 2026-10-29. Manuscript releases
+include a PDF and a standalone SHA-256 file; none is a peer-reviewed acceptance.
+
+| Release | Contents | Scope |
+|---|---|---|
+| [`r5-verify-vs-gate` v0.1.0](https://github.com/aidless/r5-verify-vs-gate/releases/tag/v0.1.0) | 10-page preprint + checksum | Finite local-effect audit of model-internal verification |
+| [`arx` v0.3.0](https://github.com/aidless/arx/releases/tag/v0.3.0) | 6-page preprint + checksum | Statistical gate for autonomous research loops |
+| [`mm-epc` v0.1.0](https://github.com/aidless/mm-epc/releases/tag/v0.1.0) | 17-page arXiv v3 + checksum | Multimodal evaluator preference collapse |
+| [`ai-agent-playground` v1.3.0](https://github.com/aidless/ai-agent-playground/releases/tag/v1.3.0) | Source snapshot | Five-engine autonomous agent playground |
+
 ---
 
 ## Five things to look at

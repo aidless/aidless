@@ -6,6 +6,8 @@ All notable changes to this repository are documented here. The format follows
 
 ## [Unreleased]
 
+- Added a concise latest-release shelf for four published source/manuscript
+  snapshots. No underlying research claims or evidence changed.
 - Governance baseline: LICENSE, security policy, code of conduct, contributor and
   support guides, issue and pull-request templates, CODEOWNERS, dependabot, and
   `.editorconfig` added. No research content changed.
