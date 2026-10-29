@@ -47,7 +47,7 @@ python3 verify_evidence.py
 
 **5** self-improvement engines (evolution, debate, bootstrap, self-play, meta-agent) across ~55 modules under `agent/`. Detects its own capability gaps, generates missing tools at runtime, evolves them, rolls back on regression.
 
-- **166 passed, 1 skipped** in `tests/`, **0 failures**
+- **161 passed, 1 skipped** in `tests/`, **0 failures** (run needs a format-valid `DEEPSEEK_API_KEY`; the key is never used to reach the network)
 - **14/14** penetration tests (OWASP LLM Top 10), `scripts/pentest.py`
 - Committed evidence: `benchmark_report.json`, `b3_bench_report.json` (10 attacks), `code_bench_report.json`, `swebench_report.json`, `multi_agent_bench_report.json`
 - Ran 24/7 on Alibaba Cloud ECS. **The instance is released**, so there is no live demo — see below
@@ -99,7 +99,7 @@ itself is covered by eval.
 
 | Instrument | Question it answers | Evidence |
 |---|---|---|
-| [`arx`](https://github.com/aidless/arx) | Can this comparison be resolved at all? | Four verdicts; the same board flips `READABLE` → `MARGINAL` when the MDE method changes (0.0274 → 0.0743, 2.7×) with no change to the data. 370 tests passing, 3 skipped |
+| [`arx`](https://github.com/aidless/arx) | Can this comparison be resolved at all? | Four verdicts; the same board flips `READABLE` → `MARGINAL` when the MDE method changes (0.0274 → 0.0743, 2.7×) with no change to the data. 374 tests, 371 passing / 3 environment-skipped in CI |
 | [`agent-proxy-audit`](https://github.com/aidless/agent-proxy-audit) | Does the proxy report agree with the persisted effect? | 540-cell matrix: name-check passes **63** unauthorized effects, full precheck **45**, bound-control/AGT **0**. Self-verification's zeros include a **27/27 format collapse** — a false zero, not safety |
 | [`agent-loop-safety`](https://github.com/aidless/agent-loop-safety) | Is the agent loop covered by eval? | `compare` / `chain_coverage` / `coupling_map` / `estimate`; offline tests and a red-team integration behind a write gate |
 
@@ -111,7 +111,15 @@ Supporting: [`agent-redteam`](https://github.com/aidless/agent-redteam) (OWASP-a
 
 ## The research line
 
-Five papers on evaluator-coupling and multi-agent systems, all **arXiv preprints, none peer-reviewed**, all with evidence chains (SHA-256 manifests) rather than prose claims.
+Eight preprints on evaluator-coupling, multi-agent systems and memory architecture, **none peer-reviewed**. Three carry a public arXiv ID; the other five are in-repo manuscripts, and those repositories say so themselves rather than letting a summary imply otherwise.
+
+| Preprint on arXiv | ID |
+|---|---|
+| Multimodal Evaluator Preference Collapse: Cross-Modal Coupling in Self-Evolving Agents | [2606.16682](https://arxiv.org/abs/2606.16682) |
+| Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops? | [2606.31371](https://arxiv.org/abs/2606.31371) |
+| Mapping the Evaluation Frontier: An Empirical Survey of the Bias–Reliability Tradeoff Across Eleven Evaluator-Agent Conditions | [2607.00304](https://arxiv.org/abs/2607.00304) |
+
+The other five carry an arXiv-style manuscript in the repository and state plainly that no arXiv submission is claimed. The `2606.31371` and `2607.00304` evidence bundles are not public yet, so this page links the preprint and not an artifact I cannot hand you. The public repositories ship SHA-256 evidence chains rather than prose claims.
 
 | Repository | What it establishes |
 |---|---|
@@ -127,11 +135,11 @@ Five papers on evaluator-coupling and multi-agent systems, all **arXiv preprints
 
 - [`morphagent-textbook`](https://github.com/aidless/morphagent-textbook) — 31-chapter open textbook on self-modifying agents. Zenodo DOI, GitHub Pages. **The only repository here with more than one star.**
 - [`paper-writing-agent`](https://github.com/aidless/paper-writing-agent) — 49 deterministic validation gates for paper writing, including a 619-line stdlib re-implementation of p/t/z/χ²/F, and a library of 29 failure modes mined from real revision rounds
-- [`arx`](https://github.com/aidless/arx) — a research loop that refuses to write a claim its measurement cannot resolve: noise floor, minimum detectable effect, pre-registration ledger. 366 tests passing (3 environment-skipped), five offline examples. The [ChaosNLI case study](https://github.com/aidless/arx/tree/main/case-studies/chaosnli-noise-floor) returns `READABLE` once and `UNREADABLE` twice over three real boards, shows the same board flipping verdict when only the label producer changes, and records an audit of AlpacaEval 2.0 that rejects it on four premises
+- [`arx`](https://github.com/aidless/arx) — a research loop that refuses to write a claim its measurement cannot resolve: noise floor, minimum detectable effect, pre-registration ledger. 374 tests (371 passing, 3 environment-skipped in CI), five offline examples. Clone-and-run needs `pip install -e .` first, because the package lives under `src/`. The [ChaosNLI case study](https://github.com/aidless/arx/tree/main/case-studies/chaosnli-noise-floor) returns `READABLE` once and `UNREADABLE` twice over three real boards, shows the same board flipping verdict when only the label producer changes, and records an audit of AlpacaEval 2.0 that rejects it on four premises
 - [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — evaluating the evaluator: the naive check reports 100% green while the authoritative scorer returns 69.00% / 67.00%
 - [`wse-bench-public`](https://github.com/aidless/wse-bench-public) — 156-task eval-gated self-evolution benchmark with an append-only promotion ledger, paired McNemar and cluster bootstrap
-- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10, plus a plugin API for auditing papers the built-in configs do not cover; **published to PyPI** ([`pip install tmaudit`](https://pypi.org/project/tmaudit/)), 246 tests, 14/14 regression-injection bugs caught
-- [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 92 pytest tests passing plus a 93-check CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
+- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI, rulepack C1–C10, plus a plugin API for auditing papers the built-in configs do not cover; **published to PyPI** ([`pip install tmaudit`](https://pypi.org/project/tmaudit/)), 264 passing / 1 skipped across Python 3.9–3.13 in CI, 14/14 regression-injection bugs caught
+- [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-team harness; 109 pytest tests, 108 passing offline (one needs network), plus a CI regression gate, including a documented incident where a hallucinated dependency version (`pandas==3.0.5`) broke a pipeline
 - [`ai-researcher`](https://github.com/aidless/ai-researcher) — autonomous research loop: preregistration envelope + kill-switch executor + two-seat review + an Ed25519 evidence chain
 - [`paper_agent`](https://github.com/aidless/paper_agent) — full-lifecycle paper agent: retrieval, close reading, writing and an evidence chain, with its own eval harness
 - [`agent_compose`](https://github.com/aidless/agent_compose) — agent-composition experiments (ReAct / Reflexion / ablations); every results JSON recomputable from raw files
@@ -140,7 +148,7 @@ Five papers on evaluator-coupling and multi-agent systems, all **arXiv preprints
 
 ## How I work
 
-**I test my own gates.** After finding that six repositories on this account had CI that was green while proving nothing — `|| true` swallowing every failure, and one gate that printed "no Python sources tracked" in a repository with 182 of them — I added mutation-control jobs: each injects a known fault and requires the gate to reject it, then re-wraps the gate in the swallowing form and requires the control to *refuse* that. **38 repositories now carry one** — 36 as a `mutation-control:` job in their `ci.yml`, 2 as a workflow of their own.
+**I test my own gates.** After finding that six repositories on this account had CI that was green while proving nothing — `|| true` swallowing every failure, and one gate that printed "no Python sources tracked" in a repository with 182 of them — I added mutation-control jobs: each injects a known fault and requires the gate to reject it, then re-wraps the gate in the swallowing form and requires the control to *refuse* that. **38 repositories carry one**, 30 of them public, so the pattern is checkable rather than asserted.
 
 That approach immediately paid for itself: in `hybrid-calibration` the control reported `FAIL: the byte-compile gate accepted a file with a syntax error`. It had been wrong since it was written and no one had noticed.
 
@@ -160,7 +168,12 @@ Three rules I now follow without exception:
 
 - **Looking for:** LLM Evaluation & Reliability Engineer / LLM–Agent Engineer
 - **Location:** China · open to relocate · **Available immediately**
+- **Contact:** [17353895263@163.com](mailto:17353895263@163.com) — plain email, no form
+
+## The other half: AI application engineering
+
+[`portfolio-site`](https://aidless.github.io/portfolio-site/) covers the product-engineering side — a zero-dependency static portfolio for AI-application / Agent-engineering roles, built on [`agent-platform`](https://github.com/aidless/agent-platform) (gateway, tool sandbox, memory compaction, failure taxonomy), [`llm-lab`](https://github.com/aidless/llm-lab) (eval orchestration with a hash-linked audit trail) and [`study-buddy`](https://github.com/aidless/study-buddy) (mobile first-run path, RLS, explicit privacy choice). Every card states what it does **not** prove — `study-buddy` has zero real users, and the page says so.
 
 ## Elsewhere
 
-- [从学生项目到生产级 AI Agent](https://github.com/aidless/ai-agent-playground/blob/main/blog/from-student-to-production.md) · [English](https://github.com/aidless/ai-agent-playground/blob/main/blog/from-student-to-production-en.md)
+- [从学生项目到生产级 AI Agent](https://github.com/aidless/ai-agent-playground/blob/master/blog/from-student-to-production.md) · [English](https://github.com/aidless/ai-agent-playground/blob/master/blog/from-student-to-production-en.md)
