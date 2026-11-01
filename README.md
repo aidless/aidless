@@ -186,6 +186,25 @@ Three rules I now follow without exception:
 
 [`portfolio-site`](https://aidless.github.io/portfolio-site/) covers the product-engineering side — a zero-dependency static portfolio for AI-application / Agent-engineering roles, built on [`agent-platform`](https://github.com/aidless/agent-platform) (gateway, tool sandbox, memory compaction, failure taxonomy), [`llm-lab`](https://github.com/aidless/llm-lab) (eval orchestration with a hash-linked audit trail) and [`study-buddy`](https://github.com/aidless/study-buddy) (mobile first-run path, RLS, explicit privacy choice). Every card states what it does **not** prove — `study-buddy` has zero real users, and the page says so.
 
+## What this repository itself is
+
+This repository is a **profile page**, not a codebase: it tracks **0 Python
+files** and holds no runnable artifact. Its CI (`.github/workflows/ci.yml`) runs
+three things on a checkout with no source: a byte-compile gate that is a no-op
+here, a link check that every relative Markdown link resolves, and a
+mutation-control job that proves the byte-compile gate *can* fail (it corrupts a
+tracked `.py` and requires a non-zero exit; here it has no `.py` to corrupt, so
+the control asserts the gate is vacuously green on this tree and documents that
+fact rather than pretending it tested something).
+
+**Boundary:** the numbers and claims on this page belong to the linked
+repositories, not to this one. Each link's claim is verified in that repo (e.g.
+`r5-verify-vs-gate` runs `audit_numbers.py` and fails on any unsourced number;
+`gsm8k-self-evolve` runs `verify_evidence.py`). Where a number cannot be
+reproduced, this page says so instead of quoting it. No claim here is a
+peer-reviewed acceptance — every manuscript is an arXiv-style preprint or an
+in-repo manuscript, and the page states that.
+
 ## Elsewhere
 
 - [从学生项目到生产级 AI Agent](https://github.com/aidless/ai-agent-playground/blob/master/blog/from-student-to-production.md) · [English](https://github.com/aidless/ai-agent-playground/blob/master/blog/from-student-to-production-en.md)
