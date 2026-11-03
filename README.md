@@ -176,6 +176,24 @@ Three rules I now follow without exception:
 
 ---
 
+## The portfolio is also a dataset an agent can query
+
+[`portfolio-mcp/`](portfolio-mcp/) is a stdio [MCP](https://modelcontextprotocol.io) server over the same audit data behind the portfolio — 107 repos, 51 preprints, 8 Kaggle entries. Any MCP client (Claude Desktop, Cursor, an agent you wrote) can query it directly.
+
+Eight tools: `portfolio_overview`, `search_repos`, `get_repo`, `search_papers`, `recompute_value`, `skill_to_evidence`, `verify_integrity`, `search_competitions`.
+
+- `recompute_value` recomputes the 5-factor weighted score from the raw dimension values, so the score is a **public formula**, not a stored number
+- `search_papers` returns each preprint together with its `doesNotProve` list — the boundary is part of the record, not a footnote
+- `data/audit-chain.json` is a SHA-256 hash chain over every record. `node verify_chain.mjs` recomputes all chains and exits non-zero if a single field anywhere was changed. Combined root: `af30ebdf9fa0fe77c8e2234c57033a72`
+
+```bash
+cd portfolio-mcp && npm install
+node verify_chain.mjs      # recompute every hash chain
+node server.mjs            # MCP over stdio; add it to your client config
+```
+
+The same data drives a WeChat mini-program build (9 pages, CloudBase serverless functions, offline-first). It is not publicly released yet, so I do not link a preview QR — those expire. The repo and the MCP server above are the durable entry points.
+
 ## Currently
 
 - **Looking for:** LLM Evaluation & Reliability Engineer / LLM–Agent Engineer

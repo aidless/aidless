@@ -1,0 +1,18 @@
+{
+  "name": "aidless-portfolio-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server exposing the aidless portfolio (107 audited repos / 51 preprints / 8 competitions) to any AI agent",
+  "bin": { "aidless-portfolio-mcp": "./server.mjs" },
+  "scripts": {
+    "start": "node server.mjs",
+    "build:chain": "node build_chain.mjs",
+    "verify": "node verify_chain.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "engines": { "node": ">=20" }
+}
