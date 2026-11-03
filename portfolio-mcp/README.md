@@ -46,7 +46,7 @@ canonical JSON, each hash folds in the previous one). Changing a single field an
 breaks every downstream hash and the combined root.
 
 ```
-root = af30ebdf9fa0fe77c8e2234c57033a72847143e552459bf9d2fbd6bd8bc8e031
+root = 6563685496e72931ca9c3b5a1ec99a2379b5abda6ed87f1da758253f3526cb2b
 ```
 
 Verify:

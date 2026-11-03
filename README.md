@@ -184,7 +184,7 @@ Eight tools: `portfolio_overview`, `search_repos`, `get_repo`, `search_papers`, 
 
 - `recompute_value` recomputes the 5-factor weighted score from the raw dimension values, so the score is a **public formula**, not a stored number
 - `search_papers` returns each preprint together with its `doesNotProve` list — the boundary is part of the record, not a footnote
-- `data/audit-chain.json` is a SHA-256 hash chain over every record. `node verify_chain.mjs` recomputes all chains and exits non-zero if a single field anywhere was changed. Combined root: `af30ebdf9fa0fe77c8e2234c57033a72`
+- `data/audit-chain.json` is a SHA-256 hash chain over every record. `node verify_chain.mjs` recomputes all chains and exits non-zero if a single field anywhere was changed. Combined root: `6563685496e72931ca9c3b5a1ec99a23`
 
 ```bash
 cd portfolio-mcp && npm install
