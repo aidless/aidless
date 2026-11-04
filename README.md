@@ -1,124 +1,48 @@
-# Zewen Liu · 刘泽文
+# Liu Zewen (刘泽文)
 
-**AI-Native Engineer** — I don't just use AI. I build AI agent systems that run in production, research how they fail, and make them safer.
+**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-sandbox`](https://github.com/aidless/eval-sandbox): one command, no API key, ~5 seconds.**
 
-> 📧 17353895263@163.com · 📍 Shanghai · 🔗 [arXiv](https://arxiv.org/search/?searchtype=author&query=Liu%2C+Zewen) · [ORCID](https://orcid.org/0009-0003-2981-9888)
-> 
-> **Available immediately** — looking for AI Agent Engineer / LLM Application Developer roles.
+📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
----
+## One chain, three repos
 
-## Why Me
+**Execution → Verdict → Criteria.** Each repo is independently clonable, runs offline, and fails loudly instead of passing quietly.
 
-```text
-Most graduates:  "I've used ChatGPT to help with assignments"
-Me:              "I built an AI agent system that served 100K+ requests on cloud
-                  with 0 recorded incidents, published 10 arXiv papers on
-                  multi-agent LLM safety, and stress-tested LLM systems
-                  against 12 attack vectors."
+| Layer | Repository | The question it answers | Measured now |
+|---|---|---|---|
+| Execution | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | Did the task actually run isolated — network, mounts, memory, CPU, PIDs? | `SUMMARY: 10/10 PASS`, `43 passed` |
+| Verdict | [`eval-gate`](https://github.com/aidless/eval-gate) | Did this change make the model worse? | `4/4` verdicts as expected, `70` tests |
+| Criteria | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | Is the scoring rubric itself right, before anyone scores with it? | 300 dev + 800 frozen items hash-verified, `114` tests |
+
+```bash
+# Execution — also needs bubblewrap + a writable cgroup v2 subtree; missing either and it refuses to run
+git clone --depth 1 https://github.com/aidless/eval-sandbox && cd eval-sandbox
+python3 -m eval_sandbox.cli check
+
+# Verdict — quickstart needs no dataset and no API key
+git clone --depth 1 https://github.com/aidless/eval-gate && cd eval-gate
+python3 -m venv .venv && .venv/bin/pip install . && .venv/bin/eval-gate quickstart
+
+# Criteria — hash-checks the frozen sets, then lints rubric v0
+git clone --depth 1 https://github.com/aidless/rubric-support-qa && cd rubric-support-qa
+python3 scripts/freeze.py --check && python3 scripts/freeze_test.py --check && python3 rubric/lint.py
 ```
 
-I'm an AI-native engineer: I embed AI into every step of my workflow — research, design, coding, debugging, documentation — and I've shipped production systems, not just demos.
+The refusal is the product: `eval-sandbox` will not report a PASS when the isolation primitives are unavailable.
 
----
+## Supporting layer
 
-## 🔬 Research: 10 arXiv Papers (First Author)
+- [`trace-replay`](https://github.com/aidless/trace-replay) — replays recorded agent tool-call traces offline; byte-identical reports across repeated runs (sha256 verified), `111` tests, CI green on 3.10 / 3.11 / 3.12.
+- [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — is the reported number fake-green? Naive checker `100/100` green vs authoritative `0.69 / 0.67`; `88` tests.
+- [`mcp-guard`](https://github.com/aidless/mcp-guard) — offline MCP tool-definition poisoning scan, with hash pinning against rug pulls.
+- [`agent-reliability`](https://github.com/aidless/agent-reliability) — joint verdict over the tool surface and the output surface; `60 passed, 16 subtests passed`.
+- [`llmtriage`](https://github.com/aidless/llmtriage) — one-command triage of a broken inference deployment; `57 passed`.
+- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI on PyPI; `264 passed, 3 skipped`.
+- [`arx`](https://github.com/aidless/arx) — refuses to rank a leaderboard whose labels cannot resolve it; `371 passed, 3 skipped` after `pip install -e .`.
+- [`agent-redteam`](https://github.com/aidless/agent-redteam) — OWASP-aligned red-team harness for LLM agents.
 
-My research asks: **when LLM agents communicate, what happens to their outputs?**
+## What I don't claim
 
-I discovered and formalized communication-induced coupling in multi-agent LLM systems — including strategy consensus, calibration contagion, and the evaluation "impossibility triangle."
+No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number. Where I could not reproduce a figure, I removed it rather than hedge.
 
-| Paper | arXiv | Key Finding |
-|-------|-------|-------------|
-| **BOUNDARY_SYNC** | [2607.01600](https://arxiv.org/abs/2607.01600) | Communication causes assimilation (CAF=0.80, Cohen's d=1.30, p<0.001) |
-| **EPC Protocol** | [2607.00297](https://arxiv.org/abs/2607.00297) | Standardized protocol for measuring evaluator preference coupling |
-| **Contagion Tensor** | [2606.28839](https://arxiv.org/abs/2606.28839) | Tensor framework for output-distribution coupling |
-| **Hidden Cost of Resampling** | [2606.29720](https://arxiv.org/abs/2606.29720) | Resampling for balance breaks probability calibration |
-| **Contagion Networks** | [2606.20493](https://arxiv.org/abs/2606.20493) | Evaluator bias propagation paths in multi-agent networks |
-| **Memory Contagion** | [2606.23195](https://arxiv.org/abs/2606.23195) | Agent memory propagates evaluation bias across time |
-| **Multimodal EPC** | [2606.16682](https://arxiv.org/abs/2606.16682) | Cross-modal preference collapse (text + image) |
-| **Diagnostic Framework** | [2606.29719](https://arxiv.org/abs/2606.29719) | Multi-evaluator audit framework |
-| **Calibrating the Evaluator** | [2606.31371](https://arxiv.org/abs/2606.31371) | Calibration mitigates coupling (γ↓20-49%), but conditionally |
-| **Mapping the Frontier** | [2607.00304](https://arxiv.org/abs/2607.00304) | Empirical survey across 11 evaluator-agent conditions |
-
-Experiments span GPT-4o, DeepSeek, Claude, GLM, and Qwen as executor and evaluator.
-
----
-
-## 🏭 Production Systems
-
-### Agent Red Team Platform
-> *Reproducible security evaluation for multi-agent LLM systems*
-
-- **12 adversarial attack vectors** × **5 defense layers** — red-vs-blue combat simulation
-- **86 tests passing**, CI/CD with multi-Python matrix (3.10/3.11/3.12), GitHub Actions
-- Streamlit dashboard with real-time visualization + SQLite trace persistence
-- Pluggable embedders, 7-aggregator pipeline, calibration metrics (ECE/JSD/entropy/γ)
-- Companion implementation for a survey on multi-agent LLM reliability
-
-→ [GitHub](https://github.com/aidless/agent-redteam) · Apache 2.0
-
-### Production AI Agent System
-> *Autonomous agent framework — previously deployed 24/7 on cloud*
-
-- **AutoPilot Orchestrator**: automatic task decomposition + multi-step execution chains
-- **Agent Matrix**: multi-model routing (DeepSeek/Qwen/Claude), cost-optimized
-- **Security Sandbox**: container isolation, blocked `os`/`subprocess`/`socket`, 12 vulns fixed
-- **161 tests**, 0 failures · **1000/1000** stress test (P95=150ms) · **14/14** pentest passed
-- **Cloud deployment**: 100K+ task requests served, **0 recorded incidents** (instance since released — see the repo for local reproduction)
-
-→ [GitHub](https://github.com/aidless/ai-agent-playground) · [Blog: From Student to Production](https://github.com/aidless/ai-agent-playground/blob/main/blog/from-student-to-production.md)
-
-### Enterprise RAG
-> *Hybrid retrieval + evaluation harness for enterprise knowledge bases*
-
-→ [GitHub](https://github.com/aidless/enterprise-rag)
-
----
-
-## 🛠 Tech Stack
-
-| Category | Technologies |
-|----------|-------------|
-| **AI/LLM** | LangChain/LangGraph, PyTorch, scikit-learn, LLM APIs (GPT-4o, DeepSeek, Claude, GLM, Qwen) |
-| **Agent Tech** | RAG (ChromaDB), tool calling, multi-agent orchestration, self-evolution loops |
-| **Backend** | Python (AsyncIO), FastAPI, Flask, Spring Boot, Express.js |
-| **Frontend** | Vue.js, React, Streamlit, WeChat Mini Programs |
-| **Security** | OWASP Top 10 for LLM, sandbox isolation, automated pentest scripts |
-| **DevOps** | Docker, Nginx, CI/CD (GitHub Actions), Linux, SQLite/MySQL |
-| **Research** | Statistical analysis (SciPy/NumPy), LaTeX, experiment design, reproducibility |
-
----
-
-## 🤖 AI-Native Workflow
-
-I don't just "use AI" — I've built AI agent systems to manage my entire research pipeline:
-
-- **DeepSeek Harness research-collab agent**: 36+ sessions, automating literature review → experiment design → statistical analysis → paper writing → adversarial review → submission compliance
-- **Self-evolution protocol**: 40+ generations (G000–G040) of agent improvement with A/B statistical gating
-- **Paper-writing-agent**: ~48 scripts, CI 11/11, claim-ledger-driven evidence-first writing
-
-This is how I work every day: AI amplifies my output at every step, but I make the decisions and take responsibility.
-
----
-
-## 📌 Pinned Repos
-
-<!-- Pin these 6 repos on your GitHub profile (Profile → Customize your pins) -->
-1. `agent-redteam` — Multi-agent LLM security evaluation platform
-2. `ai-agent-playground` — Production autonomous agent system
-3. `enterprise-rag` — Enterprise RAG with hybrid retrieval
-4. `mm-epc` — Research code for 10 arXiv papers
-5. `llm-lab` — Local-first LLM evaluation framework
-6. `auditable-llm-eval` — Auditable eval pipeline: 30-point false-green detection zone
-
----
-
-## GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=aidless&show_icons=true&theme=vue-dark&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aidless&layout=compact&theme=vue-dark)
-
----
-
-*Market rewards shipping, not learning. — Zewen Liu*
+The longer lines — preprints, agent-evaluation instruments, and the portfolio MCP server — are in [AGENT_EVAL.md](AGENT_EVAL.md).

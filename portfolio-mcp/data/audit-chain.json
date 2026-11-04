@@ -1,0 +1,694 @@
+{
+  "generatedAt": "2026-11-03T07:19:08.885Z",
+  "algorithm": "sha256(chained, canonical-json)",
+  "chains": [
+    {
+      "label": "repos",
+      "count": 107,
+      "root": "5922f75c0c7c745aea455e0250c4819931606ac26a58d43943fb84daef78652e"
+    },
+    {
+      "label": "papers",
+      "count": 51,
+      "root": "521f16d398ec8a1a2b978a72953c2daf6b63760721b5357f6cc1ef82ad35c4dc"
+    },
+    {
+      "label": "comps",
+      "count": 8,
+      "root": "429d574f63158d78e630e08736d2ff211887e842a1fb518ca57caaf0007c56a5"
+    }
+  ],
+  "root": "6563685496e72931ca9c3b5a1ec99a2379b5abda6ed87f1da758253f3526cb2b",
+  "nodes": {
+    "repos": [
+      {
+        "id": "accel-preflight",
+        "hash": "6c10a9c78dd9ff86350b13b1f441c80c8875b0cc451e965735ec81399ebcd5e8"
+      },
+      {
+        "id": "acvjepa-project",
+        "hash": "fa874a19413a80a3e406b0fd7f19aa49ab6832afb3aaaf53b2998bcc01402718"
+      },
+      {
+        "id": "aettl-research",
+        "hash": "0a631f2f4b11d9dd38223ea43b4edd33642fb6b1a427c1c01871821c763f3df9"
+      },
+      {
+        "id": "agent_compose",
+        "hash": "18913151abd9c0585a1be5eb80c1c869b0a056a31e8f5af263b5aa08d65d3b9c"
+      },
+      {
+        "id": "agent-databench",
+        "hash": "cf557f527eb4500dc923510abf2174d688c58af50ebf3d38ed51c93836a10590"
+      },
+      {
+        "id": "agent-effort-r1",
+        "hash": "c2db801627c19f255544cb353951fcfbc63f6d958ea43973b0900fff71e6f520"
+      },
+      {
+        "id": "agent-long-term-memory",
+        "hash": "b21c0549d66c0cfa2d2d2a7c8129687fb363389525dd2865e552112f14a02431"
+      },
+      {
+        "id": "agent-loop-safety",
+        "hash": "e7d9720f042b00e90257f27584e759d3b1909b00f06ff3ee10a05f8f07d77d04"
+      },
+      {
+        "id": "agent-obligation-semantic-annotation",
+        "hash": "924f88be30cce18078cfd02b9be79ba62d854edc1057b4c42b8aae77fa398c92"
+      },
+      {
+        "id": "agent-platform",
+        "hash": "65282816ea403124626a74248e29efa7b0af5b39afc8974f8cbc55f2e2cdf636"
+      },
+      {
+        "id": "agent-proxy-audit",
+        "hash": "1180cea82855d9c46e69dc6202112a51dd403210bf8fff3d6eda9253d52b1811"
+      },
+      {
+        "id": "agent-redteam",
+        "hash": "3ae750969bd01ab1fcfbddf3283dc6897c427059670f356e0e9967136b61f2f6"
+      },
+      {
+        "id": "agent-reliability",
+        "hash": "d270c0c91498ef590e7149af6b1b89cc942f52e07694ba9841bb7bcef6715f65"
+      },
+      {
+        "id": "agentic-paper-review",
+        "hash": "513e8f1ef34bd669303f5bb23bdb08b0b7ae59bc0f8d4f8513cba9bfbc132e0d"
+      },
+      {
+        "id": "AGI-KIT",
+        "hash": "d7058ffa77a616ff888669de75b35a5408d36f4a377ea2b01be9c8b8de66c02c"
+      },
+      {
+        "id": "agi-research",
+        "hash": "129b5fbc0052777c7bf18bf251dfaf3393f9d3768ecdaaf362893fdc2d1a7910"
+      },
+      {
+        "id": "ai-agent-playground",
+        "hash": "3bd15bfd1be65e1f8f900b4851f7e57c96faaa2e55396186bfdd6f3c7b4c426c"
+      },
+      {
+        "id": "ai-agent-studio",
+        "hash": "6876a46da93b248b18ba97ee070d599e84c6ada81b6f9c24833a7f7f6f74e0c2"
+      },
+      {
+        "id": "ai-job-search",
+        "hash": "c5a52e4560985d54b023fa5540d0b788f68ab804dcc5ef011b2af3a7e145ab54"
+      },
+      {
+        "id": "ai-researcher",
+        "hash": "96da19fef41ae472fcf314968e67ea0f0c91deab33350db7fed4930e4a9c79a4"
+      },
+      {
+        "id": "ai-researcher-employee",
+        "hash": "d61c70a71ca07f466564a8c44911b33c3ef002644b7d14066a0dd558cfd9193f"
+      },
+      {
+        "id": "aidless",
+        "hash": "03befe2d6307df465991f3073d5331c334acc4a8e83a111a342cd9ccf63a2d67"
+      },
+      {
+        "id": "aihot-test",
+        "hash": "782076efeca8d1a3f9241e6c79ce884126152186b75382143a9d0131c867d17f"
+      },
+      {
+        "id": "approval-gates-r3",
+        "hash": "f8c84a2f2a2a4d5a9106803d045fd6de05482fd7ca344fe3115e553d4c39f44a"
+      },
+      {
+        "id": "arx",
+        "hash": "d31f4f11de3a79c458dcc61c63228132aead494bb32a58ee6fed7a35f7a75af6"
+      },
+      {
+        "id": "auditable-llm-eval",
+        "hash": "86c00bbe4b81e08ef2c2fa35404189bec1c05c5040c0e66333c1706b24461714"
+      },
+      {
+        "id": "auto-research-driver",
+        "hash": "33c2aa4fae8429e4f12e6068736005dcab10b05905d00d60a68dbbaf4952c44c"
+      },
+      {
+        "id": "autoresearcher",
+        "hash": "be773d6936d2c5feb5d9536133a12ea2b04b46bb2d8df580807751be4f6b639f"
+      },
+      {
+        "id": "BAAI_Knowledge_Base",
+        "hash": "12691b70e06489a3615e6735b1baab2f639bc3eb30dfa19359d7be927d7ffbe9"
+      },
+      {
+        "id": "bi-level-pepa",
+        "hash": "d452c96b0e014ec6e7ab911f52c325ec45da3f67db1296c9612c5bfc5dbd5349"
+      },
+      {
+        "id": "cca-agent",
+        "hash": "e4155d3c5bb0472a42bca40ae3d05848ae5fe68f6283dbc7ac732b30bcdbb305"
+      },
+      {
+        "id": "code-review-agent",
+        "hash": "d04fda170c21fc6918eed117d25b9902d18564a0b44d56350a560f10546feea5"
+      },
+      {
+        "id": "cow-agent-os",
+        "hash": "012e5a513a338eddd4c5feba0e2fccdc35f0636751b0ce71668066d6b8dbbaed"
+      },
+      {
+        "id": "deepseek-harness",
+        "hash": "b6e9a9db4aea72b15ea6bd73e1b3ce2ef481d7da96db7285102657ff73cadb6f"
+      },
+      {
+        "id": "deepseek-workspace",
+        "hash": "a08488826a8f8886bdff4ea4798856661838b8e81ae9bceb227921c894533d88"
+      },
+      {
+        "id": "douyin-minigame-lab",
+        "hash": "7b3351b4729979f05ddd7dced5183228515879ac60f64bbf4d633e81368a6468"
+      },
+      {
+        "id": "echo-chambers-of-one",
+        "hash": "74d8aa64788d640af95b255c54510d64ca83e47e59ff2073cbb3347384559687"
+      },
+      {
+        "id": "effective-context-lab",
+        "hash": "f97f61ee3841ae75da249bbd19f87a75b68f769c6047a365d0f60fb51e3ff7f8"
+      },
+      {
+        "id": "enterprise-rag",
+        "hash": "65a03fcf57f0e12397ae87633a14a99f865199d0f7dabf491adde61bb824686a"
+      },
+      {
+        "id": "enterprise-rag-saas",
+        "hash": "7aecb0fd074bd9ae1eb8c25ef7fb2fe46f7f24f1b603eaf5044e24cf110e1aa5"
+      },
+      {
+        "id": "eval-meta",
+        "hash": "bd811995781ad995b7d04798edacde5d9ec30a69472376488bbbbfc63bf7f68f"
+      },
+      {
+        "id": "evoagent",
+        "hash": "eb5a228dae9639caf34761acbd8952f8f77e95caea8111c734d8e750acd34c1a"
+      },
+      {
+        "id": "flowgrid-aml-retriever",
+        "hash": "deb11851babea033bc9c5f7a5eafdf10813ccdba0f17d1d5a87f0aa090df7463"
+      },
+      {
+        "id": "goodhart-project",
+        "hash": "85094118a6a216444106bdcb4587a9ff4b70aa24aef0984521a3758a02d1e909"
+      },
+      {
+        "id": "gpgpu-kernel-lab",
+        "hash": "a92a26ec28ad0d48f189098b7ce0b78178ca9499886ce9c9751d567dc71fb1b2"
+      },
+      {
+        "id": "gsm8k-self-evolve",
+        "hash": "640172fd3351a0c836005369d063eef566dd3b5e1c57d1e21dd99b87462f59ee"
+      },
+      {
+        "id": "hermes-agent",
+        "hash": "7dbf1988f20e2da4f87a5747605299e1aa717a344e7c6ecd4faaa1bd250219b5"
+      },
+      {
+        "id": "hybrid-calibration",
+        "hash": "6c544823b64662f815465d7c86f0cbcdf063f1a6dcaa48470b263e7004269c78"
+      },
+      {
+        "id": "java",
+        "hash": "68a5b335399a75c8492fab88b1c865a7be8500d6ed790eef14786b63db357e11"
+      },
+      {
+        "id": "judge-calibration",
+        "hash": "15976d488149c2fbef9967c85b3aba8b3cf47c7f1110a35687f94ba3d49568c8"
+      },
+      {
+        "id": "kaggle-science-exam",
+        "hash": "954c9d6dd93ebff408d7b4edf84ed195deff887e93a08c32cb526ea9ee675e24"
+      },
+      {
+        "id": "kv-block-mass",
+        "hash": "378dbda99a48bf7892eb63483f877d643824e539438593050828f41a5cef41ec"
+      },
+      {
+        "id": "kv-serve-lab",
+        "hash": "c3207c9db0a106d460d418906eaaa8c2c19d3f23ad8c33c6cb2dccac62facf59"
+      },
+      {
+        "id": "life-planner",
+        "hash": "c533a3bfc98c72058cc1cac7b0ebbba457eb02cf2e8966ce3217ded9de797b39"
+      },
+      {
+        "id": "lifeplanner",
+        "hash": "94e64048c370290dbd979023002b8cb4519e748ca473e0c99a5ee2b4fc07569e"
+      },
+      {
+        "id": "llm-agent-projects",
+        "hash": "60ab639c92c0d7a341381a67c4c04e18086ad4d02990f11e3a474d0321098d8f"
+      },
+      {
+        "id": "llm-lab",
+        "hash": "6a4768f5e6faad7c77d8c66dedfcbebdfadf5290eba242dbd2f31abed728f01f"
+      },
+      {
+        "id": "llmtriage",
+        "hash": "b496c0bf375cee8a36ef89364fb514452013e63eff9562968849d6bc4d71c7ad"
+      },
+      {
+        "id": "longhorizon-reasoning-ceiling",
+        "hash": "0bdda95e03bcb49965b5c8e5652bf0c07d737574e0c9331097d78f7bfb7fbcff"
+      },
+      {
+        "id": "longrun-agi",
+        "hash": "9463bdd9ab4afd3b7830836b4b4a71fc3b5e40cc2f848f1f03a35c3b1e4d6d11"
+      },
+      {
+        "id": "loop-engineering",
+        "hash": "4f7590aa6e13c1ba1206d054204a4d4fee78684ba850fe4d4e7dfbd5a6d3be6c"
+      },
+      {
+        "id": "magpie-backup",
+        "hash": "1206fedf76fe453f4bb10e8f892c680ff5063fed2968a1d79abb35084a1f19de"
+      },
+      {
+        "id": "mcp-guard",
+        "hash": "58e0f76450c874c0c643a1b41acc5c5c709dd1c27213c2be05eedd836765cb75"
+      },
+      {
+        "id": "memory-architecture-bias",
+        "hash": "e2659a5322b3fb0e78475d7f5cf48e7ab24febf06d3835ef576254e668c468a3"
+      },
+      {
+        "id": "mini-agent-runtime-bench",
+        "hash": "51a3167f405717a883cb6d01d5583afddc875a69b6c505477e181df2d273071a"
+      },
+      {
+        "id": "minimax-m3-phase1",
+        "hash": "8cd6297ff8cb8cbe02e920ea800651515c6039a66bc0355201781c4642d00576"
+      },
+      {
+        "id": "mm-epc",
+        "hash": "1009b29007a4d3c11e0ef9533b861447ebb0fc14ec0f832c4c7cdb4ac6ab5f6e"
+      },
+      {
+        "id": "morphagent-textbook",
+        "hash": "101d2a412ee6be83ae11ca3014dec4db45fe6d6db549b594ebf60ca732053ce7"
+      },
+      {
+        "id": "not-contagion-just-time",
+        "hash": "b267a2b9e1a854e4548693a459ef28ee84fc5bf78e41a760c63d6528f6c4e79e"
+      },
+      {
+        "id": "obsidian",
+        "hash": "75465c2e54520a7c5eb89590db41825e64f5f6b0a3877b9d0e3166349aa4f0cc"
+      },
+      {
+        "id": "opc-llm-projects",
+        "hash": "5d75e2cad01b96a28400fe3c9cff18d0abf75b8454ebd63c485de6ac9b9685db"
+      },
+      {
+        "id": "paged-kv",
+        "hash": "c51a78fa9a0a335cd804875c9228c544e3fe6ffe9b10a17f496587f2348cd695"
+      },
+      {
+        "id": "paper_agent",
+        "hash": "4ceec069a0371a5f3ea906d86bb9a8d3d8ded4a9d616226849f168965d7888d3"
+      },
+      {
+        "id": "paper_joint_mem_forget",
+        "hash": "bdb72d99e21f2d17bdb99d649621a5cdc15ab5841e73b07e414eb30b02689444"
+      },
+      {
+        "id": "paper_workflow_kb",
+        "hash": "12f986dbbc120c61ba95253917edcfa146d9dff61377a65133abe8c1b1640201"
+      },
+      {
+        "id": "paper-writing-agent",
+        "hash": "f11c5567a46af01f4da9b841ce523c9eabba0650f70fc02803be8efd075676a6"
+      },
+      {
+        "id": "paper1-anon",
+        "hash": "5590c173fc326c7dfb6ca68128ac2d38aa86af66e0d1cbe43838365bf950145c"
+      },
+      {
+        "id": "paper2-anon",
+        "hash": "7661d32b85e50a39c9f64b10b83e51438f58acd1993f2a491bc70015f8127d6b"
+      },
+      {
+        "id": "paper4-anon",
+        "hash": "a26ec50167fcf57be57129258c2c805f3934aa1bf332675f053220332acdf58e"
+      },
+      {
+        "id": "paper5-memory-architectures",
+        "hash": "6424f544e707a3bfe2b62939d681f759b5d0e0e91f7701c774b87951d44f817e"
+      },
+      {
+        "id": "portfolio",
+        "hash": "62299eb22370283a98bd4aff201182bdc3a500da37b8384492d783eb03310cf5"
+      },
+      {
+        "id": "portfolio-site",
+        "hash": "aa428db0ba18ae4e7f10931dbf28a0c45b214d7820dfd19b71a5656218914a3f"
+      },
+      {
+        "id": "privateuse1-lab",
+        "hash": "96da10656fd2e5b56ecb102267973f37e06d609e048f19aecab29107542f10a2"
+      },
+      {
+        "id": "q-one-agent",
+        "hash": "b5ca422cd93a4c08700f9ff7aa7bed25adc108417ff06d47da02d889104842c2"
+      },
+      {
+        "id": "q-one-core",
+        "hash": "f40a888b1af3aff9d118b97465f4e4042d562c18319d3c81c39861bd440e7fbd"
+      },
+      {
+        "id": "q-one-gym",
+        "hash": "c641b2f3dae567cca5ae76cb20154ca72960f5278ccb07051a299295f490bfb2"
+      },
+      {
+        "id": "q-one-life",
+        "hash": "1a8232e267a4029f5078d8bc20c5931531e33b3278a93643d939da4face97e1a"
+      },
+      {
+        "id": "r5-verify-vs-gate",
+        "hash": "11fd2bc47872efdb9bdce955e202209895ac17fa388f13f599d2987fb2f3ef09"
+      },
+      {
+        "id": "rag_min_demo",
+        "hash": "db99003dead3167b982e26960fc99bb194ebb9688922903df09fbd4a3552faa1"
+      },
+      {
+        "id": "rag-qa",
+        "hash": "f9e2c212da82cde8136376727f925f97b94c30bb203ea3e8adec8878047f314f"
+      },
+      {
+        "id": "research-kit",
+        "hash": "11e67a9230748b98ef8152e6b648e3160e5704078cec8fa0dbe0e862f39883f1"
+      },
+      {
+        "id": "research-writing-skill",
+        "hash": "1f002ba1a71f79f4706526bbe0a24b8d284fc4c21d906733d4fc58e20df8778c"
+      },
+      {
+        "id": "review-workflow",
+        "hash": "90bd728b39b72b7f75cf49a795fa66c0c571e71ac76d7c7a01b55e91a5f5d3f1"
+      },
+      {
+        "id": "reviewer-sim",
+        "hash": "25b737b14461484f983283ea2bd6e87df84d1c375f622c52697365034e7833bf"
+      },
+      {
+        "id": "roofline-lint",
+        "hash": "4df2f8924dfbe7d8cb5f0256ff08f1890204b6f44d9d15e79e4c1372dbd30784"
+      },
+      {
+        "id": "scheduler",
+        "hash": "99d3772a96fce6468ca197a65e0bf3fb7016884e0e23f43dfd4c5f1703f2b9c6"
+      },
+      {
+        "id": "situational-awareness-audit",
+        "hash": "408ffbc3d5cc0e5b7646210cddbcc45e5e31852647c3ddfd8af3674d749e16d9"
+      },
+      {
+        "id": "study-buddy",
+        "hash": "0713f2b90a7cd2c2192dd1faff3784e8641ba4fb2b2193ee5a09392e2da51745"
+      },
+      {
+        "id": "superagent-platform",
+        "hash": "a72360be42b357c99ab60ebb8de0a844187c5d9c506f356789aceb8d89dba9c4"
+      },
+      {
+        "id": "taixuan-web",
+        "hash": "856a9e9d1e31005b861637ad10539eb6346f965ff4ef7f1e081308078504e3d5"
+      },
+      {
+        "id": "task-gravity",
+        "hash": "bf8176afd3de03175245baecc02ae9a3e31d2055709524f122a2c3fd09779a92"
+      },
+      {
+        "id": "thesis_auto_generator",
+        "hash": "e4cf527e78c2f4bc28b06e53a4662cdbaa2494aa1a9efb4dd9d068f1af3e1f57"
+      },
+      {
+        "id": "tmaudit",
+        "hash": "bc4ab8cd57654b79d5432f8c2098909319176f954de5d40a7922cc73679fe550"
+      },
+      {
+        "id": "ttftkit",
+        "hash": "0c13b8450e1e7bc6b089e4d336f41cf6dcfed7103281c3b7548b82818016ddb7"
+      },
+      {
+        "id": "ViMax",
+        "hash": "353a36cc3c2c2f76bb99e61e7e1a9e90f0a4741f5d68f19b184df511109bc213"
+      },
+      {
+        "id": "vllm",
+        "hash": "405e10148c76a85f570594811ff37a4c5bc4054ec96092a33aca182aac954b16"
+      },
+      {
+        "id": "wse-bench-public",
+        "hash": "5922f75c0c7c745aea455e0250c4819931606ac26a58d43943fb84daef78652e"
+      }
+    ],
+    "papers": [
+      {
+        "id": "2606.16682-multimodal-epc",
+        "hash": "9970e4a82bf8b49f814fb2286bf61fe60c533b37464c7b21f43d933eba1bfc28"
+      },
+      {
+        "id": "2606.20493-contagion-networks",
+        "hash": "8d4ae9c938bf761d1f49464da2d6bd28ad9ead1e7e06a8dcacd3612a343df771"
+      },
+      {
+        "id": "2606.23195-memory-contagion",
+        "hash": "fc2dd9f856f22dfc69b4b3aa1178ea2c6bfc4a6a63e18b28cb52c48562157b4c"
+      },
+      {
+        "id": "2606.28839-contagion-tensor",
+        "hash": "40ce58e9b47bf64819d1add4b571c1499f1f6fc54175c161b83a6f2455d8f1fe"
+      },
+      {
+        "id": "2606.29719-diagnostic-framework",
+        "hash": "9b3670a238cdfc13b93aaa52b56cbdd552dea50ef31642f60581f1aa47f6cb90"
+      },
+      {
+        "id": "2606.29720-hidden-cost-resampling",
+        "hash": "39522d7fdbced86749028626f30706a940e1de1cd2bedc1f353eecbb050a339a"
+      },
+      {
+        "id": "2606.31371-calibrating-evaluator",
+        "hash": "311e8792a8c66c968df073a4acbd234e07fc9f3d746a757f375d14c1ddf3a5c0"
+      },
+      {
+        "id": "2607.00297-epc-protocol",
+        "hash": "6441809e55f1146a7974207c2c6a526059dd822305294386f27f4328f8d029ef"
+      },
+      {
+        "id": "2607.00304-mapping-frontier",
+        "hash": "21f589cfbdb9320a2d0a9e93bd7f12f1f1c55b6d1d064e9af6ea11d2d32e7017"
+      },
+      {
+        "id": "2607.01600-boundary-sync",
+        "hash": "c88442d3cacb468d34c210a20a91d1a8d56244a58249022c2fa2546a5276c4ca"
+      },
+      {
+        "id": "agent-effort-r1",
+        "hash": "4cd19fb35be5750015d11771b7a1decda1dce12d26c5e662cd1ffd1b1580eac9"
+      },
+      {
+        "id": "approval-gates-r5",
+        "hash": "535c5e702490d244d6ca59141c5f9bec5136d41ef36146824f54575727dd891e"
+      },
+      {
+        "id": "zenodo-22076541",
+        "hash": "5480f5a0059e71ba57ab57f76c0504c050002b23aa0d678ff9ed5e9047c368f0"
+      },
+      {
+        "id": "zenodo-22076545",
+        "hash": "038f39919d033a9e03c273edc9522f128d4899fae1a483c4d6de73275b99b343"
+      },
+      {
+        "id": "zenodo-22076551",
+        "hash": "48087c58045b02ed6a9b796552bd89c80fe94d178082d06f3976f599ac33c11f"
+      },
+      {
+        "id": "zenodo-22076571",
+        "hash": "d1965780f1628682d351c325b70bbe90bf3e29de3689427da9e0d9534e272cc5"
+      },
+      {
+        "id": "zenodo-22076578",
+        "hash": "5f65dfdcec4665cf3d287cb1e803535f8b17cca1306d2859f26c3dde7cc3d133"
+      },
+      {
+        "id": "zenodo-22076584",
+        "hash": "40bcfde0ad15f7cf733dd5a4a2fbf6585071c74a66e5773399b867eb50b72a95"
+      },
+      {
+        "id": "zenodo-22076733",
+        "hash": "b2cd4e4e8eb34575c99dd32d3431a6511b4ad2926e9571ebca9a4f161edc6aef"
+      },
+      {
+        "id": "zenodo-22076744",
+        "hash": "ff9bd4df7484325e0b76e007dfd4264bf5482a5e3d3c2f202a52c7f495efca8a"
+      },
+      {
+        "id": "zenodo-22076747",
+        "hash": "3349752f5347394fd41d50ce22cc05aeb62a52751dfd7bd093b16899ae0190ae"
+      },
+      {
+        "id": "zenodo-22076751",
+        "hash": "ea0629ba819bf9572c60dd2acacb241bf03780cc50e01763fc413b1f20d95295"
+      },
+      {
+        "id": "zenodo-22076759",
+        "hash": "27080dd57e611a8ac8da216a839b00b323d4ca72dfef1d015d75553617959906"
+      },
+      {
+        "id": "zenodo-22076764",
+        "hash": "19ddd4c696604e566671cb1c8cf217e848c8773755f28b82439421a72ab43bfc"
+      },
+      {
+        "id": "zenodo-22076766",
+        "hash": "fa8121882c773358c770e8e52f05a3c51f45d338d8f28c2de5ae0ae5c2534ba1"
+      },
+      {
+        "id": "zenodo-22076768",
+        "hash": "b1bd1374845a99a33afc533a2d74e1fee6d691fa3c9b1109083389c4214ba56d"
+      },
+      {
+        "id": "zenodo-22076991",
+        "hash": "911b5e3c146dc4a423151283869dab3d6fa99f06802f02d35c43b5dc93c9874f"
+      },
+      {
+        "id": "zenodo-22076993",
+        "hash": "8f9121585b96f7c990f47e016055e2b9b61a84d1bf4df53bab677b557fe17955"
+      },
+      {
+        "id": "zenodo-22076995",
+        "hash": "0c5dbc7a8e64a7ec2dfc0f19d96e7ca90c5c04324edc9a033f6eb56477d61bbc"
+      },
+      {
+        "id": "zenodo-22077000",
+        "hash": "e9579adf651d70c6d032675adbde2a4a7c67a35b8b956b09210e22cec28fe2c9"
+      },
+      {
+        "id": "zenodo-22077002",
+        "hash": "12cf3dd6b2178c667169b20ccd6e58600243921d6e9be12623642164efd06391"
+      },
+      {
+        "id": "zenodo-22077012",
+        "hash": "233f18ab7f6dd978b81f80dd5f5b21b05e656574d4c6d2c05267cfa457323313"
+      },
+      {
+        "id": "zenodo-22077046",
+        "hash": "975e5c392da4089a6349c52027ace949daf5f2a7b1513b5230c0e20c019bf603"
+      },
+      {
+        "id": "zenodo-22077050",
+        "hash": "dc6b0ce3f0766c40f711b62107dc58cd88c870959bd7c79366b9e38e8e76c68f"
+      },
+      {
+        "id": "zenodo-22077052",
+        "hash": "600cde8ec514f178fc31c3b2b40cea1616c2c38d812e462845c245b38c52e8e7"
+      },
+      {
+        "id": "zenodo-22077067",
+        "hash": "761079bd84578fdb85a589ac74a635885887ef35a48e547d01b7954a8b6ea52c"
+      },
+      {
+        "id": "zenodo-22077069",
+        "hash": "6f00fc762b552e1204ab6c51c3dcf196da1b32cfe310ef24f753e30a10f2ba05"
+      },
+      {
+        "id": "zenodo-22077071",
+        "hash": "a57ba90a22da2d361edeaee112b628a37fa781ceffc13b594c3594d61fff027e"
+      },
+      {
+        "id": "zenodo-22077077",
+        "hash": "20053f4f4fdf4054303ac58b601faeb99d35516842e3f25cf0b8da5093f3af8e"
+      },
+      {
+        "id": "zenodo-22077082",
+        "hash": "435191e8939a3f16e86133b465a5d5f62e57deff96205b212f25b9ae82d23288"
+      },
+      {
+        "id": "zenodo-22077086",
+        "hash": "d13995087afe662eaf9629b8f163ff157a3b7047d0827126d2474a15229969d9"
+      },
+      {
+        "id": "zenodo-22077090",
+        "hash": "a8a86db24e213ab977b2fe71a301c0ae7568b5ca6237226d5ee3bee3453c57fc"
+      },
+      {
+        "id": "zenodo-22077092",
+        "hash": "2f093a05f3484f7ad9b385ccdb0adee793ee08f555471b6501fdafefd7ac1be3"
+      },
+      {
+        "id": "zenodo-22077096",
+        "hash": "833d40bb35c0459d16ecb65cbc4afa2fc9b003b1527c64dc2cce686fd5e8afef"
+      },
+      {
+        "id": "zenodo-22077098",
+        "hash": "6f98afdb4de8276d62b0dd5236221792346bf7d1997b37ed9b682c5671433609"
+      },
+      {
+        "id": "zenodo-22077110",
+        "hash": "8e2f3495024aae94b4c9a42fbc25b03313c28fda24fd2aa433c6ab639a4789b0"
+      },
+      {
+        "id": "zenodo-22079224",
+        "hash": "6d346938a3582d731be9ec8ac1b9b7ae48132661ac258f741dceabac7f6b3358"
+      },
+      {
+        "id": "zenodo-22079225",
+        "hash": "7a01263f1dbf3bc5f77d6704f2fa6d5c84dd6f44aaaa0bf4103940f161f21790"
+      },
+      {
+        "id": "zenodo-22079227",
+        "hash": "82226bbea3a985f50bfcb3137c4a5e112828528dd154711014b7a0ed662946cf"
+      },
+      {
+        "id": "zenodo-22079228",
+        "hash": "0bdeb413de68147578e26287440939e6e9d7480f42cc5a1812a53e5562de6c65"
+      },
+      {
+        "id": "zenodo-22079229",
+        "hash": "521f16d398ec8a1a2b978a72953c2daf6b63760721b5357f6cc1ef82ad35c4dc"
+      }
+    ],
+    "comps": [
+      {
+        "id": "arc-prize-2026",
+        "hash": "9cce78272c080652b74a3c1b7d5c475c08f1ca0ec83ba62b23d1667e6d9cc77a"
+      },
+      {
+        "id": "casmi26",
+        "hash": "38bff027e108de7618d41519bee1626784eb7423ac46a44f59b1696d19792710"
+      },
+      {
+        "id": "gemma-4-developer-agent",
+        "hash": "d015ea4512bb221a87da8a1755efa561fa16a32739a06e8fc68aa5605d21288a"
+      },
+      {
+        "id": "name-that-llm",
+        "hash": "59ab399ff7c926f4f2ca54d49041e18e4f9b67bd0844d3585ee50942b454666c"
+      },
+      {
+        "id": "quantum-compilation",
+        "hash": "ae2e74fccc700ef65c892f418c9faa22592fd2c23af223dfd8bd82d5219e8381"
+      },
+      {
+        "id": "rsna-knee",
+        "hash": "4c390aedd16b7243f1f253783fe5d8158853b64a63bf6c5ca7fd6fa4b1c0bde6"
+      },
+      {
+        "id": "smart-buildings",
+        "hash": "e66af5121647fe3ea641095b9def457b0dc16396aed642e26aebc871e6a35007"
+      },
+      {
+        "id": "trafficflowbench",
+        "hash": "429d574f63158d78e630e08736d2ff211887e842a1fb518ca57caaf0007c56a5"
+      }
+    ]
+  }
+}
