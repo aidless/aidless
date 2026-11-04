@@ -6,15 +6,29 @@
 
 ## One chain, three repos
 
-Execution → Verdict → Criteria. Each repo is separately clonable, runs offline, and fails loudly instead of passing quietly.
+**Execution → Verdict → Criteria.** Each repo is independently clonable, runs offline, and fails loudly instead of passing quietly.
 
-| Layer | Repository | The question it answers | One command | Measured |
-|---|---|---|---|---|
-| Execution | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | Did the task actually run isolated — network, mounts, memory, CPU, PIDs? | `git clone --depth 1 https://github.com/aidless/eval-sandbox && cd eval-sandbox && python3 -m eval_sandbox.cli check` | `SUMMARY: 10/10 PASS`; `43 passed` |
-| Verdict | [`eval-gate`](https://github.com/aidless/eval-gate) | Did this change make the model worse? | `git clone --depth 1 https://github.com/aidless/eval-gate && cd eval-gate && python3 -m venv .venv && .venv/bin/pip install . && .venv/bin/eval-gate quickstart` | `4/4` verdicts as expected; `70` tests |
-| Criteria | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | Is the scoring rubric itself right, before anyone scores with it? | `git clone --depth 1 https://github.com/aidless/rubric-support-qa && cd rubric-support-qa && python3 scripts/freeze.py --check && python3 scripts/freeze_test.py --check && python3 rubric/lint.py` | 300-item dev + 800-item frozen test set, hash-verified; `114` tests |
+| Layer | Repository | The question it answers | Measured now |
+|---|---|---|---|
+| Execution | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | Did the task actually run isolated — network, mounts, memory, CPU, PIDs? | `SUMMARY: 10/10 PASS`, `43 passed` |
+| Verdict | [`eval-gate`](https://github.com/aidless/eval-gate) | Did this change make the model worse? | `4/4` verdicts as expected, `70` tests |
+| Criteria | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | Is the scoring rubric itself right, before anyone scores with it? | 300 dev + 800 frozen items hash-verified, `114` tests |
 
-`eval-sandbox` needs bubblewrap and a writable cgroup v2 subtree. If either is missing it refuses to run rather than reporting a false PASS — that refusal is the product.
+```bash
+# Execution — also needs bubblewrap + a writable cgroup v2 subtree; missing either and it refuses to run
+git clone --depth 1 https://github.com/aidless/eval-sandbox && cd eval-sandbox
+python3 -m eval_sandbox.cli check
+
+# Verdict — quickstart needs no dataset and no API key
+git clone --depth 1 https://github.com/aidless/eval-gate && cd eval-gate
+python3 -m venv .venv && .venv/bin/pip install . && .venv/bin/eval-gate quickstart
+
+# Criteria — hash-checks the frozen sets, then lints rubric v0
+git clone --depth 1 https://github.com/aidless/rubric-support-qa && cd rubric-support-qa
+python3 scripts/freeze.py --check && python3 scripts/freeze_test.py --check && python3 rubric/lint.py
+```
+
+The refusal is the product: `eval-sandbox` will not report a PASS when the isolation primitives are unavailable.
 
 ## Supporting layer
 
@@ -30,4 +44,4 @@ Execution → Verdict → Criteria. Each repo is separately clonable, runs offli
 
 No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number. Where I could not reproduce a figure, I removed it rather than hedge.
 
-Longer lines — the research preprints, the agent-evaluation instruments, and the portfolio MCP server — are in [AGENT_EVAL.md](AGENT_EVAL.md).
+The longer lines — preprints, agent-evaluation instruments, and the portfolio MCP server — are in [AGENT_EVAL.md](AGENT_EVAL.md).
