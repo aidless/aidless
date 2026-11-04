@@ -32,6 +32,7 @@ The refusal is the product: `eval-sandbox` will not report a PASS when the isola
 
 ## Supporting layer
 
+- [`trace-replay`](https://github.com/aidless/trace-replay) — replays recorded agent tool-call traces offline; byte-identical reports across repeated runs (sha256 verified), `111` tests, CI green on 3.10 / 3.11 / 3.12.
 - [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — is the reported number fake-green? Naive checker `100/100` green vs authoritative `0.69 / 0.67`; `88` tests.
 - [`mcp-guard`](https://github.com/aidless/mcp-guard) — offline MCP tool-definition poisoning scan, with hash pinning against rug pulls.
 - [`agent-reliability`](https://github.com/aidless/agent-reliability) — joint verdict over the tool surface and the output surface; `60 passed, 16 subtests passed`.
