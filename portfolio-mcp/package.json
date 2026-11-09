@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "MCP server exposing the aidless portfolio (107 audited repos / 51 preprints / 8 competitions) to any AI agent",
+  "description": "MCP server over a stored portfolio snapshot (107 repo records, 51 paper records, 8 competition records). Not a live census. The main-line repos eval-sandbox, eval-gate, and rubric-support-qa are not in the snapshot. Preprints are not acceptances.",
   "bin": { "aidless-portfolio-mcp": "./server.mjs" },
   "scripts": {
     "start": "node server.mjs",

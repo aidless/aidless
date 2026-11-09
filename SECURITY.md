@@ -27,5 +27,5 @@ is maintained for reporters throughout.
 
 ## Scope
 
-This repository is source code and documentation. Reports about dependencies with a published CVE
+This repository is a profile index plus a small MCP server over a JSON snapshot. Reports about dependencies with a published CVE
 are welcome and will be tracked; issues in upstream services are out of scope.

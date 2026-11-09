@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-03T07:19:08.885Z",
+  "generatedAt": "2026-11-09T17:13:03.663Z",
   "algorithm": "sha256(chained, canonical-json)",
   "chains": [
     {
       "label": "repos",
       "count": 107,
-      "root": "5922f75c0c7c745aea455e0250c4819931606ac26a58d43943fb84daef78652e"
+      "root": "a6d7f28f9b48e270d164c05b1d8565f4f7648158cf596d666759a1d8530bd4ee"
     },
     {
       "label": "papers",
       "count": 51,
-      "root": "521f16d398ec8a1a2b978a72953c2daf6b63760721b5357f6cc1ef82ad35c4dc"
+      "root": "beacb651d192b4b3ce9cb8dd05a2197248124df6be69a752381f15368fb8ecc6"
     },
     {
       "label": "comps",
@@ -18,7 +18,7 @@
       "root": "429d574f63158d78e630e08736d2ff211887e842a1fb518ca57caaf0007c56a5"
     }
   ],
-  "root": "6563685496e72931ca9c3b5a1ec99a2379b5abda6ed87f1da758253f3526cb2b",
+  "root": "2073904c79d9fa299d41bedb02eedb61c58fee9e886ad9e5e129db935c49018a",
   "nodes": {
     "repos": [
       {
@@ -119,541 +119,541 @@
       },
       {
         "id": "arx",
-        "hash": "d31f4f11de3a79c458dcc61c63228132aead494bb32a58ee6fed7a35f7a75af6"
+        "hash": "1eaf04417abc95b958c4b42286948ac71f2c67921b1aad523848d2fbd27a53b4"
       },
       {
         "id": "auditable-llm-eval",
-        "hash": "86c00bbe4b81e08ef2c2fa35404189bec1c05c5040c0e66333c1706b24461714"
+        "hash": "677e68d540a0297e8c217110013b0053afcebffaa78149ea57d1806d0e10213b"
       },
       {
         "id": "auto-research-driver",
-        "hash": "33c2aa4fae8429e4f12e6068736005dcab10b05905d00d60a68dbbaf4952c44c"
+        "hash": "4a899916e5a689996a0592bf3e1dabb4f5ddcbe4d1d12211129abc2cb7a9c1c9"
       },
       {
         "id": "autoresearcher",
-        "hash": "be773d6936d2c5feb5d9536133a12ea2b04b46bb2d8df580807751be4f6b639f"
+        "hash": "47de7761b993e52117d6be31772b8cb03a1da45801aeaec7bec513525728a7b0"
       },
       {
         "id": "BAAI_Knowledge_Base",
-        "hash": "12691b70e06489a3615e6735b1baab2f639bc3eb30dfa19359d7be927d7ffbe9"
+        "hash": "6317e1e6fa628bc3d9c3cd5f47b9df300df8a5aebad65a5bcce19c0f62458b5a"
       },
       {
         "id": "bi-level-pepa",
-        "hash": "d452c96b0e014ec6e7ab911f52c325ec45da3f67db1296c9612c5bfc5dbd5349"
+        "hash": "3f1f53ff952895a912da0f683a7a30185b9676739f6167f15246ca3f5cf1d601"
       },
       {
         "id": "cca-agent",
-        "hash": "e4155d3c5bb0472a42bca40ae3d05848ae5fe68f6283dbc7ac732b30bcdbb305"
+        "hash": "bbe8f71d921e9dea793fa549d783b46ace412d132223e51018ac72ccab9ec884"
       },
       {
         "id": "code-review-agent",
-        "hash": "d04fda170c21fc6918eed117d25b9902d18564a0b44d56350a560f10546feea5"
+        "hash": "4dce26e206da791f1cc2eccdcbad310fc5a90bff1c208ea017bd3e084fad2d0e"
       },
       {
         "id": "cow-agent-os",
-        "hash": "012e5a513a338eddd4c5feba0e2fccdc35f0636751b0ce71668066d6b8dbbaed"
+        "hash": "268991cb3ba3fc6f7318d16c85c6289883ed1cba1410137c82d5fe73f563634f"
       },
       {
         "id": "deepseek-harness",
-        "hash": "b6e9a9db4aea72b15ea6bd73e1b3ce2ef481d7da96db7285102657ff73cadb6f"
+        "hash": "9a575430a0ce19f8b0f33a4de09ccd6ea43b89ce6d4395c586c7702d2e2bfd0b"
       },
       {
         "id": "deepseek-workspace",
-        "hash": "a08488826a8f8886bdff4ea4798856661838b8e81ae9bceb227921c894533d88"
+        "hash": "22bbee204dc807c961e5d05fbfadcc4fd2a579822bf434abf490954a2004b532"
       },
       {
         "id": "douyin-minigame-lab",
-        "hash": "7b3351b4729979f05ddd7dced5183228515879ac60f64bbf4d633e81368a6468"
+        "hash": "1a8879351e890517bb7abb2a3f75954e74a7d0d89a83c8b57626af7d78623189"
       },
       {
         "id": "echo-chambers-of-one",
-        "hash": "74d8aa64788d640af95b255c54510d64ca83e47e59ff2073cbb3347384559687"
+        "hash": "576136dcacbdbbab3ece6e812ec37bab7cde37c0c1b4307d23c383bb218754d0"
       },
       {
         "id": "effective-context-lab",
-        "hash": "f97f61ee3841ae75da249bbd19f87a75b68f769c6047a365d0f60fb51e3ff7f8"
+        "hash": "08d959b6d2b86f33f9a3650d347d96af05941483a5cfcbc55399279a60051bfb"
       },
       {
         "id": "enterprise-rag",
-        "hash": "65a03fcf57f0e12397ae87633a14a99f865199d0f7dabf491adde61bb824686a"
+        "hash": "9d1c3296a067dc73a5521b3e9d1954be934156f17be28c3512e22f03956694ba"
       },
       {
         "id": "enterprise-rag-saas",
-        "hash": "7aecb0fd074bd9ae1eb8c25ef7fb2fe46f7f24f1b603eaf5044e24cf110e1aa5"
+        "hash": "8b3a17c330ca97aed1b983b8139dd90c58090c8d7ee851009c6f11fe98de50fd"
       },
       {
         "id": "eval-meta",
-        "hash": "bd811995781ad995b7d04798edacde5d9ec30a69472376488bbbbfc63bf7f68f"
+        "hash": "ae93c849f861f2e57a9bd6056d06e658fa5378dce4b2fc9bdacb76d5c490fd7f"
       },
       {
         "id": "evoagent",
-        "hash": "eb5a228dae9639caf34761acbd8952f8f77e95caea8111c734d8e750acd34c1a"
+        "hash": "f197bfebe032e6f1595b3251a31e20697ff62084c8fc4bae30e886a6d6c4e5a5"
       },
       {
         "id": "flowgrid-aml-retriever",
-        "hash": "deb11851babea033bc9c5f7a5eafdf10813ccdba0f17d1d5a87f0aa090df7463"
+        "hash": "6f774607092680d5bb33696f030dac6c3ac5279f32f464fd9903d144c582f85d"
       },
       {
         "id": "goodhart-project",
-        "hash": "85094118a6a216444106bdcb4587a9ff4b70aa24aef0984521a3758a02d1e909"
+        "hash": "88ac7faf30f53c1fe3af10a806b386aa06092cbff7e5d4e6f9d20cdb24f8238f"
       },
       {
         "id": "gpgpu-kernel-lab",
-        "hash": "a92a26ec28ad0d48f189098b7ce0b78178ca9499886ce9c9751d567dc71fb1b2"
+        "hash": "059a8778f53355268cc6d7c94d5c79c9f13d5378287c3aaa46011e1e0ebdac6d"
       },
       {
         "id": "gsm8k-self-evolve",
-        "hash": "640172fd3351a0c836005369d063eef566dd3b5e1c57d1e21dd99b87462f59ee"
+        "hash": "aa0f35a4662b37e530f61fa4cb44fb93eacd935d16ba4a57bc6f5d59adda1042"
       },
       {
         "id": "hermes-agent",
-        "hash": "7dbf1988f20e2da4f87a5747605299e1aa717a344e7c6ecd4faaa1bd250219b5"
+        "hash": "935f9e29e82d48711763440f9afdfff6d4dbd5629a9133d31b8c7e8a0d018e27"
       },
       {
         "id": "hybrid-calibration",
-        "hash": "6c544823b64662f815465d7c86f0cbcdf063f1a6dcaa48470b263e7004269c78"
+        "hash": "6af9912e1d5903c3f4487db8c72fa10cdbb9386951255874cac63409a5e10bd5"
       },
       {
         "id": "java",
-        "hash": "68a5b335399a75c8492fab88b1c865a7be8500d6ed790eef14786b63db357e11"
+        "hash": "e9408046d42408d5a8512f026a1bf66437b1293ec87aa4143b7e33637e6c67f6"
       },
       {
         "id": "judge-calibration",
-        "hash": "15976d488149c2fbef9967c85b3aba8b3cf47c7f1110a35687f94ba3d49568c8"
+        "hash": "756c20739a33f63e26e3c8aa9af833926280ecd9accf2d16032a0d09fbad4fe3"
       },
       {
         "id": "kaggle-science-exam",
-        "hash": "954c9d6dd93ebff408d7b4edf84ed195deff887e93a08c32cb526ea9ee675e24"
+        "hash": "2f7d940892c294be8c6059bcda003d322ebdde0e72a788d0dde14ceafaea7963"
       },
       {
         "id": "kv-block-mass",
-        "hash": "378dbda99a48bf7892eb63483f877d643824e539438593050828f41a5cef41ec"
+        "hash": "35f9e98b5ff1450a859f981c7e4596babff71be8922902eddd2620c45e32841c"
       },
       {
         "id": "kv-serve-lab",
-        "hash": "c3207c9db0a106d460d418906eaaa8c2c19d3f23ad8c33c6cb2dccac62facf59"
+        "hash": "18ee413c25853955cf4fa6166153f05c7d00fe46202b564d4b71e477de11323f"
       },
       {
         "id": "life-planner",
-        "hash": "c533a3bfc98c72058cc1cac7b0ebbba457eb02cf2e8966ce3217ded9de797b39"
+        "hash": "2ac38538e38e1e219760be1c884da8e0565955ded72cee003611267da8b74391"
       },
       {
         "id": "lifeplanner",
-        "hash": "94e64048c370290dbd979023002b8cb4519e748ca473e0c99a5ee2b4fc07569e"
+        "hash": "2a54d2f138059ac607599c7f1675e0970be6a8de65c333bdeada958c330a3a78"
       },
       {
         "id": "llm-agent-projects",
-        "hash": "60ab639c92c0d7a341381a67c4c04e18086ad4d02990f11e3a474d0321098d8f"
+        "hash": "3a0b8c676c9324f3450df91d33c499b32720fada70ccff37809aef728a6a777c"
       },
       {
         "id": "llm-lab",
-        "hash": "6a4768f5e6faad7c77d8c66dedfcbebdfadf5290eba242dbd2f31abed728f01f"
+        "hash": "465067c00dc29aa9440ff3193318c2e92025f9745ebfe29d07df88d70d4c740b"
       },
       {
         "id": "llmtriage",
-        "hash": "b496c0bf375cee8a36ef89364fb514452013e63eff9562968849d6bc4d71c7ad"
+        "hash": "25ba68cf68dd3f4687925f874e948a7d02ba8181239ca4f5f39c56bd9993ad84"
       },
       {
         "id": "longhorizon-reasoning-ceiling",
-        "hash": "0bdda95e03bcb49965b5c8e5652bf0c07d737574e0c9331097d78f7bfb7fbcff"
+        "hash": "885fdf0ffbcf5713f9f062e691be7f1cebeea0d70f40e59ad1431297fc00896d"
       },
       {
         "id": "longrun-agi",
-        "hash": "9463bdd9ab4afd3b7830836b4b4a71fc3b5e40cc2f848f1f03a35c3b1e4d6d11"
+        "hash": "1fe534b8bc820b51894a762e9fbf91e8e89bd4328a43591cdfc55e72f315c5a3"
       },
       {
         "id": "loop-engineering",
-        "hash": "4f7590aa6e13c1ba1206d054204a4d4fee78684ba850fe4d4e7dfbd5a6d3be6c"
+        "hash": "336de637a578ea021c3f7d0b1740bfcc3a71c6118741ac43f0ab2a91c651da51"
       },
       {
         "id": "magpie-backup",
-        "hash": "1206fedf76fe453f4bb10e8f892c680ff5063fed2968a1d79abb35084a1f19de"
+        "hash": "1766acbf17e40092b9f722747356f3d56cc20ba6ba97038c15440a2388ca81bf"
       },
       {
         "id": "mcp-guard",
-        "hash": "58e0f76450c874c0c643a1b41acc5c5c709dd1c27213c2be05eedd836765cb75"
+        "hash": "a7c29b9a49997003f6be0a510315da6043c080c568d4f4837784c092ffca7e12"
       },
       {
         "id": "memory-architecture-bias",
-        "hash": "e2659a5322b3fb0e78475d7f5cf48e7ab24febf06d3835ef576254e668c468a3"
+        "hash": "2703bce6dba93dd63b48ecb973c69b3b56681af2439d8d9e5885c9fc2f77f7c5"
       },
       {
         "id": "mini-agent-runtime-bench",
-        "hash": "51a3167f405717a883cb6d01d5583afddc875a69b6c505477e181df2d273071a"
+        "hash": "4de39e002d54dfdb03a21725f5d170d74e91fcc19c0a68c2d09af5e9b8281dec"
       },
       {
         "id": "minimax-m3-phase1",
-        "hash": "8cd6297ff8cb8cbe02e920ea800651515c6039a66bc0355201781c4642d00576"
+        "hash": "343c48dd1e55604e99508d1226ab333833a150e20ac6e9d60ffd7a7d30536ac9"
       },
       {
         "id": "mm-epc",
-        "hash": "1009b29007a4d3c11e0ef9533b861447ebb0fc14ec0f832c4c7cdb4ac6ab5f6e"
+        "hash": "fffd02cc453c4bdddc503293f476244374606e54ce3531ff97029297bc988235"
       },
       {
         "id": "morphagent-textbook",
-        "hash": "101d2a412ee6be83ae11ca3014dec4db45fe6d6db549b594ebf60ca732053ce7"
+        "hash": "68400b8bae80f32c57e9da0d1a2fdfa386f51aa180f478e6118cd6321043d88f"
       },
       {
         "id": "not-contagion-just-time",
-        "hash": "b267a2b9e1a854e4548693a459ef28ee84fc5bf78e41a760c63d6528f6c4e79e"
+        "hash": "ae0a8ea4c370d77afc063b2a55c9bdbe6b5bb6a534b7c1334bcba4a0edea8e45"
       },
       {
         "id": "obsidian",
-        "hash": "75465c2e54520a7c5eb89590db41825e64f5f6b0a3877b9d0e3166349aa4f0cc"
+        "hash": "93cd4c5739eb00988e77b6ef52729fdd80ff3f7588db3ab7f4c1f83b5172a2c7"
       },
       {
         "id": "opc-llm-projects",
-        "hash": "5d75e2cad01b96a28400fe3c9cff18d0abf75b8454ebd63c485de6ac9b9685db"
+        "hash": "4056317c62582b7952296f3b1d4a201646502bebfa0a213e2882746457e28577"
       },
       {
         "id": "paged-kv",
-        "hash": "c51a78fa9a0a335cd804875c9228c544e3fe6ffe9b10a17f496587f2348cd695"
+        "hash": "aea460a89684b485fe34eed2369b443147aa379e17cefcf65b1fa4e05eb06dde"
       },
       {
         "id": "paper_agent",
-        "hash": "4ceec069a0371a5f3ea906d86bb9a8d3d8ded4a9d616226849f168965d7888d3"
+        "hash": "22a10085bcc51c635909a19e8346fcf1e15eb67e18adeb7229fad0841aade7c2"
       },
       {
         "id": "paper_joint_mem_forget",
-        "hash": "bdb72d99e21f2d17bdb99d649621a5cdc15ab5841e73b07e414eb30b02689444"
+        "hash": "5b51564e34926b1d4894c63c5e3405fa3e475745d80f028e0a1004f74b06ad1e"
       },
       {
         "id": "paper_workflow_kb",
-        "hash": "12f986dbbc120c61ba95253917edcfa146d9dff61377a65133abe8c1b1640201"
+        "hash": "b52cb18e18f7007396e4054909579f52683c4e1b221751c7e6387deacaf3cd65"
       },
       {
         "id": "paper-writing-agent",
-        "hash": "f11c5567a46af01f4da9b841ce523c9eabba0650f70fc02803be8efd075676a6"
+        "hash": "6d63ed392aecd1fec110ab9ed925e87f14c485ad94b1481d27acc662086f6e14"
       },
       {
         "id": "paper1-anon",
-        "hash": "5590c173fc326c7dfb6ca68128ac2d38aa86af66e0d1cbe43838365bf950145c"
+        "hash": "aa8f3321acc8a2e87898013d22e9778aea0798c2d24b9efcace5d3ff03b4e1b3"
       },
       {
         "id": "paper2-anon",
-        "hash": "7661d32b85e50a39c9f64b10b83e51438f58acd1993f2a491bc70015f8127d6b"
+        "hash": "b557393334125e795d617e8ab265aa32201662a1076ca1d6398ebda1e3ed8618"
       },
       {
         "id": "paper4-anon",
-        "hash": "a26ec50167fcf57be57129258c2c805f3934aa1bf332675f053220332acdf58e"
+        "hash": "a1826abc88f0094f572b63e4af49984b0fe859bc3d67eb2bd5b6282c94240214"
       },
       {
         "id": "paper5-memory-architectures",
-        "hash": "6424f544e707a3bfe2b62939d681f759b5d0e0e91f7701c774b87951d44f817e"
+        "hash": "b3fd6d886addea10b933a5bbe81f467a6bbf41880e8afd578a2fdbc9b9bf1914"
       },
       {
         "id": "portfolio",
-        "hash": "62299eb22370283a98bd4aff201182bdc3a500da37b8384492d783eb03310cf5"
+        "hash": "98bf97b579992b7e7e4e7111e8ba8b065a9984d71284b6f7a1bf38269d3fa86c"
       },
       {
         "id": "portfolio-site",
-        "hash": "aa428db0ba18ae4e7f10931dbf28a0c45b214d7820dfd19b71a5656218914a3f"
+        "hash": "ee883ea6e05cdd3add74c8c26ae5d8c366b6ca4b11a9e4546f3e2a1abf058683"
       },
       {
         "id": "privateuse1-lab",
-        "hash": "96da10656fd2e5b56ecb102267973f37e06d609e048f19aecab29107542f10a2"
+        "hash": "5d4d3a9c2583cbdac10f76552c35c7ea0d0179ba4938ea26ffab887b0c301f89"
       },
       {
         "id": "q-one-agent",
-        "hash": "b5ca422cd93a4c08700f9ff7aa7bed25adc108417ff06d47da02d889104842c2"
+        "hash": "231a80c953906c1fd02cf65c65a41cc49a046a36be38c96dabed64669e1e1624"
       },
       {
         "id": "q-one-core",
-        "hash": "f40a888b1af3aff9d118b97465f4e4042d562c18319d3c81c39861bd440e7fbd"
+        "hash": "33d89329ec621edeff2099894e636d30751a8dd9ca0339498abafea6290f9506"
       },
       {
         "id": "q-one-gym",
-        "hash": "c641b2f3dae567cca5ae76cb20154ca72960f5278ccb07051a299295f490bfb2"
+        "hash": "9ed5f2f70a9c1cf5bfdc374a353534a919aebf6d405f6c413fbb96a365fb4ca4"
       },
       {
         "id": "q-one-life",
-        "hash": "1a8232e267a4029f5078d8bc20c5931531e33b3278a93643d939da4face97e1a"
+        "hash": "76ced12ab0abc97cf33863f564c3ecd8a0ef135cd670644e149896eef3f3ef0f"
       },
       {
         "id": "r5-verify-vs-gate",
-        "hash": "11fd2bc47872efdb9bdce955e202209895ac17fa388f13f599d2987fb2f3ef09"
+        "hash": "c1bab0ea415732be487ff0329b9d5025a14bca91cdaebe7baacdf8cdd49874ae"
       },
       {
         "id": "rag_min_demo",
-        "hash": "db99003dead3167b982e26960fc99bb194ebb9688922903df09fbd4a3552faa1"
+        "hash": "00faff0248d8e97aa4ef2656af9d716b35e52778be3fc386b898f73854fa756f"
       },
       {
         "id": "rag-qa",
-        "hash": "f9e2c212da82cde8136376727f925f97b94c30bb203ea3e8adec8878047f314f"
+        "hash": "6fc7c7ce50f480ee944220575733ac616799ae8b39f2f9063e438c142d18a158"
       },
       {
         "id": "research-kit",
-        "hash": "11e67a9230748b98ef8152e6b648e3160e5704078cec8fa0dbe0e862f39883f1"
+        "hash": "89e4f49c8f18750adcc8d4d3cc475f4fce31d05aa0099223a1ac081c42d13bf8"
       },
       {
         "id": "research-writing-skill",
-        "hash": "1f002ba1a71f79f4706526bbe0a24b8d284fc4c21d906733d4fc58e20df8778c"
+        "hash": "44f02615c8a95ae52fade35c2505870155c860886bf90406d06fc24ef4ba762f"
       },
       {
         "id": "review-workflow",
-        "hash": "90bd728b39b72b7f75cf49a795fa66c0c571e71ac76d7c7a01b55e91a5f5d3f1"
+        "hash": "c6db6b8abf22b319bbbd94ab8eb4bda97fcf12eb3b66e0196b2a613f2e966d5e"
       },
       {
         "id": "reviewer-sim",
-        "hash": "25b737b14461484f983283ea2bd6e87df84d1c375f622c52697365034e7833bf"
+        "hash": "43f1e8783e1d2f324e2ebf75d764f9b67dce3f1d91b65bc705bb8e5005201a6f"
       },
       {
         "id": "roofline-lint",
-        "hash": "4df2f8924dfbe7d8cb5f0256ff08f1890204b6f44d9d15e79e4c1372dbd30784"
+        "hash": "a678aca94c6647c913e44bb502114d0423bd71a39aeac3e3d0ae83795ea73306"
       },
       {
         "id": "scheduler",
-        "hash": "99d3772a96fce6468ca197a65e0bf3fb7016884e0e23f43dfd4c5f1703f2b9c6"
+        "hash": "d6b6a0480c41dac493ea56c52a5d87b04ce6209cab9b9aeca4a088d208b49a4c"
       },
       {
         "id": "situational-awareness-audit",
-        "hash": "408ffbc3d5cc0e5b7646210cddbcc45e5e31852647c3ddfd8af3674d749e16d9"
+        "hash": "9c69022a513b8cc73f6dd456d9f30d07789e4bca9dfcc325d28354dd23e536d4"
       },
       {
         "id": "study-buddy",
-        "hash": "0713f2b90a7cd2c2192dd1faff3784e8641ba4fb2b2193ee5a09392e2da51745"
+        "hash": "cb2c87022bd4cba090d2233221ec0897fcdc57984a51c6c893f2521a131e9fa4"
       },
       {
         "id": "superagent-platform",
-        "hash": "a72360be42b357c99ab60ebb8de0a844187c5d9c506f356789aceb8d89dba9c4"
+        "hash": "a99b464aeb637434c6924ca0a18b042cb2cb33866d77a68ad8c9ab8e94a56def"
       },
       {
         "id": "taixuan-web",
-        "hash": "856a9e9d1e31005b861637ad10539eb6346f965ff4ef7f1e081308078504e3d5"
+        "hash": "cb6dd1ce2b30e3684ca44a6792701bf65ec20461a1836ccedb2a6aa972fc1fb7"
       },
       {
         "id": "task-gravity",
-        "hash": "bf8176afd3de03175245baecc02ae9a3e31d2055709524f122a2c3fd09779a92"
+        "hash": "9a884a76db6a8b8707f291aa7ab9c8463970158270a93b1316d64e81da357663"
       },
       {
         "id": "thesis_auto_generator",
-        "hash": "e4cf527e78c2f4bc28b06e53a4662cdbaa2494aa1a9efb4dd9d068f1af3e1f57"
+        "hash": "62727e29fc4bcb0bdabcd8935f261652ad7d15496c6891de98afdd61d60a4a7e"
       },
       {
         "id": "tmaudit",
-        "hash": "bc4ab8cd57654b79d5432f8c2098909319176f954de5d40a7922cc73679fe550"
+        "hash": "b05a2ebdab61121df6970af2a61aa3fe5f5dd71eb7acb3afeedeb47fac54988f"
       },
       {
         "id": "ttftkit",
-        "hash": "0c13b8450e1e7bc6b089e4d336f41cf6dcfed7103281c3b7548b82818016ddb7"
+        "hash": "8e7e746066e7f98f3ae63db7eb5e599a37d820b07834343f8c2d0c89552ccbe2"
       },
       {
         "id": "ViMax",
-        "hash": "353a36cc3c2c2f76bb99e61e7e1a9e90f0a4741f5d68f19b184df511109bc213"
+        "hash": "0a072f85ce4b86699f17525528311588ae6b63f139c1477c500c21c510d54f91"
       },
       {
         "id": "vllm",
-        "hash": "405e10148c76a85f570594811ff37a4c5bc4054ec96092a33aca182aac954b16"
+        "hash": "bb5194a2ef25e2dcd662922fbead7879af9bc963aa01f59bec95a11ca2f5c7e6"
       },
       {
         "id": "wse-bench-public",
-        "hash": "5922f75c0c7c745aea455e0250c4819931606ac26a58d43943fb84daef78652e"
+        "hash": "a6d7f28f9b48e270d164c05b1d8565f4f7648158cf596d666759a1d8530bd4ee"
       }
     ],
     "papers": [
       {
         "id": "2606.16682-multimodal-epc",
-        "hash": "9970e4a82bf8b49f814fb2286bf61fe60c533b37464c7b21f43d933eba1bfc28"
+        "hash": "e9d147dce59dd0d00af28a29e194a5feb8df415ee2fa2826bacf8f609f25cfe1"
       },
       {
         "id": "2606.20493-contagion-networks",
-        "hash": "8d4ae9c938bf761d1f49464da2d6bd28ad9ead1e7e06a8dcacd3612a343df771"
+        "hash": "5b510f3db6222e2b0fdc5a661a191fc552c615fec697a854cf21ced2421bcfec"
       },
       {
         "id": "2606.23195-memory-contagion",
-        "hash": "fc2dd9f856f22dfc69b4b3aa1178ea2c6bfc4a6a63e18b28cb52c48562157b4c"
+        "hash": "02660db4ee0afd056cb3d7a1698017036c8d58636964ada9d09706a00e95ac89"
       },
       {
         "id": "2606.28839-contagion-tensor",
-        "hash": "40ce58e9b47bf64819d1add4b571c1499f1f6fc54175c161b83a6f2455d8f1fe"
+        "hash": "f43fc81e50f8a89f3a96ba8d4e63c3bca37c6c9c9aecd0d6ad784b39882afa0c"
       },
       {
         "id": "2606.29719-diagnostic-framework",
-        "hash": "9b3670a238cdfc13b93aaa52b56cbdd552dea50ef31642f60581f1aa47f6cb90"
+        "hash": "39d3c9f9f6ebf620568620c624cdaa0ce4b5deae0b07739d47e4fbe862b64576"
       },
       {
         "id": "2606.29720-hidden-cost-resampling",
-        "hash": "39522d7fdbced86749028626f30706a940e1de1cd2bedc1f353eecbb050a339a"
+        "hash": "8c8f8bb227f87436aa8ec79adb1a2ca54fb37fe925907dc9309bbd5177be4065"
       },
       {
         "id": "2606.31371-calibrating-evaluator",
-        "hash": "311e8792a8c66c968df073a4acbd234e07fc9f3d746a757f375d14c1ddf3a5c0"
+        "hash": "2a7ca157ad99b7aa677bcf8a5293ace0c7c711b87b291667052d8ef6ff14ba27"
       },
       {
         "id": "2607.00297-epc-protocol",
-        "hash": "6441809e55f1146a7974207c2c6a526059dd822305294386f27f4328f8d029ef"
+        "hash": "2dbd41aa5ce96178c9f8af47caca467c3c2e2f70ca90b0f4143ce1925974c395"
       },
       {
         "id": "2607.00304-mapping-frontier",
-        "hash": "21f589cfbdb9320a2d0a9e93bd7f12f1f1c55b6d1d064e9af6ea11d2d32e7017"
+        "hash": "9d7cba35eac4c641b0c322b3bda001c6e4d73d0f83f2ef942cbfd83edf7dbfc7"
       },
       {
         "id": "2607.01600-boundary-sync",
-        "hash": "c88442d3cacb468d34c210a20a91d1a8d56244a58249022c2fa2546a5276c4ca"
+        "hash": "9bdd288f760c77826003d85d2949735e2d149ecfd63d4aefe7b5d049d8bcf32a"
       },
       {
         "id": "agent-effort-r1",
-        "hash": "4cd19fb35be5750015d11771b7a1decda1dce12d26c5e662cd1ffd1b1580eac9"
+        "hash": "38cf0864bd26127ebff6857a7adbfacff17affb80d9acbcd7ece4bb9c5ee4ac5"
       },
       {
         "id": "approval-gates-r5",
-        "hash": "535c5e702490d244d6ca59141c5f9bec5136d41ef36146824f54575727dd891e"
+        "hash": "f807d3639a57f8352bb764729eb1ef388cd40acba6344a898e954b2559990cba"
       },
       {
         "id": "zenodo-22076541",
-        "hash": "5480f5a0059e71ba57ab57f76c0504c050002b23aa0d678ff9ed5e9047c368f0"
+        "hash": "c047c14972dd5ccd73c960cb1eb3de51d538ea77fbe3bf657020ef9d290fdd20"
       },
       {
         "id": "zenodo-22076545",
-        "hash": "038f39919d033a9e03c273edc9522f128d4899fae1a483c4d6de73275b99b343"
+        "hash": "00264250a1bfc6f7a3b6c5e66f37744cb549ec5b1691d340713a99b04e5fc4b3"
       },
       {
         "id": "zenodo-22076551",
-        "hash": "48087c58045b02ed6a9b796552bd89c80fe94d178082d06f3976f599ac33c11f"
+        "hash": "3f6bf3b6e668b1035c7f7b166bc4878b58ef4c71bd5890a73769b9efaebb7cec"
       },
       {
         "id": "zenodo-22076571",
-        "hash": "d1965780f1628682d351c325b70bbe90bf3e29de3689427da9e0d9534e272cc5"
+        "hash": "69501eb9fa30deba97bcd655eb55ab6b3ae55e6ceb956ae90b3303dbf26ec6f9"
       },
       {
         "id": "zenodo-22076578",
-        "hash": "5f65dfdcec4665cf3d287cb1e803535f8b17cca1306d2859f26c3dde7cc3d133"
+        "hash": "bf6674226cadc0037a737798728659fe6a80eb70a745378316e0e8c60efd8718"
       },
       {
         "id": "zenodo-22076584",
-        "hash": "40bcfde0ad15f7cf733dd5a4a2fbf6585071c74a66e5773399b867eb50b72a95"
+        "hash": "e69a9b7774a5633c040e0dc2448ff2d4248107e93fbe5e0a041e56e1d70eabe9"
       },
       {
         "id": "zenodo-22076733",
-        "hash": "b2cd4e4e8eb34575c99dd32d3431a6511b4ad2926e9571ebca9a4f161edc6aef"
+        "hash": "6ad60322b5e248cbb1cdacaa512e2180eca7632ada6b0ec7c303ddb0999aa64d"
       },
       {
         "id": "zenodo-22076744",
-        "hash": "ff9bd4df7484325e0b76e007dfd4264bf5482a5e3d3c2f202a52c7f495efca8a"
+        "hash": "99ed1a7fcf7c0f49d9bb1327f9bea704363cc548c2b77be48538f52678c80c2a"
       },
       {
         "id": "zenodo-22076747",
-        "hash": "3349752f5347394fd41d50ce22cc05aeb62a52751dfd7bd093b16899ae0190ae"
+        "hash": "97d1779921f3868daf70045de537cd1c9f173d18c334b30cc678013381dac3ca"
       },
       {
         "id": "zenodo-22076751",
-        "hash": "ea0629ba819bf9572c60dd2acacb241bf03780cc50e01763fc413b1f20d95295"
+        "hash": "52b4620f1f47532ff44a4b996aea618de3bfe13f09217ad55817b7c6a4008a31"
       },
       {
         "id": "zenodo-22076759",
-        "hash": "27080dd57e611a8ac8da216a839b00b323d4ca72dfef1d015d75553617959906"
+        "hash": "6cf432895a36b80f2f9c8e6a3cf15bacce253b7adaa0198688963a1ebf8ce550"
       },
       {
         "id": "zenodo-22076764",
-        "hash": "19ddd4c696604e566671cb1c8cf217e848c8773755f28b82439421a72ab43bfc"
+        "hash": "f0d5e048e5fcfeb2397ba2745090f73388977ca037df993f5b8683eb3c938a39"
       },
       {
         "id": "zenodo-22076766",
-        "hash": "fa8121882c773358c770e8e52f05a3c51f45d338d8f28c2de5ae0ae5c2534ba1"
+        "hash": "9b17b0dcfe410a3b5c667dfeb6c0070a454db1cb0d29eb1e5311225e73234909"
       },
       {
         "id": "zenodo-22076768",
-        "hash": "b1bd1374845a99a33afc533a2d74e1fee6d691fa3c9b1109083389c4214ba56d"
+        "hash": "66ac9d9791bfd8d45d8e5d600f6f5ded170e55e6f5aecd03083b240e05b0a921"
       },
       {
         "id": "zenodo-22076991",
-        "hash": "911b5e3c146dc4a423151283869dab3d6fa99f06802f02d35c43b5dc93c9874f"
+        "hash": "d896cf514c3571ec1336b818a841cc1f6ba3bd54f632b35327c54451f55b3d18"
       },
       {
         "id": "zenodo-22076993",
-        "hash": "8f9121585b96f7c990f47e016055e2b9b61a84d1bf4df53bab677b557fe17955"
+        "hash": "01511efaf887d8589902d36e77de5584f0d699874dd02131fd2af8e40a8a5279"
       },
       {
         "id": "zenodo-22076995",
-        "hash": "0c5dbc7a8e64a7ec2dfc0f19d96e7ca90c5c04324edc9a033f6eb56477d61bbc"
+        "hash": "d3f1e43b70df30629d7c7e7bf8610ee4c327f4c2fdc2c3399f49c96ad1cdba48"
       },
       {
         "id": "zenodo-22077000",
-        "hash": "e9579adf651d70c6d032675adbde2a4a7c67a35b8b956b09210e22cec28fe2c9"
+        "hash": "51f62682b20e45d0434bcf7f04856cc3b70a442751038841f80ea79ad6e4febd"
       },
       {
         "id": "zenodo-22077002",
-        "hash": "12cf3dd6b2178c667169b20ccd6e58600243921d6e9be12623642164efd06391"
+        "hash": "a42bf22bd4c66083f5c9fde120354e4ba2cbc4c0d444e357d161c6d9f9e7f343"
       },
       {
         "id": "zenodo-22077012",
-        "hash": "233f18ab7f6dd978b81f80dd5f5b21b05e656574d4c6d2c05267cfa457323313"
+        "hash": "1997d4c1f9a7446d9f953d67db404f3039eb31cdbaf0f2ac79b41f5390d6d2a7"
       },
       {
         "id": "zenodo-22077046",
-        "hash": "975e5c392da4089a6349c52027ace949daf5f2a7b1513b5230c0e20c019bf603"
+        "hash": "b9b1bc0a9a922d5dac329df4a52904c0b303eb7f798295e31c79edb2eb2feb30"
       },
       {
         "id": "zenodo-22077050",
-        "hash": "dc6b0ce3f0766c40f711b62107dc58cd88c870959bd7c79366b9e38e8e76c68f"
+        "hash": "a1b53cab02fe93ae1d802ff6783939042dd74f16a05a2a0a3f49940e59f92e12"
       },
       {
         "id": "zenodo-22077052",
-        "hash": "600cde8ec514f178fc31c3b2b40cea1616c2c38d812e462845c245b38c52e8e7"
+        "hash": "0b9d0364960188cb12df0386f2ec244cfcf9eb21cf775faf1ee62602cef98eda"
       },
       {
         "id": "zenodo-22077067",
-        "hash": "761079bd84578fdb85a589ac74a635885887ef35a48e547d01b7954a8b6ea52c"
+        "hash": "daecf16dcb5583fcedc8b1846c26f90d5a6c7f4513c621473d2db525c0ea2e40"
       },
       {
         "id": "zenodo-22077069",
-        "hash": "6f00fc762b552e1204ab6c51c3dcf196da1b32cfe310ef24f753e30a10f2ba05"
+        "hash": "26ce48151bec275ac775be11fbe581f3c1a5ecc0440b92841fafef57fd9105a7"
       },
       {
         "id": "zenodo-22077071",
-        "hash": "a57ba90a22da2d361edeaee112b628a37fa781ceffc13b594c3594d61fff027e"
+        "hash": "b6910a2810f65f94ece041427f75d9aa692d8678ba314255c391f64bb92aaa83"
       },
       {
         "id": "zenodo-22077077",
-        "hash": "20053f4f4fdf4054303ac58b601faeb99d35516842e3f25cf0b8da5093f3af8e"
+        "hash": "75545975b55d82d1dc5c03d34e4137f0567e7b3ac2ff509909cb6e0680c147a7"
       },
       {
         "id": "zenodo-22077082",
-        "hash": "435191e8939a3f16e86133b465a5d5f62e57deff96205b212f25b9ae82d23288"
+        "hash": "3349e4713105edba73d58df92e55d59ae85893adc999053ec1b943dc2d0128c7"
       },
       {
         "id": "zenodo-22077086",
-        "hash": "d13995087afe662eaf9629b8f163ff157a3b7047d0827126d2474a15229969d9"
+        "hash": "482c3d6078b44084fc6ce8eac0c1905ab4f5139424aa95bd036ae536544e6d19"
       },
       {
         "id": "zenodo-22077090",
-        "hash": "a8a86db24e213ab977b2fe71a301c0ae7568b5ca6237226d5ee3bee3453c57fc"
+        "hash": "7daa83bb8ccab98764a6689ff0a65f7f96986dcd536af8f2f1c65f03ed8f22ef"
       },
       {
         "id": "zenodo-22077092",
-        "hash": "2f093a05f3484f7ad9b385ccdb0adee793ee08f555471b6501fdafefd7ac1be3"
+        "hash": "9b9b1ef9e3401ac7570b4a2df1d4cdc08582aa3d8b525c69319da0927cb917ee"
       },
       {
         "id": "zenodo-22077096",
-        "hash": "833d40bb35c0459d16ecb65cbc4afa2fc9b003b1527c64dc2cce686fd5e8afef"
+        "hash": "cf339826e90f55d0c0d7b03660f3e854547648a7b284b941b0d960c062dcb9e0"
       },
       {
         "id": "zenodo-22077098",
-        "hash": "6f98afdb4de8276d62b0dd5236221792346bf7d1997b37ed9b682c5671433609"
+        "hash": "3ec470f0cb033ad365f68da4241f817bb0c83b4d813093de0a5162a13e03242b"
       },
       {
         "id": "zenodo-22077110",
-        "hash": "8e2f3495024aae94b4c9a42fbc25b03313c28fda24fd2aa433c6ab639a4789b0"
+        "hash": "43e80ef8791f8717146c5c2370eb93550858e9973967d419dbd627d0b2d0f37b"
       },
       {
         "id": "zenodo-22079224",
-        "hash": "6d346938a3582d731be9ec8ac1b9b7ae48132661ac258f741dceabac7f6b3358"
+        "hash": "31e285766027b56453f75b801fe04052672cfef357e324366798217649f41efb"
       },
       {
         "id": "zenodo-22079225",
-        "hash": "7a01263f1dbf3bc5f77d6704f2fa6d5c84dd6f44aaaa0bf4103940f161f21790"
+        "hash": "15d8cd4ed09a687c2087887d6bde19144dc6446b8ad3bccc12741644ec040023"
       },
       {
         "id": "zenodo-22079227",
-        "hash": "82226bbea3a985f50bfcb3137c4a5e112828528dd154711014b7a0ed662946cf"
+        "hash": "f416e4d30647cd0aed31fb102a2d2b40985edd25fa10ad9c16d42075528e4c3b"
       },
       {
         "id": "zenodo-22079228",
-        "hash": "0bdeb413de68147578e26287440939e6e9d7480f42cc5a1812a53e5562de6c65"
+        "hash": "b7739679c3693a7e5702ae26f3c8931218c09300407fc9c191e2c1e45b9929c2"
       },
       {
         "id": "zenodo-22079229",
-        "hash": "521f16d398ec8a1a2b978a72953c2daf6b63760721b5357f6cc1ef82ad35c4dc"
+        "hash": "beacb651d192b4b3ce9cb8dd05a2197248124df6be69a752381f15368fb8ecc6"
       }
     ],
     "comps": [

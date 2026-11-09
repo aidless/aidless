@@ -1,6 +1,6 @@
-// 审计数据哈希链：把 107 条审计记录按 slug 排序，逐条链式哈希，
-// 产出 root hash。任何人改一条记录，后续哈希全变 → 可检测篡改。
-// 这是「可复算」的升级：不仅分数可算，记录本身也防篡改。
+// SHA-256 chain over the JSON snapshot. Editing a record changes every
+// downstream hash. The chain detects edits. It does not re-derive scores
+// from the linked repositories.
 import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 
