@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-// aidless portfolio MCP server —— 把 107 仓 / 51 论文 / 8 赛道 / 五维价值分
-// 暴露成标准 MCP 工具，任何 MCP 客户端（Claude Desktop / Cursor / 任意 AI Agent）
-// 都能直接查询。这是作品集的「机器消费接口」：作品集不只是给人看的页面，
-// 也是 AI 助手可检索的结构化数据源。
+// MCP server over the JSON snapshot in data/. Not a live GitHub census.
+// repos.json omits eval-sandbox, eval-gate, rubric-support-qa, and trace-replay.
+// Paper figures were not re-checked against arXiv or Zenodo when this note was written.
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -71,7 +70,9 @@ server.tool(
       maxValue: BOARD.maxValue,
       boundaryWritten: REPOS.filter(r => r.hasBoundary).length,
       usageHas: REPOS.filter(r => r.hasUsage).length,
-      board: BOARD
+      board: BOARD,
+      omittedFromRepoSnapshot: ["eval-sandbox", "eval-gate", "rubric-support-qa", "trace-replay"],
+      snapshotNote: "Authored snapshot. Not a live GitHub census. Paper numbers were not re-checked against arXiv or Zenodo. status preprint is not peer-reviewed acceptance."
     };
     return { content: [{ type: "text", text: JSON.stringify(payload, null, 2) }] };
   }
@@ -80,7 +81,7 @@ server.tool(
 // 2) 仓库查询
 server.tool(
   "search_repos",
-  "Search the 107 audited GitHub repos by keyword (name/desc/claim/topics) or by 5-factor skill tag. Returns value score, tier, 5-factor breakdown, url.",
+  "Search repo records stored in data/repos.json. The file is a snapshot and omits eval-sandbox, eval-gate, rubric-support-qa, and trace-replay. Not a live GitHub search.",
   {
     q: z.string().optional().describe("free-text query, matched against name/desc/claim/topics"),
     skill: z.string().optional().describe("exact topic tag, e.g. 'python', 'llm-evaluation'"),
@@ -132,7 +133,7 @@ server.tool(
 // 4) 论文 + 边界账本
 server.tool(
   "search_papers",
-  "Search 51 preprints (10 arXiv + 36 Zenodo + in-prep/rejected). Every paper carries 'proves' and 'doesNotProve' — the honest boundary ledger.",
+  "Search paper records in data/papers.json. Counts are the file, not a live arXiv or Zenodo query. status preprint is not acceptance. Every record carries proves and doesNotProve.",
   {
     q: z.string().optional().describe("keyword in titleZh/title/tagline/proves/doesNotProve"),
     direction: z.string().optional().describe("research direction, e.g. '多智能体评估'"),
@@ -175,7 +176,7 @@ server.tool(
 // 6) 技能 → 证据映射
 server.tool(
   "skill_to_evidence",
-  "Given a skill, return the repos + papers that are the verifiable evidence for it (skill → code mapping).",
+  "Given a skill string, return snapshot repos and papers whose stored text matches it. A match is not a new measurement.",
   { skill: z.string().describe("e.g. 'LLM 评测系统', 'Agent 安全评测', '可复现工程'") },
   async ({ skill }) => {
     const SKILL_MAP = {

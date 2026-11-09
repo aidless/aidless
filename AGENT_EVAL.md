@@ -1,5 +1,9 @@
 # Agent evaluation: does the signal agree with the effect?
 
+Figures on this page are quotations from the linked files, read on 2026-11-09.
+They were not re-run from this repository. An arXiv id is a preprint, not an
+acceptance. No peer-reviewed acceptance is claimed for this line.
+
 A claim about an agent is only as good as the measurement behind it. The repos
 below are three instruments aimed at one question, from three directions:
 
@@ -22,15 +26,19 @@ effect (MDE), and the method that produced the MDE.
 
 - Four verdicts: `READABLE` / `MARGINAL` / `UNDECIDABLE` / `UNREADABLE`. More
   items fixes `MARGINAL`; it does not fix `UNDECIDABLE`.
-- The same board gives **MDE 0.0274** with an independent binomial approximation
-  and **0.0743** with a paired cluster bootstrap — a **2.7×** difference that
-  flips the verdict with no change to the data. `mde_method` is therefore always
-  printed.
+- The same README's example prints **MDE 0.0274** (`binomial_approx`) and
+  **0.0743** (`cluster_bootstrap`) — about **2.7×** — and the verdict label
+  changes with no change to the board. `mde_method` is therefore always
+  printed. This page did not re-run `examples/02_audit_a_leaderboard.py`.
 - A floor check runs first: five generators that each flip a coin agree half the
   time, so a margin above that floor looks like a landslide. If the floor is not
   distinguishable from chance, the verdict is `UNDECIDABLE` regardless of margin.
-- **370 tests passing, 3 skipped**; six examples run offline with no API key and
-  no model.
+- Test count unchecked. That README's header says `374 passed, 0 skipped` and
+  its Status section says `373 tests: 370 passing, 3 skipped` (both read on
+  2026-11-09). This page will not pick one. The same header says six examples
+  run offline with no API key and   no model. The PyPI project `arx` is a
+  different project (`https://git.ligo.org/jameson.rollins/arx`). This page
+  does not give a PyPI install command for it.
 
 **What it does not claim:** `READABLE` says the margin cleared the floor by more
 than the apparatus can resolve. It does not say the effect is real or that the
@@ -83,7 +91,10 @@ front.
 
 ## Recent related work (Oct 2026)
 
-The direction is now active in public preprints. Four papers read closely:
+The direction is visible in public preprints. Four papers are quoted below
+from [`agent-proxy-audit/replications/2026-10-harness-and-deletion`](https://github.com/aidless/agent-proxy-audit/tree/main/replications/2026-10-harness-and-deletion),
+read on 2026-11-09. The pilots described after them are that file's pilots,
+not a new run from this page. The preprints are not acceptances.
 
 - **When the harness decides success** (arXiv:2610.26632): truncating context
   costs nothing when a fact can be looked up again, but drops success to chance
@@ -115,18 +126,21 @@ editable components, Propose–Probe–Compose), and `context-mode` (sandboxed
 `ctx_execute`, SQLite/FTS5 continuity). Three pilots (local Ollama; the last two
 scaled to 50 cases):
 
-- **Decay:** access weighting extends retention **81 → 119 days**, but has no
-  effect at the eviction margin under a 180-day half-life (418 days for every
-  access pattern tested).
-- **Conflict:** 50 pairs × 3 models. The conservative rule had **1/90 false
-  merges** but missed **16/60** true continuations; the permissive rule caught
-  **58/60** and merged **29/90**. The best operating point is model-specific:
-  llama conservative 49/50, qwen conservative 46/50, gemma permissive 46/50.
-- **Deletion:** 50 profiles. An extractive summary preserved a deleted secret
-  **50/50** (clean 0/50, closure 0/50); the model's own three-bullet summary
-  retained it only **2/50** and recovered **1/50** — and the one failure with
-  the string present said "their access code", not "your". Residue depends on
-  the summarizer and on how the query addresses the memory.
+- **Decay:** that note says an access-weighted page survives **119 days** versus
+  **81 days** for a never-accessed page, and that under a 180-day half-life
+  retention is **418 days** for every access pattern tested.
+- **Conflict:** that note's aggregate is conservative **44/60** true
+  continuations and **1/90** false merges, and permissive **58/60** true and
+  **29/90** false. (44 of 60 true is 16 missed; the missed count is that
+  subtraction, not a separate reported cell.) The same note's per-model lines
+  include llama conservative 49/50, qwen conservative 46/50, and gemma
+  permissive 46/50.
+- **Deletion:** that note says an extractive summary preserved a deleted secret
+  **50/50** (clean 0/50, closure 0/50). Its prose says the model-written
+  three-bullet summary retained the secret twice and recovered it once
+  (**2/50** retained, **1/50** recovered). The one failure with the string
+  present said "their access code", not "your". Residue depends on the
+  summarizer and on how the query addresses the memory.
 
 Comparison, scripts, raw records and limits:
 [related systems](https://github.com/aidless/agent-proxy-audit/blob/main/docs/related-systems-2026-10.md).
@@ -142,11 +156,13 @@ published protocols.
 ## Supporting tools
 
 - [`agent-redteam`](https://github.com/aidless/agent-redteam) — red-vs-blue
-  security harness for multi-agent systems, OWASP-aligned playbook, 92 pytest
-  tests passing (1 skipped), 93/93 CI checks across 7 suites.
+  security harness for multi-agent systems, OWASP-aligned playbook. That
+  README's status line says `92 passed / 1 skipped` and a CI regression gate
+  `93/93` across 7 suites. Not re-run here. The PyPI project `agent-redteam`
+  is `uninhibited-scholar/agent-redteam`, a different repository.
 - [`mcp-guard`](https://github.com/aidless/mcp-guard) — offline MCP tool-definition
   scanner for description poisoning and description drift, plus sha256 pinning
-  against rug-pull changes; 27-case rules-v1 evaluation (17 poisoned, 10 benign).
+  against rug-pull changes. That README's current offline set is 30 cases (19 poison / 11 benign), with `recall_case` quoted as 18/19. Not re-run here.
 - [`agent-databench`](https://github.com/aidless/agent-databench) — a 20-task CSV
   data-analysis agent with a cost-aware harness (pass rate, turns, token spend).
   Fake-model rows are labelled `llm: fake` and are not counted as capability.
@@ -168,8 +184,15 @@ python -m unittest discover -s tests -t .
 
 ## What this line does not claim
 
-- Not peer-reviewed, except where a specific arXiv preprint is linked.
+- No peer-reviewed acceptance. An arXiv id is a preprint, not an acceptance.
+  The four ids named above resolved on 2026-11-09, via `export.arxiv.org`, to
+  the titles this page uses. The numeric sentences are copied from
+  `agent-proxy-audit/replications/2026-10-harness-and-deletion/README.md`,
+  which quotes those preprints. This page did not re-read the PDFs.
 - Not a general-purpose agent or an AGI claim. The instruments measure specific
   claims; they do not establish intelligence.
 - The numbers are local and authored. Each repo states its own interpretation
   limits; the summaries here do not widen them.
+- `chain_coverage`'s word "production" is the name of a chain under test in
+  `agent-loop-safety`. That README says the repository is a reference
+  skeleton, not a production runtime.

@@ -7,17 +7,18 @@ Thanks for your interest in improving this repository.
 ```bash
 git clone https://github.com/aidless/aidless.git
 cd aidless
-pip install -r requirements.txt   # if present
 ```
+
+There is no `requirements.txt` and no `Makefile`. This repository is a profile index.
 
 ## Verifying your change
 
 ```bash
-# 仅文档仓；改动后请检查链接可达
+python3 scripts/check_claim_pins.py
+cd portfolio-mcp && node verify_chain.mjs
 ```
 
-If the repository has a `Makefile`, `make check` or the closest equivalent runs the same
-checks as CI. Please run it before opening a pull request.
+Those two commands are what CI runs for the claims and the snapshot hash, besides the Markdown link check. They do not execute the linked evaluation repositories.
 
 ## Pull requests
 
