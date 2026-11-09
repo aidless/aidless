@@ -1,5 +1,7 @@
 # Liu Zewen (刘泽文)
 
+[![CI](https://github.com/aidless/aidless/actions/workflows/ci.yml/badge.svg)](https://github.com/aidless/aidless/actions/workflows/ci.yml)
+
 **LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-sandbox`](https://github.com/aidless/eval-sandbox): one command, no API key, ~5 seconds.**
 
 📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
