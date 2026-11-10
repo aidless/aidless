@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/aidless/aidless/actions/workflows/ci.yml/badge.svg)](https://github.com/aidless/aidless/actions/workflows/ci.yml)
 
-**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-sandbox`](https://github.com/aidless/eval-sandbox): one command, no API key, ~5 seconds.**
+**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-gate`](https://github.com/aidless/eval-gate): one command, no API key, sub-second, and its frozen demo suite is benchmark-verified ([`10/10 scenarios`](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md), [`v0.2.0 release`](https://github.com/aidless/eval-gate/releases/tag/v0.2.0)).**
 
 📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
@@ -13,7 +13,7 @@
 | Layer | Repository | The question it answers | Measured now |
 |---|---|---|---|
 | Execution | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | Did the task actually run isolated — network, mounts, memory, CPU, PIDs? | `SUMMARY: 10/10 PASS`, `43 passed` |
-| Verdict | [`eval-gate`](https://github.com/aidless/eval-gate) | Did this change make the model worse? | `4/4` verdicts as expected, `70` tests |
+| Verdict | [`eval-gate`](https://github.com/aidless/eval-gate) | Did this change make the model worse? | [benchmark-verified](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md): `10/10` frozen scenarios, `v0.2.0` |
 | Criteria | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | Is the scoring rubric itself right, before anyone scores with it? | 300 dev + 800 frozen items hash-verified, `114` tests |
 
 ```bash
@@ -38,12 +38,12 @@ Six entry points, in reading order. Each one runs offline with no API key; each 
 
 | # | Repository | Why this one first |
 |---|---|---|
-| 1 | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | The execution floor: does the task actually run isolated? `10/10 PASS` |
-| 2 | [`eval-gate`](https://github.com/aidless/eval-gate) | The verdict: did this change make the model worse? five-state answer |
-| 3 | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | The criteria: is the rubric right before anyone scores with it? |
-| 4 | [`arx`](https://github.com/aidless/arx) | The research loop: refuses to rank what its labels cannot resolve |
-| 5 | [`mcp-guard`](https://github.com/aidless/mcp-guard) | The tool surface: offline MCP definition-poisoning scan |
-| 6 | [`ttftkit`](https://github.com/aidless/ttftkit) | The serving floor: TTFT/throughput measured against a stated ceiling |
+| 1 | [`eval-gate`](https://github.com/aidless/eval-gate) | The flagship verdict gate: did this change make the model worse? five-state answer, [benchmark-verified frozen suite](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md) |
+| 2 | [`tmaudit`](https://github.com/aidless/tmaudit) | The reviewer pre-check: cheap reviewable defects caught before submission |
+| 3 | [`arx`](https://github.com/aidless/arx) | The research loop: refuses to rank what its labels cannot resolve |
+| 4 | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | The execution floor: does the task actually run isolated? `10/10 PASS` |
+| 5 | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | The criteria: is the rubric right before anyone scores with it? |
+| 6 | [`mcp-guard`](https://github.com/aidless/mcp-guard) | The tool surface: offline MCP definition-poisoning scan |
 
 ## Supporting layer
 
