@@ -32,6 +32,19 @@ python3 scripts/freeze.py --check && python3 scripts/freeze_test.py --check && p
 
 The refusal is the product: `eval-sandbox` will not report a PASS when the isolation primitives are unavailable.
 
+## Where to click first
+
+Six entry points, in reading order. Each one runs offline with no API key; each one refuses rather than guesses.
+
+| # | Repository | Why this one first |
+|---|---|---|
+| 1 | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | The execution floor: does the task actually run isolated? `10/10 PASS` |
+| 2 | [`eval-gate`](https://github.com/aidless/eval-gate) | The verdict: did this change make the model worse? five-state answer |
+| 3 | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | The criteria: is the rubric right before anyone scores with it? |
+| 4 | [`arx`](https://github.com/aidless/arx) | The research loop: refuses to rank what its labels cannot resolve |
+| 5 | [`mcp-guard`](https://github.com/aidless/mcp-guard) | The tool surface: offline MCP definition-poisoning scan |
+| 6 | [`ttftkit`](https://github.com/aidless/ttftkit) | The serving floor: TTFT/throughput measured against a stated ceiling |
+
 ## Supporting layer
 
 - [`trace-replay`](https://github.com/aidless/trace-replay) — replays recorded agent tool-call traces offline; byte-identical reports across repeated runs (sha256 verified), `111` tests, CI green on 3.10 / 3.11 / 3.12.
