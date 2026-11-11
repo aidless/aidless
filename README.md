@@ -6,6 +6,12 @@
 
 📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
+## What I don't claim (read this first)
+
+No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number.
+
+What I do claim: **every number in this profile is recomputable from the repo that produced it**, and where I could not reproduce a figure I removed it rather than hedge. The `Measured now` column below is command output, not aspiration.
+
 ## One chain, three repos
 
 **Execution → Verdict → Criteria.** Each repo is independently clonable, runs offline, and fails loudly instead of passing quietly.
@@ -56,8 +62,5 @@ Six entry points, in reading order. Each one runs offline with no API key; each 
 - [`arx`](https://github.com/aidless/arx) — refuses to rank a leaderboard whose labels cannot resolve it; `371 passed, 3 skipped` after `pip install -e .`.
 - [`agent-redteam`](https://github.com/aidless/agent-redteam) — OWASP-aligned red-team harness for LLM agents.
 
-## What I don't claim
-
-No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number. Where I could not reproduce a figure, I removed it rather than hedge.
 
 The longer lines — preprints, agent-evaluation instruments, and the portfolio MCP server — are in [AGENT_EVAL.md](AGENT_EVAL.md).
