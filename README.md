@@ -6,6 +6,12 @@
 
 📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
+## What I don't claim (read this first)
+
+No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number.
+
+What I do claim: **every number in this profile is recomputable from the repo that produced it**, and where I could not reproduce a figure I removed it rather than hedge. The `Measured now` column below is command output, not aspiration.
+
 ## One chain, three repos
 
 **Execution → Verdict → Criteria.** Each repo is independently clonable, runs offline, and fails loudly instead of passing quietly.
@@ -48,7 +54,7 @@ Six entry points, in reading order. Each one runs offline with no API key; each 
 ## Supporting layer
 
 - [`trace-replay`](https://github.com/aidless/trace-replay) — replays recorded agent tool-call traces offline; byte-identical reports across repeated runs (sha256 verified), `111` tests, CI green on 3.10 / 3.11 / 3.12.
-- [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — is the reported number fake-green? Naive checker `100/100` green vs authoritative `0.69 / 0.67`; `88` tests.
+- [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — is the reported number fake-green? Naive checker `100/100` green vs authoritative `0.69 / 0.67`; `96` tests.
 - [`mcp-guard`](https://github.com/aidless/mcp-guard) — offline MCP tool-definition poisoning scan, with hash pinning against rug pulls.
 - [`agent-reliability`](https://github.com/aidless/agent-reliability) — joint verdict over the tool surface and the output surface; `60 passed, 16 subtests passed`.
 - [`llmtriage`](https://github.com/aidless/llmtriage) — one-command triage of a broken inference deployment; `57 passed`.
@@ -56,9 +62,6 @@ Six entry points, in reading order. Each one runs offline with no API key; each 
 - [`arx`](https://github.com/aidless/arx) — refuses to rank a leaderboard whose labels cannot resolve it; `371 passed, 3 skipped` after `pip install -e .`.
 - [`agent-redteam`](https://github.com/aidless/agent-redteam) — OWASP-aligned red-team harness for LLM agents.
 
-## What I don't claim
-
-No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number. Where I could not reproduce a figure, I removed it rather than hedge.
 
 A pre-registered five-arm protocol measuring whether a model's **own** verification assertion tracks the persisted state — the same proxy/actual divergence found in external approval gates, but with no log to compare against, because the assertion and the action come from the same source.
 
