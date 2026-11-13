@@ -1,31 +1,64 @@
 # Liu Zewen (刘泽文)
 
-[![PyPI](https://img.shields.io/pypi/v/tmaudit)](https://pypi.org/project/tmaudit/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/aidless/aidless/actions/workflows/ci.yml/badge.svg)](https://github.com/aidless/aidless/actions/workflows/ci.yml)
 
-**LLM Evaluation & Reliability Engineer** — auditing the judges, gates and agent runtimes that decide whether a model actually improved.
+**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-gate`](https://github.com/aidless/eval-gate): one command, no API key, sub-second, and its frozen demo suite is benchmark-verified ([`10/10 scenarios`](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md), [`v0.2.0 release`](https://github.com/aidless/eval-gate/releases/tag/v0.2.0)).**
 
-Every claim below links to something you can check. Where a number can't be reproduced, I say so instead of quoting it.
+📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
-## Latest releases
+## One chain, three repos
 
-Four versioned source snapshots published on 2026-10-29. Manuscript releases
-include a PDF and a standalone SHA-256 file; none is a peer-reviewed acceptance.
+**Execution → Verdict → Criteria.** Each repo is independently clonable, runs offline, and fails loudly instead of passing quietly.
 
-| Release | Contents | Scope |
+| Layer | Repository | The question it answers | Measured now |
+|---|---|---|---|
+| Execution | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | Did the task actually run isolated — network, mounts, memory, CPU, PIDs? | `SUMMARY: 10/10 PASS`, `43 passed` |
+| Verdict | [`eval-gate`](https://github.com/aidless/eval-gate) | Did this change make the model worse? | [benchmark-verified](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md): `10/10` frozen scenarios, `v0.2.0` |
+| Criteria | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | Is the scoring rubric itself right, before anyone scores with it? | 300 dev + 800 frozen items hash-verified, `114` tests |
+
+```bash
+# Execution — also needs bubblewrap + a writable cgroup v2 subtree; missing either and it refuses to run
+git clone --depth 1 https://github.com/aidless/eval-sandbox && cd eval-sandbox
+python3 -m eval_sandbox.cli check
+
+# Verdict — quickstart needs no dataset and no API key
+git clone --depth 1 https://github.com/aidless/eval-gate && cd eval-gate
+python3 -m venv .venv && .venv/bin/pip install . && .venv/bin/eval-gate quickstart
+
+# Criteria — hash-checks the frozen sets, then lints rubric v0
+git clone --depth 1 https://github.com/aidless/rubric-support-qa && cd rubric-support-qa
+python3 scripts/freeze.py --check && python3 scripts/freeze_test.py --check && python3 rubric/lint.py
+```
+
+The refusal is the product: `eval-sandbox` will not report a PASS when the isolation primitives are unavailable.
+
+## Where to click first
+
+Six entry points, in reading order. Each one runs offline with no API key; each one refuses rather than guesses.
+
+| # | Repository | Why this one first |
 |---|---|---|
-| [`r5-verify-vs-gate` v0.1.0](https://github.com/aidless/r5-verify-vs-gate/releases/tag/v0.1.0) | 10-page preprint + checksum | Finite local-effect audit of model-internal verification |
-| [`arx` v0.3.0](https://github.com/aidless/arx/releases/tag/v0.3.0) | 6-page preprint + checksum | Statistical gate for autonomous research loops |
-| [`mm-epc` v0.1.0](https://github.com/aidless/mm-epc/releases/tag/v0.1.0) | 17-page arXiv v3 + checksum | Multimodal evaluator preference collapse |
-| [`ai-agent-playground` v1.3.0](https://github.com/aidless/ai-agent-playground/releases/tag/v1.3.0) | Source snapshot | Five-engine autonomous agent playground |
+| 1 | [`eval-gate`](https://github.com/aidless/eval-gate) | The flagship verdict gate: did this change make the model worse? five-state answer, [benchmark-verified frozen suite](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md) |
+| 2 | [`tmaudit`](https://github.com/aidless/tmaudit) | The reviewer pre-check: cheap reviewable defects caught before submission |
+| 3 | [`arx`](https://github.com/aidless/arx) | The research loop: refuses to rank what its labels cannot resolve |
+| 4 | [`eval-sandbox`](https://github.com/aidless/eval-sandbox) | The execution floor: does the task actually run isolated? `10/10 PASS` |
+| 5 | [`rubric-support-qa`](https://github.com/aidless/rubric-support-qa) | The criteria: is the rubric right before anyone scores with it? |
+| 6 | [`mcp-guard`](https://github.com/aidless/mcp-guard) | The tool surface: offline MCP definition-poisoning scan |
 
----
+## Supporting layer
 
-## Five things to look at
+- [`trace-replay`](https://github.com/aidless/trace-replay) — replays recorded agent tool-call traces offline; byte-identical reports across repeated runs (sha256 verified), `111` tests, CI green on 3.10 / 3.11 / 3.12.
+- [`auditable-llm-eval`](https://github.com/aidless/auditable-llm-eval) — is the reported number fake-green? Naive checker `100/100` green vs authoritative `0.69 / 0.67`; `88` tests.
+- [`mcp-guard`](https://github.com/aidless/mcp-guard) — offline MCP tool-definition poisoning scan, with hash pinning against rug pulls.
+- [`agent-reliability`](https://github.com/aidless/agent-reliability) — joint verdict over the tool surface and the output surface; `60 passed, 16 subtests passed`.
+- [`llmtriage`](https://github.com/aidless/llmtriage) — one-command triage of a broken inference deployment; `57 passed`.
+- [`tmaudit`](https://github.com/aidless/tmaudit) — TMLR self-audit CLI on PyPI; `264 passed, 3 skipped`.
+- [`arx`](https://github.com/aidless/arx) — refuses to rank a leaderboard whose labels cannot resolve it; `371 passed, 3 skipped` after `pip install -e .`.
+- [`agent-redteam`](https://github.com/aidless/agent-redteam) — OWASP-aligned red-team harness for LLM agents.
 
-Each of these is a repository you can clone and verify yourself. I start here rather than a skills table because the table is the least interesting thing about my work.
+## What I don't claim
 
-### 0. [`r5-verify-vs-gate`](https://github.com/aidless/r5-verify-vs-gate) — the newest: external gates vs model-internal verification
+No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number. Where I could not reproduce a figure, I removed it rather than hedge.
 
 A pre-registered five-arm protocol measuring whether a model's **own** verification assertion tracks the persisted state — the same proxy/actual divergence found in external approval gates, but with no log to compare against, because the assertion and the action come from the same source.
 
