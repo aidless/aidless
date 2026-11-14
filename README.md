@@ -244,3 +244,35 @@ in-repo manuscript, and the page states that.
 ## Elsewhere
 
 - [从学生项目到生产级 AI Agent](https://github.com/aidless/ai-agent-playground/blob/master/blog/from-student-to-production.md) · [English](https://github.com/aidless/ai-agent-playground/blob/master/blog/from-student-to-production-en.md)
+
+## 验收标准与复算
+
+本仓判为合格的验收判据是：`python3 eval/run_cases.py` 的通过率必须为 100%（20/20），且 `make eval` 的退出码必须为 0；任何一条失败即判为不合格。20 条题全部现算 —— 19 条 `expr` 真解析 `portfolio-mcp/data/*.json` 与 `server.mjs` / `verify_chain.mjs` 源码，1 条 `doc` 校验 `portfolio-mcp/README.md` 公布的组合 root 与数据一致；期望值是跑出来的，改一个字段就会变红。
+
+| axis | 判什么 | 条数 |
+|---|---|---|
+| `dataset/repos` | 仓库记录数、original 口径、tier F 榜首（与 `search_repos` 排序一致） | 3 |
+| `dataset/papers` | 可见论文数、arXiv 号条数、单一方向的条数 | 3 |
+| `dataset/comps` | 参赛记录数、奖牌资格条数、单条快照字段 | 3 |
+| `chain` | 逐条 canonical sha256 重算三条链的 root、组合 root、不一致节点数 | 3 |
+| `score` | 五维权重重算单仓 value、全表一致条数、`WEIGHTS` 归一 | 3 |
+| `board` | `medianValue` 与 original value 中位数一致、commits 合计 | 2 |
+| `server` | MCP 工具注册数、链初始前缀、README 公布 root 与重算一致 | 3 |
+
+```bash
+python3 eval/run_cases.py             # 期望 20/20，exit 0
+python3 eval/run_cases.py --selftest  # 把第一条期望值改坏：期望 19/20 且 exit 0（证明这套题会红）
+make eval                             # 一键重跑，rc 必须为 0
+```
+
+**复算口径。** 每条题的 `source` 指向真实文件（`portfolio-mcp/data/*.json:1`、`portfolio-mcp/server.mjs:24`、`portfolio-mcp/verify_chain.mjs:17`）。哈希链不是抄 `audit-chain.json` 的结论：`AL-10`–`AL-12` 按 `build_chain.mjs` 的 canonical JSON（字段名排序、数值按 `JSON.stringify` 形态）+ `prev|record` 链式 sha256 重算 166 条记录（107 repos + 51 papers + 8 comps），初始 `prev = "GENESIS:<label>"`，再以 `|` 连接三条 root 求组合 root；三个 root 与本仓落盘值逐字节相同、不一致节点数为 0。`AL-14` 钉住「落盘 value 与公开公式完全相等的条数」（当前 99/107），因此公式与数据一旦漂移，这一条先红，而不是让不一致被一个 pass rate 掩盖。
+
+**失败归因**（`run_cases.py` 直接按 axis 汇总，不给单一通过率）：
+
+```text
+失败归因（按 axis）：
+  dataset/comps: 3 条 —— AL-07, AL-08, AL-09
+  dataset/papers: 3 条 —— AL-04, AL-05, AL-06
+```
+
+（上面是 `--selftest` 与变量名错误时的真实输出形态：先按 axis 定位是哪一类数据/口径坏了，再打开单条 `detail`。）

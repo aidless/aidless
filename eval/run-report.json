@@ -1,0 +1,129 @@
+{
+ "total": 20,
+ "passed": 20,
+ "failed": 0,
+ "selftest": false,
+ "failed_by_axis": {},
+ "results": [
+  {
+   "id": "AL-01",
+   "axis": "dataset/repos",
+   "ok": true,
+   "detail": "107"
+  },
+  {
+   "id": "AL-02",
+   "axis": "dataset/repos",
+   "ok": true,
+   "detail": "90"
+  },
+  {
+   "id": "AL-03",
+   "axis": "dataset/repos",
+   "ok": true,
+   "detail": "roofline-lint"
+  },
+  {
+   "id": "AL-04",
+   "axis": "dataset/papers",
+   "ok": true,
+   "detail": "48"
+  },
+  {
+   "id": "AL-05",
+   "axis": "dataset/papers",
+   "ok": true,
+   "detail": "10"
+  },
+  {
+   "id": "AL-06",
+   "axis": "dataset/papers",
+   "ok": true,
+   "detail": "14"
+  },
+  {
+   "id": "AL-07",
+   "axis": "dataset/comps",
+   "ok": true,
+   "detail": "8"
+  },
+  {
+   "id": "AL-08",
+   "axis": "dataset/comps",
+   "ok": true,
+   "detail": "5"
+  },
+  {
+   "id": "AL-09",
+   "axis": "dataset/comps",
+   "ok": true,
+   "detail": "4498"
+  },
+  {
+   "id": "AL-10",
+   "axis": "chain",
+   "ok": true,
+   "detail": "5922f75c0c7c745aea455e0250c4819931606ac26a58d43943fb84daef78652e"
+  },
+  {
+   "id": "AL-11",
+   "axis": "chain",
+   "ok": true,
+   "detail": "6563685496e72931ca9c3b5a1ec99a2379b5abda6ed87f1da758253f3526cb2b"
+  },
+  {
+   "id": "AL-12",
+   "axis": "chain",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "id": "AL-13",
+   "axis": "score",
+   "ok": true,
+   "detail": "9.12"
+  },
+  {
+   "id": "AL-14",
+   "axis": "score",
+   "ok": true,
+   "detail": "99"
+  },
+  {
+   "id": "AL-15",
+   "axis": "score",
+   "ok": true,
+   "detail": "1.0"
+  },
+  {
+   "id": "AL-16",
+   "axis": "board",
+   "ok": true,
+   "detail": "True"
+  },
+  {
+   "id": "AL-17",
+   "axis": "board",
+   "ok": true,
+   "detail": "10210"
+  },
+  {
+   "id": "AL-18",
+   "axis": "server",
+   "ok": true,
+   "detail": "8"
+  },
+  {
+   "id": "AL-19",
+   "axis": "server",
+   "ok": true,
+   "detail": "GENESIS:"
+  },
+  {
+   "id": "AL-20",
+   "axis": "server",
+   "ok": true,
+   "detail": "root = 6563685496e72931ca9c3b5a1ec99a237"
+  }
+ ]
+}
