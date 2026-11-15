@@ -224,14 +224,28 @@ Three rules I now follow without exception:
 
 ## What this repository itself is
 
-This repository is a **profile page**, not a codebase: it tracks **0 Python
-files** and holds no runnable artifact. Its CI (`.github/workflows/ci.yml`) runs
-three things on a checkout with no source: a byte-compile gate that is a no-op
-here, a link check that every relative Markdown link resolves, and a
-mutation-control job that proves the byte-compile gate *can* fail (it corrupts a
-tracked `.py` and requires a non-zero exit; here it has no `.py` to corrupt, so
-the control asserts the gate is vacuously green on this tree and documents that
-fact rather than pretending it tested something).
+This repository is **the profile page plus one small runnable artifact**, and the
+numbers are checkable rather than asserted: `git ls-files | wc -l` = **38 tracked
+files**, of which **1** Python file (`eval/run_cases.py`) and **3** JavaScript
+modules (`portfolio-mcp/{server,verify_chain,build_chain}.mjs`).
+
+`portfolio-mcp/` is a real MCP server over a static dataset (166 records: 107 repos
++ 51 papers + 8 competitions), and it ships its own acceptance corpus:
+
+```bash
+python3 eval/run_cases.py             # 20/20 cases passed
+python3 eval/run_cases.py --selftest  # corrupts case #0's expectation: must go red
+make eval                             # exit code must be 0
+```
+
+Its CI (`.github/workflows/ci.yml`) runs a byte-compile gate, a relative-link
+check, and a mutation-control job that proves the byte-compile gate *can* fail
+(it corrupts a tracked `.py` and requires a non-zero exit).
+
+> An earlier version of this section claimed the repository tracked "0 Python
+> files" and held "no runnable artifact". That was measured before `portfolio-mcp/`
+> and `eval/` landed here, and it stayed on the page after it stopped being true.
+> Corrected 2026-11-14 with the counts above.
 
 **Boundary:** the numbers and claims on this page belong to the linked
 repositories, not to this one. Each link's claim is verified in that repo (e.g.
