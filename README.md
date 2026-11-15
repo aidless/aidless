@@ -2,13 +2,13 @@
 
 [![CI](https://github.com/aidless/aidless/actions/workflows/ci.yml/badge.svg)](https://github.com/aidless/aidless/actions/workflows/ci.yml)
 
-**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-gate`](https://github.com/aidless/eval-gate): one command, no API key, sub-second, and its frozen demo suite is benchmark-verified ([`10/10 scenarios`](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md), [`v0.2.0 release`](https://github.com/aidless/eval-gate/releases/tag/v0.2.0)).**
+**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-gate`](https://github.com/aidless/eval-gate): one command (`pip install eval-verdict`), no API key, sub-second, and its frozen demo suite is benchmark-verified ([`10/10 scenarios`](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md), [`v0.2.0 release`](https://github.com/aidless/eval-gate/releases/tag/v0.2.0)).**
 
 📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
 ## What I don't claim (read this first)
 
-No peer-reviewed acceptance. No external users yet. No live demo. `eval-sandbox`, `eval-gate` and `rubric-support-qa` are not on PyPI. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number.
+No peer-reviewed acceptance. No external users yet. No live demo. `eval-verdict` (the PyPI name of `eval-gate`) is published; `eval-sandbox` and `rubric-support-qa` are not on PyPI yet. `rubric-support-qa` has no model run and no inter-annotator κ yet — its README says so instead of quoting a number.
 
 What I do claim: **every number in this profile is recomputable from the repo that produced it**, and where I could not reproduce a figure I removed it rather than hedge. The `Measured now` column below is command output, not aspiration.
 
