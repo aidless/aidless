@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/aidless/aidless/actions/workflows/ci.yml/badge.svg)](https://github.com/aidless/aidless/actions/workflows/ci.yml)
 
-**LLM Evaluation & Reliability.** I build a three-layer LLM evaluation pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and I publish the evidence when it refuses to pass. **Start with [`eval-gate`](https://github.com/aidless/eval-gate): one command (`pip install eval-verdict`), no API key, sub-second, and its frozen demo suite is benchmark-verified ([`10/10 scenarios`](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md), [`v0.2.0 release`](https://github.com/aidless/eval-gate/releases/tag/v0.2.0)).**
+**LLM Evaluation & Reliability.** I build two evidence-first chains: a three-layer **model-quality** pipeline — execution sandbox → verdict gate → rubric — that decides whether a model actually improved, and an **inference & deployment** chain — TTFT/throughput measurement → accelerator preflight → roofline lint → one-command triage — that decides whether the serving stack delivers what its numbers claim. In both, I publish the evidence when the tool refuses to pass. **Start with [`eval-gate`](https://github.com/aidless/eval-gate): one command (`pip install eval-verdict`), no API key, sub-second, and its frozen demo suite is benchmark-verified ([`10/10 scenarios`](https://github.com/aidless/eval-gate/blob/main/docs/BENCHMARK.md), [`v0.2.0 release`](https://github.com/aidless/eval-gate/releases/tag/v0.2.0)).**
 
 📧 [17353895263@163.com](mailto:17353895263@163.com) · China · open to relocate · available immediately
 
@@ -154,6 +154,35 @@ itself is covered by eval.
 Supporting: [`agent-redteam`](https://github.com/aidless/agent-redteam) (OWASP-aligned red-team harness, 92 tests), [`mcp-guard`](https://github.com/aidless/mcp-guard) (offline MCP poisoning scan + hash pinning), [`agent-databench`](https://github.com/aidless/agent-databench) (20-task cost-aware eval).
 
 **Full line, methods, reproducible commands, and stated limits:** [AGENT_EVAL.md](AGENT_EVAL.md)
+
+---
+
+## Inference & deployment evaluation: is the machine, not just the model, telling the truth?
+
+A second chain, one layer below model quality — whether the **serving stack** actually delivers the
+latency, throughput and isolation its numbers claim, and whether a broken deployment is diagnosable
+in one command. Each repo fails loudly rather than reporting a green that means nothing.
+
+| Repo | Question it answers | Measured now |
+|---|---|---|
+| [`ttftkit`](https://github.com/aidless/ttftkit) | Is the TTFT/TPOT/goodput number real, or a same-seed, same-cache artifact? | `284 passed`; `red_check.py` reverses **61** fixes → **61/61** go red; a real RTX 3060 + vLLM run shows `8/8` byte-identical outputs c=1 vs c=16 (greedy), gate PASS |
+| [`accel-preflight`](https://github.com/aidless/accel-preflight) | Is this GPU/accelerator config valid before a job burns the cluster? | `69 passed`; acceptance suite **20/20 cases**; `--prove-red` makes all 7 rule assertions go red |
+| [`roofline-lint`](https://github.com/aidless/roofline-lint) | Is the claimed roofline working point physically reachable? | `43 passed`; 17 hand-computed working points pinned; `--prove-red` injects two known-wrong formulas and confirms the lint catches them |
+| [`llmtriage`](https://github.com/aidless/llmtriage) | Why is this inference deployment broken, in one command? | `57 passed`; `llmtriage logs --file examples/vllm_fake_lead.log` → root-cause triage |
+
+```bash
+# Latency/throughput measurement you can trust — no API key, offline against a local SSE server
+git clone https://github.com/aidless/ttftkit && cd ttftkit && pip install -e .
+python3 -m pytest -q && python3 scripts/red_check.py   # 284 passed / 61/61 RED
+
+# Catch a bad accelerator config before it costs cluster time
+git clone https://github.com/aidless/accel-preflight && cd accel-preflight
+python3 -m pytest -q && python3 eval/run_cases.py      # 69 passed / 20-20 cases
+```
+
+The same discipline as the eval chain above: a tool that reports "fast" or "valid" has to be able to
+show its own checks going red first, and where there is no hardware run recorded yet the README says
+so instead of quoting a number.
 
 ---
 
